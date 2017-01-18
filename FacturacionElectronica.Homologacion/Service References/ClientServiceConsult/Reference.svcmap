@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f4b83d6f-f414-4abf-aedc-4dc4b82d80ef" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="billConsultService.wsdl" MetadataType="Wsdl" ID="e6df93c3-6049-4573-84a1-729f9272d171" SourceId="1" SourceUrl="https://www.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl=1" />
+    <MetadataFile FileName="billConsultService1.wsdl" MetadataType="Wsdl" ID="42d2d1a4-51a4-40f1-80ce-7e799c82515b" SourceId="1" SourceUrl="https://www.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?wsdl" />
+    <MetadataFile FileName="billConsultService.xsd" MetadataType="Schema" ID="09873233-5af3-4791-9686-700229214269" SourceId="1" SourceUrl="https://www.sunat.gob.pe/ol-it-wsconscpegem/billConsultService?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

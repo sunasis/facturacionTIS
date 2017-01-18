@@ -1,0 +1,2754 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Errors>
+  <Error code="100">
+    <value>El sistema no puede responder su solicitud. Intente nuevamente o comuníquese con su Administrador </value>
+  </Error>
+  <Error code="101">
+    <value>El encabezado de seguridad es incorrecto </value>
+  </Error>
+  <Error code="102">
+    <value>Usuario o contraseña incorrectos </value>
+  </Error>
+  <Error code="103">
+    <value>El Usuario ingresado no existe </value>
+  </Error>
+  <Error code="104">
+    <value>La Clave ingresada es incorrecta </value>
+  </Error>
+  <Error code="105">
+    <value>El Usuario no está activo </value>
+  </Error>
+  <Error code="106">
+    <value>El Usuario no es válido </value>
+  </Error>
+  <Error code="109">
+    <value>El sistema no puede responder su solicitud. (El servicio de autenticación no está disponible) </value>
+  </Error>
+  <Error code="110">
+    <value>No se pudo obtener la información del tipo de usuario </value>
+  </Error>
+  <Error code="111">
+    <value>No tiene el perfil para enviar comprobantes electrónicos </value>
+  </Error>
+  <Error code="112">
+    <value>El usuario debe ser secundario </value>
+  </Error>
+  <Error code="113">
+    <value>El usuario no está afiliado a Factura Electrónica </value>
+  </Error>
+  <Error code="125">
+    <value>No se pudo obtener la constancia </value>
+  </Error>
+  <Error code="126">
+    <value>El ticket no le pertenece al usuario </value>
+  </Error>
+  <Error code="127">
+    <value>El ticket no existe </value>
+  </Error>
+  <Error code="130">
+    <value>El sistema no puede responder su solicitud. (No se pudo obtener el ticket de proceso) </value>
+  </Error>
+  <Error code="131">
+    <value>El sistema no puede responder su solicitud. (No se pudo grabar el archivo en el directorio) </value>
+  </Error>
+  <Error code="132">
+    <value>El sistema no puede responder su solicitud. (No se pudo grabar escribir en el archivo zip) </value>
+  </Error>
+  <Error code="133">
+    <value>El sistema no puede responder su solicitud. (No se pudo grabar la entrada del log) </value>
+  </Error>
+  <Error code="134">
+    <value>El sistema no puede responder su solicitud. (No se pudo grabar en el storage) </value>
+  </Error>
+  <Error code="135">
+    <value>El sistema no puede responder su solicitud. (No se pudo encolar el pedido) </value>
+  </Error>
+  <Error code="136">
+    <value>El sistema no puede responder su solicitud. (No se pudo recibir una respuesta del batch) </value>
+  </Error>
+  <Error code="137">
+    <value>El sistema no puede responder su solicitud. (Se obtuvo una respuesta nula) </value>
+  </Error>
+  <Error code="138">
+    <value>El sistema no puede responder su solicitud. (Error en Base de Datos)</value>
+  </Error>
+  <Error code="151">
+    <value>El nombre del archivo ZIP es incorrecto </value>
+  </Error>
+  <Error code="152">
+    <value>No se puede enviar por este método un archivo de resumen </value>
+  </Error>
+  <Error code="153">
+    <value>No se puede enviar por este método un archivo por lotes </value>
+  </Error>
+  <Error code="154">
+    <value>El RUC del archivo no corresponde al RUC del usuario </value>
+  </Error>
+  <Error code="155">
+    <value>El archivo ZIP esta vacío </value>
+  </Error>
+  <Error code="156">
+    <value>El archivo ZIP esta corrupto </value>
+  </Error>
+  <Error code="157">
+    <value>El archivo ZIP no contiene comprobantes </value>
+  </Error>
+  <Error code="158">
+    <value>El archivo ZIP contiene demasiados comprobantes para este tipo de envío </value>
+  </Error>
+  <Error code="159">
+    <value>El nombre del archivo XML es incorrecto </value>
+  </Error>
+  <Error code="160">
+    <value>El archivo XML esta vacío </value>
+  </Error>
+  <Error code="161">
+    <value>El nombre del archivo XML no coincide con el nombre del archivo ZIP </value>
+  </Error>
+  <Error code="200">
+    <value>No se pudo procesar su solicitud. (Ocurrió un error en el batch) </value>
+  </Error>
+  <Error code="201">
+    <value>No se pudo procesar su solicitud. (Llego un requerimiento nulo al batch)</value>
+  </Error>
+  <Error code="202">
+    <value>No se pudo procesar su solicitud. (No llego información del archivo ZIP)</value>
+  </Error>
+  <Error code="203">
+    <value>No se pudo procesar su solicitud. (No se encontró archivos en la información del archivo ZIP)</value>
+  </Error>
+  <Error code="204">
+    <value>No se pudo procesar su solicitud. (Este tipo de requerimiento solo acepta 1 archivo)</value>
+  </Error>
+  <Error code="250">
+    <value>No se pudo procesar su solicitud. (Ocurrió un error desconocido al hacer unzip) </value>
+  </Error>
+  <Error code="251">
+    <value>No se pudo procesar su solicitud. (No se pudo crear un directorio para el unzip) </value>
+  </Error>
+  <Error code="252">
+    <value>No se pudo procesar su solicitud. (No se encontró archivos dentro del zip) </value>
+  </Error>
+  <Error code="253">
+    <value>No se pudo procesar su solicitud. (No se pudo comprimir la constancia) </value>
+  </Error>
+  <Error code="300">
+    <value>No se encontró la raíz documento xml</value>
+  </Error>
+  <Error code="301">
+    <value>Elemento raíz del xml no está definido</value>
+  </Error>
+  <Error code="302">
+    <value>Código del tipo de comprobante no registrado</value>
+  </Error>
+  <Error code="303">
+    <value>No existe el directorio de schemas </value>
+  </Error>
+  <Error code="304">
+    <value>No existe el archivo de schema </value>
+  </Error>
+  <Error code="305">
+    <value>El sistema no puede procesar el archivo xml </value>
+  </Error>
+  <Error code="306">
+    <value>No se puede leer (parsear) el archivo XML </value>
+  </Error>
+  <Error code="307">
+    <value>No se pudo recuperar la constancia </value>
+  </Error>
+  <Error code="400">
+    <value>No tiene permiso para enviar casos de pruebas </value>
+  </Error>
+  <Error code="401">
+    <value>El caso de prueba no existe </value>
+  </Error>
+  <Error code="402">
+    <value>La numeración o nombre del documento ya ha sido enviado anteriormente </value>
+  </Error>
+  <Error code="403">
+    <value>El documento afectado por la nota no existe </value>
+  </Error>
+  <Error code="404">
+    <value>El documento afectado por la nota se encuentra rechazado </value>
+  </Error>
+  <Error code="1001">
+    <value>ID - El dato SERIE-CORRELATIVO no cumple con el formato de acuerdo al tipo de comprobante </value>
+  </Error>
+  <Error code="1002">
+    <value>El XML no contiene información en el tag ID </value>
+  </Error>
+  <Error code="1003">
+    <value>InvoiceTypeCode - El valor del tipo de documento es invalido o no coincide con el nombre del archivo </value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="1004">
+    <value>El XML no contiene el tag o no existe información de InvoiceTypeCode </value>
+  </Error>
+  <Error code="1005">
+    <value>CustomerAssignedAccountID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="1006">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del emisor del documento </value>
+  </Error>
+  <Error code="1007">
+    <value>AdditionalAccountID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="1008">
+    <value>El XML no contiene el tag o no existe información de AdditionalAccountID del emisor del documento </value>
+  </Error>
+  <Error code="1009">
+    <value>IssueDate - El dato ingresado  no cumple con el patrón YYYY-MM-DD</value>
+  </Error>
+  <Error code="1010">
+    <value>El XML no contiene el tag IssueDate</value>
+  </Error>
+  <Error code="1011">
+    <value>IssueDate- El dato ingresado no es valido</value>
+  </Error>
+  <Error code="1012">
+    <value>ID - El dato ingresado no cumple con el patrón SERIE-CORRELATIVO</value>
+  </Error>
+  <Error code="1013">
+    <value>El XML no contiene información en el tag ID</value>
+  </Error>
+  <Error code="1014">
+    <value>CustomerAssignedAccountID - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1015">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del emisor del documento</value>
+  </Error>
+  <Error code="1016">
+    <value>AdditionalAccountID - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1017">
+    <value>El XML no contiene el tag AdditionalAccountID del emisor del documento</value>
+  </Error>
+  <Error code="1018">
+    <value>IssueDate - El dato ingresado no cumple con el patrón YYYY-MM-DD</value>
+  </Error>
+  <Error code="1019">
+    <value>El XML no contiene el tag IssueDate</value>
+  </Error>
+  <Error code="1020">
+    <value>IssueDate- El dato ingresado no es valido</value>
+  </Error>
+  <Error code="1021">
+    <value>Error en la validación de la nota de crédito</value>
+  </Error>
+  <Error code="1022">
+    <value>La serie o número del documento modificado por la Nota Electrónica no cumple con el formato establecido </value>
+  </Error>
+  <Error code="1023">
+    <value>No se ha especificado el tipo de documento modificado por la Nota electrónica </value>
+  </Error>
+  <Error code="1024">
+    <value>CustomerAssignedAccountID - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1025">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del emisor del documento</value>
+  </Error>
+  <Error code="1026">
+    <value>AdditionalAccountID - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1027">
+    <value>El XML no contiene el tag AdditionalAccountID del emisor del documento</value>
+  </Error>
+  <Error code="1028">
+    <value>IssueDate - El dato ingresado no cumple con el patrón YYYY-MM-DD</value>
+  </Error>
+  <Error code="1029">
+    <value>El XML no contiene el tag IssueDate</value>
+  </Error>
+  <Error code="1030">
+    <value>IssueDate- El dato ingresado no es valido</value>
+  </Error>
+  <Error code="1031">
+    <value>Error en la validación de la nota de debito</value>
+  </Error>
+  <Error code="1032">
+    <value>El comprobante fue informado previamente en una comunicación de baja </value>
+  </Error>
+  <Error code="1033">
+    <value>El comprobante fue registrado previamente con otros datos </value>
+  </Error>
+  <Error code="1034">
+    <value>Número de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML </value>
+  </Error>
+  <Error code="1035">
+    <value>Número de Serie del nombre del archivo no coincide con el consignado en el contenido del archivo XML </value>
+  </Error>
+  <Error code="1036">
+    <value>Número de documento en el nombre del archivo no coincide con el consignado en el contenido del XML </value>
+  </Error>
+  <Error code="1037">
+    <value>El XML no contiene el tag o no existe información de RegistrationName del emisor del documento </value>
+  </Error>
+  <Error code="1038">
+    <value>RegistrationName - El nombre o razón social del emisor no cumple con el estándar </value>
+  </Error>
+  <Error code="1039">
+    <value>Solo se pueden recibir notas electrónicas que modifican facturas </value>
+  </Error>
+  <Error code="1040">
+    <value>El tipo de documento modificado por la nota electrónica no es valido </value>
+  </Error>
+  <Error code="1041">
+    <value>cac:PrepaidPayment/cbc:ID - El tag no contiene el atributo @SchemaID. que indica el tipo de documento que realiza el anticipo</value>
+  </Error>
+  <Error code="1042">
+    <value>cac:PrepaidPayment/cbc:InstructionID – El tag no contiene el atributo @SchemaID. Que indica el tipo de documento del emisor del documento del anticipo</value>
+  </Error>
+  <Error code="1043">
+    <value>cac:OriginatorDocumentReference/cbc:ID - El tag no contiene el atributo @SchemaID. Que indica el tipo de documento del originador del documento electrónico</value>
+  </Error>
+  <Error code="1044">
+    <value>cac:PrepaidPayment/cbc:InstructionID – El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1045">
+    <value>cac:OriginatorDocumentReference/cbc:ID – El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1046">
+    <value>cbc:Amount - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1047">
+    <value>cbc:Quantity - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="1048">
+    <value>El XML no contiene el tag o no existe información de PrepaidAmount para un documento con anticipo</value>
+  </Error>
+  <Error code="">
+    <value />
+  </Error>
+  <Error code="1049">
+    <value>ID - Serie y Número del archivo no coincide con el consignado en el contenido del XML</value>
+  </Error>
+  <Error code="1050">
+    <value>El XML no contiene información en el tag DespatchAdviceTypeCode</value>
+  </Error>
+  <Error code="1051">
+    <value>DespatchAdviceTypeCode - El valor del tipo de guía es inválido</value>
+  </Error>
+  <Error code="1052">
+    <value>DespatchAdviceTypeCode - No coincide con el consignado en el contenido del XML</value>
+  </Error>
+  <Error code="1053">
+    <value>El XML no contiene información en el tag /DespatchAdvice/cac:OrderReference/cbc:ID</value>
+  </Error>
+  <Error code="1054">
+    <value>cac:OrderReference/cac:DocumentReference/cbc:ID - El dato SERIE-número no cumple con el formato de acuerdo a la Guía</value>
+  </Error>
+  <Error code="1055">
+    <value>Serie - No cumple con el formato de acuerdo a guía electrónica (EG01 ó TXXXX)</value>
+  </Error>
+  <Error code="1056">
+    <value>El XML no contiene información en el tag /DespatchAdvice/cac:OrderReference/cbc:OrderTypeCode</value>
+  </Error>
+  <Error code="1057">
+    <value>El XML no contiene información en el tag cac:AdditionalDocumentReference/cbc:ID</value>
+  </Error>
+  <Error code="1058">
+    <value>El XML no contiene información en el tag cac:AdditionalDocumentReference/cbc:DocumentTypeCode</value>
+  </Error>
+  <Error code="1059">
+    <value>El XML no contiene firma digital</value>
+  </Error>
+  <Error code="1060">
+    <value>El XML no contiene el tag o no existe información del número de RUC del Remitente</value>
+  </Error>
+  <Error code="1061">
+    <value>El número de RUC del Remitente no existe</value>
+  </Error>
+  <Error code="1062">
+    <value>El XML no contiene el tag o no existe información en el tag /DespatchAdvice/cac:Shipment/cbc:HandlingCode</value>
+  </Error>
+  <Error code="1063">
+    <value>cbc:ShippingPriorityLevelCode: El dato ingresado no es valido</value>
+  </Error>
+  <Error code="1064">
+    <value>El XML no contiene el tag o no existe información en el tag cac:DespatchLine de bienes a transportar</value>
+  </Error>
+  <Error code="1065">
+    <value>El XML no contiene información en el tag cbc:TransportModeCode</value>
+  </Error>
+  <Error code="1066">
+    <value>El XML no contiene el tag o no existe información en el tag cac:CarrierParty de datos del transportista</value>
+  </Error>
+  <Error code="1067">
+    <value>El XML no contiene el tag o no existe información en el tag cac:TransportMeans de datos del vehículo</value>
+  </Error>
+  <Error code="1068">
+    <value>El XML no contiene el tag o no existe información en el tag cac:DriverPerson de datos del conductor</value>
+  </Error>
+  <Error code="1069">
+    <value>StartDate: El XML no contiene fecha de inicio de traslado</value>
+  </Error>
+  <Error code="1070">
+    <value>StartDate - El dato ingresado  no cumple con el patrón YYYY-MM-DD</value>
+  </Error>
+  <Error code="1071">
+    <value>StartDate - El dato ingresado no es valido</value>
+  </Error>
+  <Error code="1072">
+    <value>Starttime - El dato ingresado  no cumple con el patrón HH:mm:ss.SZ</value>
+  </Error>
+  <Error code="1073">
+    <value>StartTime - El dato ingresado no es valido</value>
+  </Error>
+  <Error code="1074">
+    <value>No ha consignado punto de llegada</value>
+  </Error>
+  <Error code="1075">
+    <value>No ha consignado punto de partida</value>
+  </Error>
+  <Error code="2010">
+    <value>El contribuyente no está activo </value>
+  </Error>
+  <Error code="2011">
+    <value>El contribuyente no está habido </value>
+  </Error>
+  <Error code="2012">
+    <value>El contribuyente no está autorizado a emitir comprobantes electrónicos</value>
+  </Error>
+  <Error code="2013">
+    <value>El contribuyente no cumple con tipo de empresa o tributos requeridos </value>
+  </Error>
+  <Error code="2014">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del receptor del documento </value>
+  </Error>
+  <Error code="2015">
+    <value>El XML no contiene el tag o no existe información de AdditionalAccountID del receptor del documento </value>
+  </Error>
+  <Error code="2016">
+    <value>AdditionalAccountID - El dato ingresado en el tipo de documento de identidad del receptor no cumple con el estándar </value>
+  </Error>
+  <Error code="2017">
+    <value>CustomerAssignedAccountID - El número de documento de identidad del receptor debe ser RUC </value>
+  </Error>
+  <Error code="2018">
+    <value>CustomerAssignedAccountID -  El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2019">
+    <value>El XML no contiene el tag o no existe información de RegistrationName del emisor del documento</value>
+  </Error>
+  <Error code="2020">
+    <value>RegistrationName - El nombre o razón social del emisor no cumple con el estándar</value>
+  </Error>
+  <Error code="2021">
+    <value>El XML no contiene el tag o no existe información de RegistrationName del receptor del documento </value>
+  </Error>
+  <Error code="2022">
+    <value>RegistrationName - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2023">
+    <value>El Numero de orden del ítem no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2024">
+    <value>El XML no contiene el tag InvoicedQuantity en el detalle de los Ítems </value>
+  </Error>
+  <Error code="2025">
+    <value>InvoicedQuantity El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2026">
+    <value>El XML no contiene el tag cac:Item/cbc:Description en el detalle de los Ítems</value>
+  </Error>
+  <Error code="2027">
+    <value>El XML no contiene el tag o no existe información de cac:Item/cbc:Description del item </value>
+  </Error>
+  <Error code="2028">
+    <value>Debe existir el tag cac:AlternativeConditionPrice con un elemento cbc:PriceTypeCode con valor 01 </value>
+  </Error>
+  <Error code="2029">
+    <value>PriceTypeCode El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2030">
+    <value>El XML no contiene el tag cbc:PriceTypeCode</value>
+  </Error>
+  <Error code="2031">
+    <value>LineExtensionAmount El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2032">
+    <value>El XML no contiene el tag LineExtensionAmount en el detalle de los Items</value>
+  </Error>
+  <Error code="2033">
+    <value>El dato ingresado en TaxAmount de la línea no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2034">
+    <value>TaxAmount es obligatorio</value>
+  </Error>
+  <Error code="2035">
+    <value>cac:TaxCategory/cac:TaxScheme/cbc:ID El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2036">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2037">
+    <value>El XML no contiene el tag cac:TaxCategory/cac:TaxScheme/cbc:ID del Item</value>
+  </Error>
+  <Error code="2038">
+    <value>cac:TaxScheme/cbc:Name del item - No existe el tag o el dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2039">
+    <value>El XML no contiene el tag cac:TaxCategory/cac:TaxScheme/cbc:Name del Item</value>
+  </Error>
+  <Error code="2040">
+    <value>El tipo de afectación del IGV es incorrecto </value>
+  </Error>
+  <Error code="2041">
+    <value>El sistema de cálculo del ISC es incorrecto </value>
+  </Error>
+  <Error code="2042">
+    <value>Debe indicar el IGV. Es un campo obligatorio </value>
+  </Error>
+  <Error code="2043">
+    <value>El dato ingresado en PayableAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2044">
+    <value>PayableAmount es obligatorio</value>
+  </Error>
+  <Error code="2045">
+    <value>El valor ingresado en AdditionalMonetaryTotal/cbc:ID es incorrecto </value>
+  </Error>
+  <Error code="2046">
+    <value>AdditionalMonetaryTotal/cbc:ID debe tener valor</value>
+  </Error>
+  <Error code="2047">
+    <value>Es obligatorio al menos un AdditionalMonetaryTotal con código 1001, 1002 o 1003 </value>
+  </Error>
+  <Error code="2048">
+    <value>El dato ingresado en TaxAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2049">
+    <value>TaxAmount es obligatorio</value>
+  </Error>
+  <Error code="2050">
+    <value>TaxScheme ID - No existe el tag o el dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2051">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2052">
+    <value>El XML no contiene el tag TaxScheme ID de impuestos globales</value>
+  </Error>
+  <Error code="2053">
+    <value>TaxScheme Name - No existe el tag o el dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2054">
+    <value>El XML no contiene el tag TaxScheme Name de impuestos globales</value>
+  </Error>
+  <Error code="2055">
+    <value>TaxScheme TaxTypeCode - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2056">
+    <value>El XML no contiene el tag TaxScheme TaxTypeCode de impuestos globales</value>
+  </Error>
+  <Error code="2057">
+    <value>El Name o TaxTypeCode debe corresponder con el Id para el IGV </value>
+  </Error>
+  <Error code="2058">
+    <value>El Name o TaxTypeCode debe corresponder con el Id para el ISC </value>
+  </Error>
+  <Error code="2059">
+    <value>El dato ingresado en TaxSubtotal/cbc:TaxAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2060">
+    <value>TaxSubtotal/cbc:TaxAmount es obligatorio</value>
+  </Error>
+  <Error code="2061">
+    <value>El tag global cac:TaxTotal/cbc:TaxAmount debe tener el mismo valor que cac:TaxTotal/cac:Subtotal/cbc:TaxAmount </value>
+  </Error>
+  <Error code="2062">
+    <value>El dato ingresado en PayableAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2063">
+    <value>El XML no contiene el tag PayableAmount</value>
+  </Error>
+  <Error code="2064">
+    <value>El dato ingresado en ChargeTotalAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2065">
+    <value>El dato ingresado en el campo Total Descuentos no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2066">
+    <value>Debe indicar una descripción para el tag sac:AdditionalProperty/cbc:Value</value>
+  </Error>
+  <Error code="2067">
+    <value>cac:Price/cbc:PriceAmount - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2068">
+    <value>El XML no contiene el tag cac:Price/cbc:PriceAmount en el detalle de los Items </value>
+  </Error>
+  <Error code="2069">
+    <value>DocumentCurrencyCode - El dato ingresado no cumple con la estructura </value>
+  </Error>
+  <Error code="2070">
+    <value>El XML no contiene el tag o no existe información de DocumentCurrencyCode </value>
+  </Error>
+  <Error code="2071">
+    <value>La moneda debe ser la misma en todo el documento </value>
+  </Error>
+  <Error code="2072">
+    <value>CustomizationID - La versión del documento no es la correcta </value>
+  </Error>
+  <Error code="2073">
+    <value>El XML no contiene el tag o no existe información de CustomizationID </value>
+  </Error>
+  <Error code="2074">
+    <value>UBLVersionID - La versión del UBL no es correcta </value>
+  </Error>
+  <Error code="2075">
+    <value>El XML no contiene el tag o no existe información de UBLVersionID </value>
+  </Error>
+  <Error code="2076">
+    <value>cac:Signature/cbc:ID - Falta el identificador de la firma </value>
+  </Error>
+  <Error code="2077">
+    <value>El tag cac:Signature/cbc:ID debe contener información </value>
+  </Error>
+  <Error code="2078">
+    <value>cac:Signature/cac:SignatoryParty/cac:PartyIdentification/cbc:ID - Debe ser igual al RUC del emisor </value>
+  </Error>
+  <Error code="2079">
+    <value>El XML no contiene el tag cac:Signature/cac:SignatoryParty/cac:PartyIdentification/cbc:ID</value>
+  </Error>
+  <Error code="2080">
+    <value>cac:Signature/cac:SignatoryParty/cac:PartyName/cbc:Name - No cumple con el estándar </value>
+  </Error>
+  <Error code="2081">
+    <value>El XML no contiene el tag cac:Signature/cac:SignatoryParty/cac:PartyName/cbc:Name</value>
+  </Error>
+  <Error code="2082">
+    <value>cac:Signature/cac:DigitalSignatureAttachment/cac:ExternalReference/cbc:URI - No cumple con el estándar </value>
+  </Error>
+  <Error code="2083">
+    <value>El XML no contiene el tag cac:Signature/cac:DigitalSignatureAttachment/cac:ExternalReference/cbc:URI </value>
+  </Error>
+  <Error code="2084">
+    <value>ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/ds:Signature/@Id - No cumple con el estándar </value>
+  </Error>
+  <Error code="2085">
+    <value>El XML no contiene el tag ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/ds:Signature/@Id </value>
+  </Error>
+  <Error code="2086">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:CanonicalizationMethod/@Algorithm - No cumple con el estándar </value>
+  </Error>
+  <Error code="2087">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:CanonicalizationMethod/@Algorithm </value>
+  </Error>
+  <Error code="2088">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:SignatureMethod/@Algorithm - No cumple con el estándar </value>
+  </Error>
+  <Error code="2089">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:SignatureMethod/@Algorithm </value>
+  </Error>
+  <Error code="2090">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/@URI - Debe estar vacío para id </value>
+  </Error>
+  <Error code="2091">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/@URI</value>
+  </Error>
+  <Error code="2092">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/.../ds:Transform@Algorithm - No cumple con el estándar </value>
+  </Error>
+  <Error code="2093">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/ds:Transform@Algorithm </value>
+  </Error>
+  <Error code="2094">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/ds:DigestMethod/@Algorithm - No cumple con el estándar </value>
+  </Error>
+  <Error code="2095">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/ds:DigestMethod/@Algorithm </value>
+  </Error>
+  <Error code="2096">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/ds:DigestValue - No cumple con el estándar </value>
+  </Error>
+  <Error code="2097">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignedInfo/ds:Reference/ds:DigestValue </value>
+  </Error>
+  <Error code="2098">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:SignatureValue - No cumple con el estándar </value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2099">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignatureValue </value>
+  </Error>
+  <Error code="2100">
+    <value>ext:UBLExtensions/.../ds:Signature/ds:KeyInfo/ds:X509Data/ds:X509Certificate - No cumple con el estándar </value>
+  </Error>
+  <Error code="2101">
+    <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:KeyInfo/ds:X509Data/ds:X509Certificate </value>
+  </Error>
+  <Error code="2102">
+    <value>Error al procesar la factura</value>
+  </Error>
+  <Error code="2103">
+    <value>La serie ingresada no es válida</value>
+  </Error>
+  <Error code="2104">
+    <value>Numero de RUC del emisor no existe</value>
+  </Error>
+  <Error code="2105">
+    <value>Factura a dar de baja no se encuentra registrada en SUNAT </value>
+  </Error>
+  <Error code="2106">
+    <value>Factura a dar de baja ya se encuentra en estado de baja </value>
+  </Error>
+  <Error code="2107">
+    <value>Numero de RUC SOL no coincide con RUC emisor</value>
+  </Error>
+  <Error code="2108">
+    <value>Presentación fuera de fecha </value>
+  </Error>
+  <Error code="2109">
+    <value>El comprobante fue registrado previamente con otros datos</value>
+  </Error>
+  <Error code="2110">
+    <value>UBLVersionID - La versión del UBL no es correcta</value>
+  </Error>
+  <Error code="2111">
+    <value>El XML no contiene el tag o no existe información de UBLVersionID</value>
+  </Error>
+  <Error code="2112">
+    <value>CustomizationID - La versión del documento no es correcta</value>
+  </Error>
+  <Error code="2113">
+    <value>El XML no contiene el tag o no existe información de CustomizationID</value>
+  </Error>
+  <Error code="2114">
+    <value>DocumentCurrencyCode -  El dato ingresado no cumple con la estructura</value>
+  </Error>
+  <Error code="2115">
+    <value>El XML no contiene el tag o no existe información de DocumentCurrencyCode</value>
+  </Error>
+  <Error code="2116">
+    <value>El tipo de documento modificado por la Nota de crédito debe ser factura electrónica o ticket </value>
+  </Error>
+  <Error code="2117">
+    <value>La serie o número del documento modificado por la Nota de Crédito no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2118">
+    <value>Debe indicar las facturas relacionadas a la Nota de Crédito </value>
+  </Error>
+  <Error code="2119">
+    <value>La factura relacionada en la Nota de crédito no está registrada. </value>
+  </Error>
+  <Error code="2120">
+    <value>La factura relacionada en la nota de crédito se encuentra de baja </value>
+  </Error>
+  <Error code="2121">
+    <value>La factura relacionada en la nota de crédito está registrada como rechazada </value>
+  </Error>
+  <Error code="2122">
+    <value>El tag cac:LegalMonetaryTotal/cbc:PayableAmount debe tener información valida</value>
+  </Error>
+  <Error code="2123">
+    <value>RegistrationName -  El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2124">
+    <value>El XML no contiene el tag RegistrationName del emisor del documento</value>
+  </Error>
+  <Error code="2125">
+    <value>ReferenceID - El dato ingresado debe indicar SERIE-CORRELATIVO del documento al que se relaciona la Nota </value>
+  </Error>
+  <Error code="2126">
+    <value>El XML no contiene información en el tag ReferenceID del documento al que se relaciona la nota </value>
+  </Error>
+  <Error code="2127">
+    <value>ResponseCode - El dato ingresado no cumple con la estructura </value>
+  </Error>
+  <Error code="2128">
+    <value>El XML no contiene el tag o no existe información de ResponseCode </value>
+  </Error>
+  <Error code="2129">
+    <value>AdditionalAccountID - El dato ingresado en el tipo de documento de identidad del receptor no cumple con el estándar </value>
+  </Error>
+  <Error code="2130">
+    <value>El XML no contiene el tag o no existe información de AdditionalAccountID del receptor del documento </value>
+  </Error>
+  <Error code="2131">
+    <value>CustomerAssignedAccountID - El número de documento de identidad del receptor debe ser RUC </value>
+  </Error>
+  <Error code="2132">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del receptor del documento </value>
+  </Error>
+  <Error code="2133">
+    <value>RegistrationName - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2134">
+    <value>El XML no contiene el tag o no existe información de RegistrationName del receptor del documento </value>
+  </Error>
+  <Error code="2135">
+    <value>cac:DiscrepancyResponse/cbc:Description - El dato ingresado no cumple con la estructura </value>
+  </Error>
+  <Error code="2136">
+    <value>El XML no contiene el tag o no existe información de cac:DiscrepancyResponse/cbc:Description </value>
+  </Error>
+  <Error code="2137">
+    <value>El Número de orden del ítem no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2138">
+    <value>CreditedQuantity/@unitCode - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2139">
+    <value>CreditedQuantity - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2140">
+    <value>El PriceTypeCode debe tener el valor 01 </value>
+  </Error>
+  <Error code="2141">
+    <value>cac:TaxCategory/cac:TaxScheme/cbc:ID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2142">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2143">
+    <value>cac:TaxScheme/cbc:Name del ítem - No existe el tag o el dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2144">
+    <value>cac:TaxCategory/cac:TaxScheme/cbc:TaxTypeCode El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2145">
+    <value>El tipo de afectación del IGV es incorrecto </value>
+  </Error>
+  <Error code="2146">
+    <value>El Nombre Internacional debe ser VAT</value>
+  </Error>
+  <Error code="2147">
+    <value>El sistema de cálculo del ISC es incorrecto </value>
+  </Error>
+  <Error code="2148">
+    <value>El Nombre Internacional debe ser EXC </value>
+  </Error>
+  <Error code="2149">
+    <value>El dato ingresado en PayableAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2150">
+    <value>El valor ingresado en AdditionalMonetaryTotal/cbc:ID es incorrecto </value>
+  </Error>
+  <Error code="2151">
+    <value>AdditionalMonetaryTotal/cbc:ID debe tener valor </value>
+  </Error>
+  <Error code="2152">
+    <value>Es obligatorio al menos un AdditionalInformation</value>
+  </Error>
+  <Error code="2153">
+    <value>Error al procesar la Nota de Crédito</value>
+  </Error>
+  <Error code="2154">
+    <value>TaxAmount - El dato ingresado en impuestos globales no cumple con el estándar</value>
+  </Error>
+  <Error code="2155">
+    <value>El XML no contiene el tag TaxAmount de impuestos globales</value>
+  </Error>
+  <Error code="2156">
+    <value>TaxScheme ID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2157">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2158">
+    <value>El XML no contiene el tag o no existe información de TaxScheme ID de impuestos globales </value>
+  </Error>
+  <Error code="2159">
+    <value>TaxScheme Name - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2160">
+    <value>El XML no contiene el tag o no existe información de TaxScheme Name de impuestos globales </value>
+  </Error>
+  <Error code="2161">
+    <value>CustomizationID - La versión del documento no es correcta</value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2162">
+    <value>El XML no contiene el tag o no existe información de CustomizationID</value>
+  </Error>
+  <Error code="2163">
+    <value>UBLVersionID - La versión del UBL no es correcta</value>
+  </Error>
+  <Error code="2164">
+    <value>El XML no contiene el tag o no existe información de UBLVersionID</value>
+  </Error>
+  <Error code="2165">
+    <value>Error al procesar la Nota de Debito</value>
+  </Error>
+  <Error code="2166">
+    <value>RegistrationName - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2167">
+    <value>El XML no contiene el tag RegistrationName del emisor del documento</value>
+  </Error>
+  <Error code="2168">
+    <value>DocumentCurrencyCode -  El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2169">
+    <value>El XML no contiene el tag o no existe información de DocumentCurrencyCode</value>
+  </Error>
+  <Error code="2170">
+    <value>ReferenceID - El dato ingresado debe indicar SERIE-CORRELATIVO del documento al que se relaciona la Nota </value>
+  </Error>
+  <Error code="2171">
+    <value>El XML no contiene información en el tag ReferenceID del documento al que se relaciona la nota </value>
+  </Error>
+  <Error code="2172">
+    <value>ResponseCode - El dato ingresado no cumple con la estructura </value>
+  </Error>
+  <Error code="2173">
+    <value>El XML no contiene el tag o no existe información de ResponseCode </value>
+  </Error>
+  <Error code="2174">
+    <value>cac:DiscrepancyResponse/cbc:Description - El dato ingresado no cumple con la estructura </value>
+  </Error>
+  <Error code="2175">
+    <value>El XML no contiene el tag o no existe información de cac:DiscrepancyResponse/cbc:Description </value>
+  </Error>
+  <Error code="2176">
+    <value>AdditionalAccountID - El dato ingresado en el tipo de documento de identidad del receptor no cumple con el estándar </value>
+  </Error>
+  <Error code="2177">
+    <value>El XML no contiene el tag o no existe información de AdditionalAccountID del receptor del documento </value>
+  </Error>
+  <Error code="2178">
+    <value>CustomerAssignedAccountID - El número de documento de identidad del receptor debe ser RUC. </value>
+  </Error>
+  <Error code="2179">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del receptor del documento </value>
+  </Error>
+  <Error code="2180">
+    <value>RegistrationName - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2181">
+    <value>El XML no contiene el tag o no existe información de RegistrationName del receptor del documento </value>
+  </Error>
+  <Error code="2182">
+    <value>TaxScheme ID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2183">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2184">
+    <value>El XML no contiene el tag o no existe información de TaxScheme ID de impuestos globales </value>
+  </Error>
+  <Error code="2185">
+    <value>TaxScheme Name - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2186">
+    <value>El XML no contiene el tag o no existe información de TaxScheme Name de impuestos globales </value>
+  </Error>
+  <Error code="2187">
+    <value>El Numero de orden del ítem no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2188">
+    <value>DebitedQuantity/@unitCode El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2189">
+    <value>DebitedQuantity El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2190">
+    <value>El XML no contiene el tag Price/cbc:PriceAmount en el detalle de los Items </value>
+  </Error>
+  <Error code="2191">
+    <value>El XML no contiene el tag Price/cbc:LineExtensionAmount en el detalle de los Items</value>
+  </Error>
+  <Error code="2192">
+    <value>EL PriceTypeCode debe tener el valor 01 </value>
+  </Error>
+  <Error code="2193">
+    <value>cac:TaxCategory/cac:TaxScheme/cbc:ID El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2194">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2195">
+    <value>cac:TaxScheme/cbc:Name del item - No existe el tag o el dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2196">
+    <value>cac:TaxCategory/cac:TaxScheme/cbc:TaxTypeCode El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2197">
+    <value>El tipo de afectación del IGV es incorrecto </value>
+  </Error>
+  <Error code="2198">
+    <value>El Nombre Internacional debe ser VAT</value>
+  </Error>
+  <Error code="2199">
+    <value>El sistema de cálculo del ISC es incorrecto </value>
+  </Error>
+  <Error code="2200">
+    <value>El Nombre Internacional debe ser EXC</value>
+  </Error>
+  <Error code="2201">
+    <value>El tag cac:RequestedMonetaryTotal/cbc:PayableAmount debe tener información valida</value>
+  </Error>
+  <Error code="2202">
+    <value>TaxAmount - El dato ingresado en impuestos globales no cumple con el estándar</value>
+  </Error>
+  <Error code="2203">
+    <value>El XML no contiene el tag TaxAmount de impuestos globales</value>
+  </Error>
+  <Error code="2204">
+    <value>El tipo de documento modificado por la Nota de Debito debe ser factura electrónica o ticket </value>
+  </Error>
+  <Error code="2205">
+    <value>La serie o número del documento modificado por la Nota de Debito no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2206">
+    <value>Debe indicar los documentos afectados por la Nota de Debito </value>
+  </Error>
+  <Error code="2207">
+    <value>La factura relacionada en la nota de débito se encuentra de baja </value>
+  </Error>
+  <Error code="2208">
+    <value>La factura relacionada en la nota de débito está registrada como rechazada </value>
+  </Error>
+  <Error code="2209">
+    <value>La factura relacionada en la Nota de débito no está registrada </value>
+  </Error>
+  <Error code="2210">
+    <value>El dato ingresado no cumple con el formato RC-fecha-correlativo </value>
+  </Error>
+  <Error code="2211">
+    <value>El XML no contiene el tag ID </value>
+  </Error>
+  <Error code="2212">
+    <value>UBLVersionID - La versión del UBL del resumen de boletas no es correcta</value>
+  </Error>
+  <Error code="2213">
+    <value>El XML no contiene el tag UBLVersionID</value>
+  </Error>
+  <Error code="2214">
+    <value>CustomizationID - La versión del resumen de boletas no es correcta</value>
+  </Error>
+  <Error code="2215">
+    <value>El XML no contiene el tag CustomizationID</value>
+  </Error>
+  <Error code="2216">
+    <value>CustomerAssignedAccountID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2217">
+    <value>El XML no contiene el tag CustomerAssignedAccountID del emisor del documento </value>
+  </Error>
+  <Error code="2218">
+    <value>AdditionalAccountID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2219">
+    <value>El XML no contiene el tag AdditionalAccountID del emisor del documento </value>
+  </Error>
+  <Error code="2220">
+    <value>El ID debe coincidir con el nombre del archivo </value>
+  </Error>
+  <Error code="2221">
+    <value>El RUC debe coincidir con el RUC del nombre del archivo </value>
+  </Error>
+  <Error code="2222">
+    <value>El contribuyente no está autorizado a emitir comprobantes electrónicos</value>
+  </Error>
+  <Error code="2223">
+    <value>El archivo ya fue presentado anteriormente </value>
+  </Error>
+  <Error code="2224">
+    <value>Numero de RUC SOL no coincide con RUC emisor</value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2225">
+    <value>Numero de RUC del emisor no existe</value>
+  </Error>
+  <Error code="2226">
+    <value>El contribuyente no está activo</value>
+  </Error>
+  <Error code="2227">
+    <value>El contribuyente no cumple con tipo de empresa o tributos requeridos</value>
+  </Error>
+  <Error code="2228">
+    <value>RegistrationName - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2229">
+    <value>El XML no contiene el tag RegistrationName del emisor del documento </value>
+  </Error>
+  <Error code="2230">
+    <value>IssueDate - El dato ingresado no cumple con el patrón YYYY-MM-DD</value>
+  </Error>
+  <Error code="2231">
+    <value>El XML no contiene el tag IssueDate</value>
+  </Error>
+  <Error code="2232">
+    <value>IssueDate- El dato ingresado no es valido</value>
+  </Error>
+  <Error code="2233">
+    <value>ReferenceDate - El dato ingresado no cumple con el patrón YYYY-MM-DD </value>
+  </Error>
+  <Error code="2234">
+    <value>El XML no contiene el tag ReferenceDate</value>
+  </Error>
+  <Error code="2235">
+    <value>ReferenceDate- El dato ingresado no es valido</value>
+  </Error>
+  <Error code="2236">
+    <value>La fecha del IssueDate no debe ser mayor al Today </value>
+  </Error>
+  <Error code="2237">
+    <value>La fecha del ReferenceDate no debe ser mayor al Today </value>
+  </Error>
+  <Error code="2238">
+    <value>LineID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2239">
+    <value>LineID - El dato ingresado debe ser correlativo mayor a cero </value>
+  </Error>
+  <Error code="2240">
+    <value>El XML no contiene el tag LineID de SummaryDocumentsLine </value>
+  </Error>
+  <Error code="2241">
+    <value>DocumentTypeCode - El valor del tipo de documento es invalido </value>
+  </Error>
+  <Error code="2242">
+    <value>El XML no contiene el tag DocumentTypeCode </value>
+  </Error>
+  <Error code="2243">
+    <value>El dato ingresado no cumple con el patrón SERIE </value>
+  </Error>
+  <Error code="2244">
+    <value>El XML no contiene el tag DocumentSerialID </value>
+  </Error>
+  <Error code="2245">
+    <value>El dato ingresado en StartDocumentNumberID debe ser numérico </value>
+  </Error>
+  <Error code="2246">
+    <value>El XML no contiene el tag StartDocumentNumberID </value>
+  </Error>
+  <Error code="2247">
+    <value>El dato ingresado en sac:EndDocumentNumberID debe ser numérico </value>
+  </Error>
+  <Error code="2248">
+    <value>El XML no contiene el tag sac:EndDocumentNumberID </value>
+  </Error>
+  <Error code="2249">
+    <value>Los rangos deben ser mayores a cero </value>
+  </Error>
+  <Error code="2250">
+    <value>En el rango de comprobantes, el EndDocumentNumberID debe ser mayor o igual al StartInvoiceNumberID </value>
+  </Error>
+  <Error code="2251">
+    <value>El dato ingresado en TotalAmount debe ser numérico mayor o igual a cero </value>
+  </Error>
+  <Error code="2252">
+    <value>El XML no contiene el tag TotalAmount</value>
+  </Error>
+  <Error code="2253">
+    <value>El dato ingresado en TotalAmount debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2254">
+    <value>PaidAmount - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2255">
+    <value>El XML no contiene el tag PaidAmount </value>
+  </Error>
+  <Error code="2256">
+    <value>InstructionID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2257">
+    <value>El XML no contiene el tag InstructionID </value>
+  </Error>
+  <Error code="2258">
+    <value>Debe indicar Referencia de Importes asociados a las boletas de venta</value>
+  </Error>
+  <Error code="2259">
+    <value>Debe indicar 3 Referencias de Importes asociados a las boletas de venta </value>
+  </Error>
+  <Error code="2260">
+    <value>PaidAmount - El dato ingresado debe ser mayor o igual a 0.00</value>
+  </Error>
+  <Error code="2261">
+    <value>cbc:Amount - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2262">
+    <value>El XML no contiene el tag cbc:Amount</value>
+  </Error>
+  <Error code="2263">
+    <value>ChargeIndicator - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2264">
+    <value>El XML no contiene el tag ChargeIndicator</value>
+  </Error>
+  <Error code="2265">
+    <value>Debe indicar Información acerca del Importe Total de Otros Cargos </value>
+  </Error>
+  <Error code="2266">
+    <value>Debe indicar cargos mayores o iguales a cero</value>
+  </Error>
+  <Error code="2267">
+    <value>TaxScheme ID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2268">
+    <value>El código del tributo es invalido </value>
+  </Error>
+  <Error code="2269">
+    <value>El XML no contiene el tag TaxScheme ID de Información acerca del importe total de un tipo particular de impuesto </value>
+  </Error>
+  <Error code="2270">
+    <value>TaxScheme Name - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2271">
+    <value>El XML no contiene el tag TaxScheme Name de impuesto </value>
+  </Error>
+  <Error code="2272">
+    <value>TaxScheme TaxTypeCode - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2273">
+    <value>TaxAmount - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2274">
+    <value>El XML no contiene el tag TaxAmount</value>
+  </Error>
+  <Error code="2275">
+    <value>Si el código de tributo es 2000, el nombre del tributo debe ser ISC </value>
+  </Error>
+  <Error code="2276">
+    <value>Si el código de tributo es 1000, el nombre del tributo debe ser IGV </value>
+  </Error>
+  <Error code="2277">
+    <value>No se ha consignado ninguna información del importe total de tributos </value>
+  </Error>
+  <Error code="2278">
+    <value>Debe indicar Información acerca del importe total de ISC e IGV </value>
+  </Error>
+  <Error code="2279">
+    <value>Debe indicar Items de consolidado de documentos</value>
+  </Error>
+  <Error code="2280">
+    <value>Existen problemas con la información del resumen de comprobantes</value>
+  </Error>
+  <Error code="2281">
+    <value>Error en la validación de los rangos de los comprobantes</value>
+  </Error>
+  <Error code="2282">
+    <value>Existe documento ya informado anteriormente </value>
+  </Error>
+  <Error code="2283">
+    <value>El dato ingresado no cumple con el formato RA-fecha-correlativo </value>
+  </Error>
+  <Error code="2284">
+    <value>El XML no contiene el tag ID</value>
+  </Error>
+  <Error code="2285">
+    <value>El ID debe coincidir con el nombre del archivo </value>
+  </Error>
+  <Error code="2286">
+    <value>El RUC debe coincidir con el RUC del nombre del archivo </value>
+  </Error>
+  <Error code="2287">
+    <value>AdditionalAccountID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2288">
+    <value>El XML no contiene el tag AdditionalAccountID del emisor del documento </value>
+  </Error>
+  <Error code="2289">
+    <value>CustomerAssignedAccountID - El dato ingresado no cumple con el estándar</value>
+  </Error>
+  <Error code="2290">
+    <value>El XML no contiene el tag CustomerAssignedAccountID del emisor del documento</value>
+  </Error>
+  <Error code="2291">
+    <value>El contribuyente no está autorizado a emitir comprobantes electrónicos</value>
+  </Error>
+  <Error code="2292">
+    <value>Numero de RUC SOL no coincide con RUC emisor</value>
+  </Error>
+  <Error code="2293">
+    <value>Numero de RUC del emisor no existe</value>
+  </Error>
+  <Error code="2294">
+    <value>El contribuyente no está activo</value>
+  </Error>
+  <Error code="2295">
+    <value>El contribuyente no cumple con tipo de empresa o tributos requeridos</value>
+  </Error>
+  <Error code="2296">
+    <value>RegistrationName - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2297">
+    <value>El XML no contiene el tag RegistrationName del emisor del documento </value>
+  </Error>
+  <Error code="2298">
+    <value>IssueDate - El dato ingresado no cumple con el patrón YYYY-MM-DD</value>
+  </Error>
+  <Error code="2299">
+    <value>El XML no contiene el tag IssueDate </value>
+  </Error>
+  <Error code="2300">
+    <value>IssueDate - El dato ingresado no es valido</value>
+  </Error>
+  <Error code="2301">
+    <value>La fecha del IssueDate no debe ser mayor al Today </value>
+  </Error>
+  <Error code="2302">
+    <value>ReferenceDate - El dato ingresado no cumple con el patrón YYYY-MM-DD </value>
+  </Error>
+  <Error code="2303">
+    <value>El XML no contiene el tag ReferenceDate</value>
+  </Error>
+  <Error code="2304">
+    <value>ReferenceDate - El dato ingresado no es valido</value>
+  </Error>
+  <Error code="2305">
+    <value>LineID - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2306">
+    <value>LineID - El dato ingresado debe ser correlativo mayor a cero </value>
+  </Error>
+  <Error code="2307">
+    <value>El XML no contiene el tag LineID de VoidedDocumentsLine </value>
+  </Error>
+  <Error code="2308">
+    <value>DocumentTypeCode - El valor del tipo de documento es invalido </value>
+  </Error>
+  <Error code="2309">
+    <value>El XML no contiene el tag DocumentTypeCode </value>
+  </Error>
+  <Error code="2310">
+    <value>El dato ingresado no cumple con el patrón SERIE </value>
+  </Error>
+  <Error code="2311">
+    <value>El XML no contiene el tag DocumentSerialID </value>
+  </Error>
+  <Error code="2312">
+    <value>El dato ingresado en DocumentNumberID debe ser numérico y como máximo de 8 dígitos </value>
+  </Error>
+  <Error code="2313">
+    <value>El XML no contiene el tag DocumentNumberID </value>
+  </Error>
+  <Error code="2314">
+    <value>El dato ingresado en VoidReasonDescription debe contener información válida </value>
+  </Error>
+  <Error code="2315">
+    <value>El XML no contiene el tag VoidReasonDescription </value>
+  </Error>
+  <Error code="2316">
+    <value>Debe indicar Items en VoidedDocumentsLine</value>
+  </Error>
+  <Error code="2317">
+    <value>Error al procesar el resumen de anulados</value>
+  </Error>
+  <Error code="2318">
+    <value>CustomizationID - La versión del documento no es correcta</value>
+  </Error>
+  <Error code="2319">
+    <value>El XML no contiene el tag CustomizationID</value>
+  </Error>
+  <Error code="2320">
+    <value>UBLVersionID - La versión del UBL  no es la correcta</value>
+  </Error>
+  <Error code="2321">
+    <value>El XML no contiene el tag UBLVersionID</value>
+  </Error>
+  <Error code="2322">
+    <value>Error en la validación de los rangos</value>
+  </Error>
+  <Error code="2323">
+    <value>Existe documento ya informado anteriormente en una comunicación de baja </value>
+  </Error>
+  <Error code="2324">
+    <value>El archivo de comunicación de baja ya fue presentado anteriormente </value>
+  </Error>
+  <Error code="2325">
+    <value>El certificado usado no es el comunicado a SUNAT </value>
+  </Error>
+  <Error code="2326">
+    <value>El certificado usado se encuentra de baja </value>
+  </Error>
+  <Error code="2327">
+    <value>El certificado usado no se encuentra vigente </value>
+  </Error>
+  <Error code="2328">
+    <value>El certificado usado se encuentra revocado </value>
+  </Error>
+  <Error code="2329">
+    <value>La fecha de emisión se encuentra fuera del límite permitido </value>
+  </Error>
+  <Error code="2330">
+    <value>La fecha de generación de la comunicación debe ser igual a la fecha consignada en el nombre del archivo </value>
+  </Error>
+  <Error code="2331">
+    <value>Número de RUC del nombre del archivo no coincide con el consignado en el contenido del archivo XML</value>
+  </Error>
+  <Error code="2332">
+    <value>Número de Serie del nombre del archivo no coincide con el consignado en el contenido del archivo XML</value>
+  </Error>
+  <Error code="2333">
+    <value>Número de documento en el nombre del archivo no coincide con el consignado en el contenido del XML</value>
+  </Error>
+  <Error code="2334">
+    <value>El documento electrónico ingresado ha sido alterado </value>
+  </Error>
+  <Error code="2335">
+    <value>El documento electrónico ingresado ha sido alterado </value>
+  </Error>
+  <Error code="2336">
+    <value>Ocurrió un error en el proceso de validación de la firma digital </value>
+  </Error>
+  <Error code="2337">
+    <value>La moneda debe ser la misma en todo el documento </value>
+  </Error>
+  <Error code="2338">
+    <value>La moneda debe ser la misma en todo el documento </value>
+  </Error>
+  <Error code="2339">
+    <value>El dato ingresado en PayableAmount no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2340">
+    <value>El valor ingresado en AdditionalMonetaryTotal/cbc:ID es incorrecto </value>
+  </Error>
+  <Error code="2341">
+    <value>AdditionalMonetaryTotal/cbc:ID debe tener valor </value>
+  </Error>
+  <Error code="2342">
+    <value>Fecha de emisión de la factura no coincide con la informada en la comunicación </value>
+  </Error>
+  <Error code="2343">
+    <value>cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount - El dato ingresado no cumple con el estándar </value>
+  </Error>
+  <Error code="2344">
+    <value>El XML no contiene el tag cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount</value>
+  </Error>
+  <Error code="2345">
+    <value>La serie no corresponde al tipo de comprobante </value>
+  </Error>
+  <Error code="2346">
+    <value>La fecha de generación del resumen debe ser igual a la fecha consignada en el nombre del archivo </value>
+  </Error>
+  <Error code="2347">
+    <value>Los rangos informados en el archivo XML se encuentran duplicados o superpuestos</value>
+  </Error>
+  <Error code="2348">
+    <value>Los documentos informados en el archivo XML se encuentran duplicados</value>
+  </Error>
+  <Error code="2349">
+    <value>Debe consignar solo un elemento sac:AdditionalMonetaryTotal con cbc:ID igual a 1001 </value>
+  </Error>
+  <Error code="2350">
+    <value>Debe consignar solo un elemento sac:AdditionalMonetaryTotal con cbc:ID igual a 1002 </value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2351">
+    <value>Debe consignar solo un elemento sac:AdditionalMonetaryTotal con cbc:ID igual a 1003 </value>
+  </Error>
+  <Error code="2352">
+    <value>Debe consignar solo un elemento cac:TaxTotal a nivel global para IGV (cbc:ID igual a 1000) </value>
+  </Error>
+  <Error code="2353">
+    <value>Debe consignar solo un elemento cac:TaxTotal a nivel global para ISC (cbc:ID igual a 2000) </value>
+  </Error>
+  <Error code="2354">
+    <value>Debe consignar solo un elemento cac:TaxTotal a nivel global para Otros (cbc:ID igual a 9999) </value>
+  </Error>
+  <Error code="2355">
+    <value>Debe consignar solo un elemento cac:TaxTotal a nivel de ítem para IGV (cbc:ID igual a 1000) </value>
+  </Error>
+  <Error code="2356">
+    <value>Debe consignar solo un elemento cac:TaxTotal a nivel de ítem para ISC (cbc:ID igual a 2000) </value>
+  </Error>
+  <Error code="2357">
+    <value>Debe consignar solo un elemento sac:BillingPayment a nivel de ítem con cbc:InstructionID igual a 01 </value>
+  </Error>
+  <Error code="2358">
+    <value>Debe consignar solo un elemento sac:BillingPayment a nivel de ítem con cbc:InstructionID igual a 02 </value>
+  </Error>
+  <Error code="2359">
+    <value>Debe consignar solo un elemento sac:BillingPayment a nivel de ítem con cbc:InstructionID igual a 03 </value>
+  </Error>
+  <Error code="2360">
+    <value>Debe consignar solo un elemento sac:BillingPayment a nivel de ítem con cbc:InstructionID igual a 04</value>
+  </Error>
+  <Error code="2361">
+    <value>Debe consignar solo un elemento cac:TaxTotal a nivel de ítem para Otros (cbc:ID igual a 9999) </value>
+  </Error>
+  <Error code="2362">
+    <value>Debe consignar solo un tag cac:AccountingSupplierParty/cbc:AdditionalAccountID </value>
+  </Error>
+  <Error code="2363">
+    <value>Debe consignar solo un tag cac:AccountingCustomerParty/cbc:AdditionalAccountID </value>
+  </Error>
+  <Error code="2364">
+    <value>El comprobante contiene un tipo y número de Guía de Remisión repetido </value>
+  </Error>
+  <Error code="2365">
+    <value>El comprobante contiene un tipo y número de Documento Relacionado repetido </value>
+  </Error>
+  <Error code="2366">
+    <value>El código en el tag sac:AdditionalProperty/cbc:ID debe tener 4 posiciones</value>
+  </Error>
+  <Error code="2367">
+    <value>El dato ingresado en PriceAmount del Precio de venta unitario por item no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2368">
+    <value>El dato ingresado en TaxSubtotal/cbc:TaxAmount del item no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2369">
+    <value>El dato ingresado en PriceAmount del Valor de venta unitario por item no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2370">
+    <value>El dato ingresado en LineExtensionAmount del item no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2371">
+    <value>El XML no contiene el tag cbc:TaxExemptionReasonCode de Afectacion al IGV </value>
+  </Error>
+  <Error code="2372">
+    <value>El tag en el item cac:TaxTotal/cbc:TaxAmount debe tener el mismo valor que cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount </value>
+  </Error>
+  <Error code="2373">
+    <value>Si existe monto de ISC en el ITEM debe especificar el sistema de cálculo </value>
+  </Error>
+  <Error code="2374">
+    <value>La factura a dar de baja tiene una fecha de recepción fuera del plazo permitido </value>
+  </Error>
+  <Error code="2375">
+    <value>Fecha de emisión de la boleta no coincide con la fecha de emisión consignada en la comunicación </value>
+  </Error>
+  <Error code="2376">
+    <value>La boleta de venta a dar de baja fue informada en un resumen con fecha de recepción fuera del plazo permitido </value>
+  </Error>
+  <Error code="2377">
+    <value>El Name o TaxTypeCode debe corresponder con el Id para el IGV </value>
+  </Error>
+  <Error code="2378">
+    <value>El Name o TaxTypeCode debe corresponder con el Id para el ISC </value>
+  </Error>
+  <Error code="2379">
+    <value>La numeración de boleta de venta a dar de baja fue generada en una fecha fuera del plazo permitido </value>
+  </Error>
+  <Error code="2380">
+    <value>El documento tiene observaciones</value>
+  </Error>
+  <Error code="2381">
+    <value>Comprobante no cumple con el Grupo 1: No todos los ítems corresponden a operaciones gravadas a IGV </value>
+  </Error>
+  <Error code="2382">
+    <value>Comprobante no cumple con el Grupo 2: No todos los ítems corresponden a operaciones inafectas o exoneradas al IGV </value>
+  </Error>
+  <Error code="2383">
+    <value>Comprobante no cumple con el Grupo 3: Falta leyenda con código 1002 </value>
+  </Error>
+  <Error code="2384">
+    <value>Comprobante no cumple con el Grupo 3: Existe ítem con operación onerosa </value>
+  </Error>
+  <Error code="2385">
+    <value>Comprobante no cumple con el Grupo 4: Debe existir Total descuentos mayor a cero </value>
+  </Error>
+  <Error code="2386">
+    <value>Comprobante no cumple con el Grupo 5: Todos los ítems deben tener operaciones afectas a ISC </value>
+  </Error>
+  <Error code="2387">
+    <value>Comprobante no cumple con el Grupo 6: El monto de percepción no existe o es cero </value>
+  </Error>
+  <Error code="2388">
+    <value>Comprobante no cumple con el Grupo 6: Todos los ítems deben tener código de Afectación al IGV igual a 10 </value>
+  </Error>
+  <Error code="2389">
+    <value>Comprobante no cumple con el Grupo 7: El código de moneda no es diferente a PEN </value>
+  </Error>
+  <Error code="2390">
+    <value>Comprobante no cumple con el Grupo 8: No todos los ítems corresponden a operaciones gravadas a IGV </value>
+  </Error>
+  <Error code="2391">
+    <value>Comprobante no cumple con el Grupo 9: No todos los ítems corresponden a operaciones inafectas o exoneradas al IGV </value>
+  </Error>
+  <Error code="2392">
+    <value>Comprobante no cumple con el Grupo 10: Falta leyenda con código 1002 </value>
+  </Error>
+  <Error code="2393">
+    <value>Comprobante no cumple con el Grupo 10: Existe ítem con operación onerosa </value>
+  </Error>
+  <Error code="2394">
+    <value>Comprobante no cumple con el Grupo 11: Debe existir Total descuentos mayor a cero </value>
+  </Error>
+  <Error code="2395">
+    <value>Comprobante no cumple con el Grupo 12: El código de moneda no es diferente a PEN </value>
+  </Error>
+  <Error code="2396">
+    <value>Si el monto total es mayor a S/. 700.00 debe consignar tipo y numero de documento del adquiriente </value>
+  </Error>
+  <Error code="2397">
+    <value>El tipo de documento del adquiriente no puede ser Numero de RUC </value>
+  </Error>
+  <Error code="2398">
+    <value>El documento a dar de baja se encuentra rechazado </value>
+  </Error>
+  <Error code="2399">
+    <value>El tipo de documento modificado por la Nota de crédito debe ser boleta electrónica</value>
+  </Error>
+  <Error code="2400">
+    <value>El tipo de documento modificado por la Nota de débito debe ser boleta electrónica </value>
+  </Error>
+  <Error code="2401">
+    <value>No se puede leer (parsear) el archivo XML </value>
+  </Error>
+  <Error code="2402">
+    <value>El caso de prueba no existe</value>
+  </Error>
+  <Error code="2403">
+    <value>La numeración o nombre del documento ya ha sido enviado anteriormente</value>
+  </Error>
+  <Error code="2404">
+    <value>Documento afectado por la nota electrónica no se encuentra autorizado </value>
+  </Error>
+  <Error code="2405">
+    <value>Contribuyente no se encuentra autorizado como emisor de boletas electrónicas </value>
+  </Error>
+  <Error code="2406">
+    <value>Existe más de un tag sac:AdditionalMonetaryTotal con el mismo ID </value>
+  </Error>
+  <Error code="2407">
+    <value>Existe más de un tag sac:AdditionalProperty con el mismo ID </value>
+  </Error>
+  <Error code="2408">
+    <value>El dato ingresado en PriceAmount del Valor referencial unitario por ítem no cumple con el formato establecido </value>
+  </Error>
+  <Error code="2409">
+    <value>Existe más de un tag cac:AlternativeConditionPrice con el mismo cbc:PriceTypeCode </value>
+  </Error>
+  <Error code="2410">
+    <value>Se ha consignado un valor invalido en el campo cbc:PriceTypeCode </value>
+  </Error>
+  <Error code="2411">
+    <value>Ha consignado más de un elemento cac:AllowanceCharge con el mismo campo cbc:ChargeIndicator </value>
+  </Error>
+  <Error code="2412">
+    <value>Se ha consignado más de un documento afectado por la nota (tag cac:BillingReference) </value>
+  </Error>
+  <Error code="2413">
+    <value>Se ha consignado más de un motivo o sustento de la nota (tag cac:DiscrepancyResponse/cbc:Description) </value>
+  </Error>
+  <Error code="CODIGO">
+    <value>DESCRIPCION </value>
+  </Error>
+  <Error code="2414">
+    <value>No se ha consignado en la nota el tag cac:DiscrepancyResponse </value>
+  </Error>
+  <Error code="2415">
+    <value>Se ha consignado en la nota más de un tag cac:DiscrepancyResponse </value>
+  </Error>
+  <Error code="2416">
+    <value>Si existe leyenda Transferida Gratuita debe consignar Total Valor de Venta de Operaciones Gratuitas</value>
+  </Error>
+  <Error code="2417">
+    <value>Debe consignar Valor Referencial unitario por ítem en operaciones no onerosas</value>
+  </Error>
+  <Error code="2418">
+    <value>Si consigna Valor Referencial unitario por ítem en operaciones no onerosas, la operación debe ser no onerosa</value>
+  </Error>
+  <Error code="2419">
+    <value>El dato ingresado en AllowanceTotalAmount no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2420">
+    <value>Ya transcurrieron más de 25 días calendarios para concluir con su proceso de homologación</value>
+  </Error>
+  <Error code="2421">
+    <value>Debe indicar  toda la información de  sustento de traslado de bienes</value>
+  </Error>
+  <Error code="2422">
+    <value>El valor unitario debe ser menor al precio unitario</value>
+  </Error>
+  <Error code="2423">
+    <value>Si ha consignado monto ISC a nivel de ítem, debe consignar un monto a nivel de total</value>
+  </Error>
+  <Error code="2424">
+    <value>RC Debe consignar solo un elemento sac:BillingPayment a nivel de ítem con cbc:InstructionID igual a 05</value>
+  </Error>
+  <Error code="2425">
+    <value>Si la  operación es gratuita PriceTypeCode =02 y cbc:PriceAmount&gt; 0 el código de afectación de igv debe ser  no onerosa es  decir diferente de 10,20,30</value>
+  </Error>
+  <Error code="2426">
+    <value>Documentos relacionados duplicados en el comprobante</value>
+  </Error>
+  <Error code="2427">
+    <value>Solo debe de existir un tag AdditionalInformation</value>
+  </Error>
+  <Error code="2428">
+    <value>Comprobante no cumple con grupo de facturas con detracciones</value>
+  </Error>
+  <Error code="2429">
+    <value>Comprobante no cumple con grupo de facturas con comercio exterior</value>
+  </Error>
+  <Error code="2430">
+    <value>Comprobante no cumple con grupo de facturas con tag de factura guía</value>
+  </Error>
+  <Error code="2431">
+    <value>Comprobante no cumple con grupo de facturas con tags no tributarios</value>
+  </Error>
+  <Error code="2432">
+    <value>Comprobante no cumple con grupo de boletas con tags no tributarios</value>
+  </Error>
+  <Error code="2433">
+    <value>Comprobante no cumple con grupo de facturas con tag venta itinerante</value>
+  </Error>
+  <Error code="2434">
+    <value>Comprobante no cumple con grupo de boletas con tag venta itinerante</value>
+  </Error>
+  <Error code="2435">
+    <value>Comprobante no cumple con grupo de boletas con ISC</value>
+  </Error>
+  <Error code="2436">
+    <value>Comprobante no cumple con el grupo de boletas de venta con percepción: El monto de percepción no existe o es cero</value>
+  </Error>
+  <Error code="2437">
+    <value>Comprobante no cumple con el grupo de boletas de venta con percepción: Todos los ítems deben tener código de Afectación al IGV igual a 10</value>
+  </Error>
+  <Error code="2438">
+    <value>Comprobante no cumple con grupo de facturas con tag venta anticipada I</value>
+  </Error>
+  <Error code="2439">
+    <value>Comprobante no cumple con grupo de facturas con tag venta anticipada II</value>
+  </Error>
+  <Error code="2500">
+    <value>Ingresar descripción y valor venta por ítem para documento de anticipos</value>
+  </Error>
+  <Error code="2501">
+    <value>Valor venta debe ser mayor a cero</value>
+  </Error>
+  <Error code="2502">
+    <value>Los valores totales deben ser mayores a cero</value>
+  </Error>
+  <Error code="2503">
+    <value>PaidAmount: monto anticipado por documento debe ser mayor a cero</value>
+  </Error>
+  <Error code="2504">
+    <value>Falta referencia de la factura relacionada con anticipo</value>
+  </Error>
+  <Error code="2505">
+    <value>cac:PrepaidPayment/cbc:ID/@SchemaID: Código de referencia debe ser 02 o 03</value>
+  </Error>
+  <Error code="2506">
+    <value>cac:PrepaidPayment/cbc:ID: Factura o boleta no existe o comunicada de Baja</value>
+  </Error>
+  <Error code="2507">
+    <value>Factura relacionada con anticipo no corresponde como factura de anticipo</value>
+  </Error>
+  <Error code="2508">
+    <value>Ingresar documentos por anticipos</value>
+  </Error>
+  <Error code="2509">
+    <value>Total de anticipos diferente a los montos anticipados por documento</value>
+  </Error>
+  <Error code="2510">
+    <value>Nro nombre del documento no tiene el formato correcto</value>
+  </Error>
+  <Error code="2511">
+    <value>El tipo de documento no es aceptado</value>
+  </Error>
+  <Error code="2512">
+    <value>No existe información de serie o número</value>
+  </Error>
+  <Error code="2513">
+    <value>Dato no cumple con formato de acuerdo al número de comprobante</value>
+  </Error>
+  <Error code="2514">
+    <value>No existe información de receptor de documento</value>
+  </Error>
+  <Error code="2515">
+    <value>Dato ingresado no cumple con catalogo 6</value>
+  </Error>
+  <Error code="2516">
+    <value>Debe indicar tipo de documento</value>
+  </Error>
+  <Error code="2517">
+    <value>Dato no cumple con formato establecido</value>
+  </Error>
+  <Error code="2518">
+    <value>Calculo IGV no es correcto</value>
+  </Error>
+  <Error code="2519">
+    <value>El importe total no coincide con la sumatoria de los valores de venta mas los tributos mas los cargos</value>
+  </Error>
+  <Error code="2520">
+    <value>cac:PrepaidPayment/cbc:InstructionID/@SchemaID – El tipo documento debe ser 6 del catálogo de tipo de documento</value>
+  </Error>
+  <Error code="2521">
+    <value>cac:PrepaidPayment/cbc:ID - El dato ingresado debe indicar SERIE-CORRELATIVO del documento que se realizó el anticipo</value>
+  </Error>
+  <Error code="2522">
+    <value>No existe información del documento del anticipo.</value>
+  </Error>
+  <Error code="2523">
+    <value>GrossWeightMeasure – El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2524">
+    <value>El dato ingresado en Amount no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2525">
+    <value>El dato ingresado en Quantity no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2526">
+    <value>El dato ingresado en Percent no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2527">
+    <value>PrepaidAmount: Monto total anticipado debe ser mayor a cero</value>
+  </Error>
+  <Error code="2528">
+    <value>cac:OriginatorDocumentReference/cbc:ID/@SchemaID – El tipo documento debe ser 6 del catálogo de tipo de documento</value>
+  </Error>
+  <Error code="2529">
+    <value>RUC que emitió documento de anticipo, no existe</value>
+  </Error>
+  <Error code="2530">
+    <value>RUC que solicita la emisión de la factura, no existe</value>
+  </Error>
+  <Error code="2531">
+    <value>Código del Local Anexo del emisor no existe</value>
+  </Error>
+  <Error code="2532">
+    <value>No existe información de modalidad de transporte</value>
+  </Error>
+  <Error code="2533">
+    <value>Si ha consignado Transporte Privado, debe consignar Licencia de conducir, Placa, N constancia de inscripción y marca del vehículo</value>
+  </Error>
+  <Error code="2534">
+    <value>Si ha consignado Transporte púbico, debe consignar Datos del transportista</value>
+  </Error>
+  <Error code="2535">
+    <value>La nota de crédito por otros conceptos tributarios debe tener Otros Documentos Relacionados</value>
+  </Error>
+  <Error code="2536">
+    <value>Serie y número no se encuentra registrado como baja por cambio de destinatario</value>
+  </Error>
+  <Error code="2537">
+    <value>cac:OrderReference/cac:DocumentReference/cbc:DocumentTypeCode - El tipo de documento de serie y número dado de baja es incorrecta</value>
+  </Error>
+  <Error code="2538">
+    <value>El contribuyente no se encuentra autorizado como emisor electrónico de Guía o de factura o de boleta Factura GEM</value>
+  </Error>
+  <Error code="2539">
+    <value>El contribuyente no está activo</value>
+  </Error>
+  <Error code="2540">
+    <value>El contribuyente no está habido</value>
+  </Error>
+  <Error code="2541">
+    <value>El XML no contiene el tag o no existe información del tipo de documento identidad del remitente</value>
+  </Error>
+  <Error code="2542">
+    <value>cac:DespatchSupplierParty/cbc:CustomerAssignedAccountID@schemeID - El valor ingresado como tipo de documento identidad del remitente es incorrecta</value>
+  </Error>
+  <Error code="2543">
+    <value>El XML no contiene el tag o no existe información de la dirección completa y detallada en domicilio fiscal</value>
+  </Error>
+  <Error code="2544">
+    <value>El XML no contiene el tag o no existe información de la provincia en domicilio fiscal</value>
+  </Error>
+  <Error code="2545">
+    <value>El XML no contiene el tag o no existe información del departamento en domicilio fiscal</value>
+  </Error>
+  <Error code="2546">
+    <value>El XML no contiene el tag o no existe información del distrito en domicilio fiscal</value>
+  </Error>
+  <Error code="2547">
+    <value>El XML no contiene el tag o no existe información del país en domicilio fiscal</value>
+  </Error>
+  <Error code="2548">
+    <value>El valor del país inválido</value>
+  </Error>
+  <Error code="2549">
+    <value>El XML no contiene el tag o no existe información del tipo de documento identidad del destinatario</value>
+  </Error>
+  <Error code="2550">
+    <value>cac:DeliveryCustomerParty/cbc:CustomerAssignedAccountID@schemeID - El dato ingresado de tipo de documento identidad del destinatario no cumple con el estándar</value>
+  </Error>
+  <Error code="2551">
+    <value>El XML no contiene el tag o no existe información de CustomerAssignedAccountID del proveedor de servicios</value>
+  </Error>
+  <Error code="2552">
+    <value>El XML no contiene el tag o no existe información del tipo de documento identidad del proveedor</value>
+  </Error>
+  <Error code="2553">
+    <value>cac:SellerSupplierParty/cbc:CustomerAssignedAccountID@schemeID - El dato ingresado no es valido</value>
+  </Error>
+  <Error code="2554">
+    <value>Para el motivo de traslado ingresado el Destinatario debe ser igual al remitente</value>
+  </Error>
+  <Error code="2555">
+    <value>Destinatario no debe ser igual al remitente</value>
+  </Error>
+  <Error code="2556">
+    <value>cbc:TransportModeCode -  dato ingresado no es valido</value>
+  </Error>
+  <Error code="2557">
+    <value>La fecha del StartDate no debe ser menor al Today</value>
+  </Error>
+  <Error code="2558">
+    <value>El XML no contiene el tag o no existe información en Numero de Ruc del transportista</value>
+  </Error>
+  <Error code="2559">
+    <value>/DespatchAdvice/cac:Shipment/cac:ShipmentStage/cac:CarrierParty/cac:PartyIdentification/cbc:ID  - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2560">
+    <value>Transportista  no debe ser igual al remitente o destinatario</value>
+  </Error>
+  <Error code="2561">
+    <value>El XML no contiene el tag o no existe información del tipo de documento identidad del transportista</value>
+  </Error>
+  <Error code="2562">
+    <value>/DespatchAdvice/cac:Shipment/cac:ShipmentStage/cac:CarrierParty/cac:PartyIdentification/cbc:ID@schemeID  - El dato ingresado no es valido</value>
+  </Error>
+  <Error code="2563">
+    <value>El XML no contiene el tag o no existe información de Apellido, Nombre o razón social del transportista</value>
+  </Error>
+  <Error code="2564">
+    <value>Razón social transportista - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2565">
+    <value>El XML no contiene el tag o no existe información del tipo de unidad de transporte</value>
+  </Error>
+  <Error code="2566">
+    <value>El XML no contiene el tag o no existe información del Número de placa del vehículo</value>
+  </Error>
+  <Error code="2567">
+    <value>Número de placa del vehículo - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2568">
+    <value>El XML no contiene el tag o no existe información en el Numero de documento de identidad del conductor</value>
+  </Error>
+  <Error code="2569">
+    <value>Documento identidad del conductor - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2570">
+    <value>El XML no contiene el tag o no existe información del tipo de documento identidad del conductor</value>
+  </Error>
+  <Error code="2571">
+    <value>cac:DriverPerson/ID@schemeID - El valor ingresado de tipo de documento identidad de conductor es incorrecto</value>
+  </Error>
+  <Error code="2572">
+    <value>El XML no contiene el tag o no existe información del Numero de licencia del conductor</value>
+  </Error>
+  <Error code="2573">
+    <value>Numero de licencia del conductor - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="2574">
+    <value>El XML no contiene el tag o no existe información de dirección detallada de punto de llegada</value>
+  </Error>
+  <Error code="2575">
+    <value>El XML no contiene el tag o no existe información de CityName</value>
+  </Error>
+  <Error code="2576">
+    <value>El XML no contiene el tag o no existe información de District</value>
+  </Error>
+  <Error code="2577">
+    <value>El XML no contiene el tag o no existe información de dirección detallada de punto de partida</value>
+  </Error>
+  <Error code="2578">
+    <value>El XML no contiene el tag o no existe información de CityName</value>
+  </Error>
+  <Error code="2579">
+    <value>El XML no contiene el tag o no existe información de District</value>
+  </Error>
+  <Error code="2580">
+    <value>El XML No contiene el tag o no existe información de la cantidad del ítem</value>
+  </Error>
+  <Error code="">
+    <value />
+  </Error>
+  <Error code="2600">
+    <value>El comprobante fue enviado fuera del plazo permitido.</value>
+  </Error>
+  <Error code="2601">
+    <value>Señor contribuyente a la fecha no se encuentra registrado ó habilitado con la condición de Agente de percepción.</value>
+  </Error>
+  <Error code="2602">
+    <value>El régimen percepción enviado no corresponde con su condición de Agente de percepción.</value>
+  </Error>
+  <Error code="2603">
+    <value>La tasa de percepción enviada no corresponde con el régimen de percepción.</value>
+  </Error>
+  <Error code="2604">
+    <value>El Cliente no puede ser el mismo que el Emisor del comprobante de percepción.</value>
+  </Error>
+  <Error code="2605">
+    <value>Número de RUC del Cliente no existe.</value>
+  </Error>
+  <Error code="2606">
+    <value>Documento de identidad del Cliente no existe.</value>
+  </Error>
+  <Error code="2607">
+    <value>La moneda del importe de cobro debe ser la misma que la del documento relacionado.</value>
+  </Error>
+  <Error code="2608">
+    <value>Los montos de pago, percibidos y montos cobrados consignados para el documento relacionado no son correctos.</value>
+  </Error>
+  <Error code="2609">
+    <value>El comprobante electrónico enviado no se encuentra registrado en la SUNAT.</value>
+  </Error>
+  <Error code="2610">
+    <value>La fecha de emisión, Importe total del comprobante y la moneda del comprobante electrónico enviado no son los registrados en los Sistemas de SUNAT.</value>
+  </Error>
+  <Error code="2611">
+    <value>El comprobante electrónico no ha sido emitido al cliente.</value>
+  </Error>
+  <Error code="2612">
+    <value>La fecha de cobro debe estar entre el primer día calendario del mes al cual corresponde la fecha de emisión del comprobante de percepción o desde la fecha de emisión del comprobante relacionado.</value>
+  </Error>
+  <Error code="2613">
+    <value>El Nro. de documento con número de cobro ya se encuentra en la Relación de Documentos Relacionados agregados.</value>
+  </Error>
+  <Error code="2614">
+    <value>El Nro. de documento con el número de cobro ya se encuentra registrado como pago realizado.</value>
+  </Error>
+  <Error code="2615">
+    <value>Importe total percibido debe ser igual a la suma de los importes percibidos por cada documento relacionado.</value>
+  </Error>
+  <Error code="2616">
+    <value>Importe total cobrado debe ser igual a la suma de los importe totales cobrados por cada documento relacionado.</value>
+  </Error>
+  <Error code="2617">
+    <value>Señor contribuyente a la fecha no se encuentra registrado ó habilitado con la condición de Agente de retención.</value>
+  </Error>
+  <Error code="2618">
+    <value>El régimen retención enviado no corresponde con su condición de Agente de retención.</value>
+  </Error>
+  <Error code="2619">
+    <value>La tasa de retención enviada no corresponde con el régimen de retención.</value>
+  </Error>
+  <Error code="2620">
+    <value>El Proveedor no puede ser el mismo que el Emisor del comprobante de retención.</value>
+  </Error>
+  <Error code="2621">
+    <value>Número de RUC del Proveedor no existe.</value>
+  </Error>
+  <Error code="2622">
+    <value>La moneda del importe de pago debe ser la misma que la del documento relacionado.</value>
+  </Error>
+  <Error code="2623">
+    <value>Los montos de pago, retenidos y montos pagados consignados para el documento relacionado no son correctos.</value>
+  </Error>
+  <Error code="2624">
+    <value>El comprobante electrónico no ha sido emitido por el proveedor.</value>
+  </Error>
+  <Error code="2625">
+    <value>La fecha de pago debe estar entre el primer día calendario del mes al cual corresponde la fecha de emisión del comprobante de retención o desde la fecha de emisión del comprobante relacionado.</value>
+  </Error>
+  <Error code="2626">
+    <value>El Nro. de documento con el número de pago ya se encuentra en la Relación de Documentos Relacionados agregados.</value>
+  </Error>
+  <Error code="2627">
+    <value>El Nro. de documento con el número de pago ya se encuentra registrado como pago realizado.</value>
+  </Error>
+  <Error code="2628">
+    <value>Importe total retenido debe ser igual a la suma de los importes retenidos por cada documento relacionado.</value>
+  </Error>
+  <Error code="2629">
+    <value>Importe total pagado debe ser igual a la suma de los importes pagados por cada documento relacionado.</value>
+  </Error>
+  <Error code="2630">
+    <value>La serie o número del documento(01) modificado por la Nota de Crédito no cumple con el formato establecido para tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2631">
+    <value>La serie o número del documento(12) modificado por la Nota de Crédito no cumple con el formato establecido para tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2632">
+    <value>La serie o número del documento(56) modificado por la Nota de Crédito no cumple con el formato establecido para tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2633">
+    <value>La serie o número del documento(03) modificado por la Nota de Crédito no cumple con el formato establecido para tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2634">
+    <value>ReferenceID - El dato ingresado debe indicar serie correcta del documento al que se relaciona la Nota tipo 10.</value>
+  </Error>
+  <Error code="2635">
+    <value>Debe existir DocumentTypeCode de Otros documentos relacionados con valor 99 para un tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2636">
+    <value>No existe datos del ID de los documentos relacionados con valor 99 para un tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2637">
+    <value>No existe datos del DocumentType de los documentos relacionados con valor 99 para un tipo código Nota Crédito 10.</value>
+  </Error>
+  <Error code="2640">
+    <value>Operación gratuita, solo debe consignar un monto referencial</value>
+  </Error>
+  <Error code="2641">
+    <value>Operación gratuita, debe consignar Total valor venta - operaciones gratuitas mayor a cero</value>
+  </Error>
+  <Error code="2642">
+    <value>Operaciones de exportación, deben consignar Tipo Afectación igual a 40</value>
+  </Error>
+  <Error code="2643">
+    <value>Factura de operación sujeta IVAP debe consignar Monto de impuestos por ítem</value>
+  </Error>
+  <Error code="2644">
+    <value>Factura de operación sujeta IVAP solo debe tener ítems con código afectación IGV 17.</value>
+  </Error>
+  <Error code="2645">
+    <value>Factura de operación sujeta a IVAP debe consignar ítems con código de tributo 1000</value>
+  </Error>
+  <Error code="2646">
+    <value>Factura de operación sujeta a IVAP debe consignar ítems con nombre de tributo IVAP</value>
+  </Error>
+  <Error code="2647">
+    <value>Código tributo UN/ECE debe ser VAT</value>
+  </Error>
+  <Error code="2648">
+    <value>Factura de operación sujeta al IVAP, solo puede consignar información para operación gravadas</value>
+  </Error>
+  <Error code="2649">
+    <value>Operación sujeta al IVAP, debe consignar monto en total operaciones gravadas</value>
+  </Error>
+  <Error code="2650">
+    <value>Factura de operación sujeta al IVAP , no debe consignar valor para ISC o debe ser 0</value>
+  </Error>
+  <Error code="2651">
+    <value>Factura de operación sujeta al IVAP , no debe consignar valor para IGV o debe ser 0</value>
+  </Error>
+  <Error code="2652">
+    <value>Factura de operación sujeta al IVAP , debe registrar mensaje 2007</value>
+  </Error>
+  <Error code="2653">
+    <value>Servicios prestados No domiciliados. Total IGV debe ser mayor a cero</value>
+  </Error>
+  <Error code="2654">
+    <value>Servicios prestados No domiciliados. Código tributo a consignar debe ser 1000</value>
+  </Error>
+  <Error code="2655">
+    <value>Servicios prestados No domiciliados. El código de afectación debe ser 40</value>
+  </Error>
+  <Error code="2656">
+    <value>Servicios prestados No domiciliados. Código tributo UN/ECE debe ser VAT</value>
+  </Error>
+  <Error code="2657">
+    <value>El Nro. de documento &lt;serie&gt;-&lt;número&gt; ya fue utilizado en la emisión de CPE.</value>
+  </Error>
+  <Error code="2658">
+    <value>El Nro. de documento &lt;serie&gt;-&lt;número&gt; no se ha informado o no se encuentra en estado Revertido</value>
+  </Error>
+  <Error code="2659">
+    <value>La fecha de cobro de cada documento relacionado deben ser del mismo Periodo (mm/aaaa), asimismo estas fechas podrán ser menores o iguales a la fecha de emisión del comprobante de percepción</value>
+  </Error>
+  <Error code="2660">
+    <value>Los datos del CPE revertido no corresponden a los registrados en la SUNAT</value>
+  </Error>
+  <Error code="2661">
+    <value>La fecha de cobro de cada documento relacionado deben ser del mismo Periodo (mm/aaaa), asimismo estas fechas podrán ser menores o iguales a la fecha de emisión del comprobante de retención</value>
+  </Error>
+  <Error code="2662">
+    <value>El Nro. de documento &lt;serie&gt;-&lt;número&gt; ya fue utilizado en la emisión de CRE.</value>
+  </Error>
+  <Error code="2663">
+    <value>El documento indicado no existe no puede ser modificado/eliminado</value>
+  </Error>
+  <Error code="2664">
+    <value>El cálculo de la base imponible de percepción y el monto de la percepción no coincide con el monto total informado.</value>
+  </Error>
+  <Error code="2665">
+    <value>El contribuyente no se encuentra autorizado a emitir Tickets</value>
+  </Error>
+  <Error code="2666">
+    <value>Las percepciones son solo válidas para boletas de venta al contado.</value>
+  </Error>
+  <Error code="2667">
+    <value>Importe total percibido debe ser igual a la suma de los importes percibidos por cada documento relacionado.</value>
+  </Error>
+  <Error code="2668">
+    <value>Importe total cobrado debe ser igual a la suma de los importes cobrados por cada documento relacionado.</value>
+  </Error>
+  <Error code="2669">
+    <value>El dato ingresado en TotalInvoiceAmount debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2670">
+    <value>La razón social no corresponde al ruc informado.</value>
+  </Error>
+  <Error code="2671">
+    <value>La fecha de generación de la comunicación debe ser mayor o igual a la fecha de generación del documento revertido.</value>
+  </Error>
+  <Error code="2672">
+    <value>La fecha de generación del documento revertido debe ser menor o igual a la fecha actual.</value>
+  </Error>
+  <Error code="2673">
+    <value>El dato ingresado no cumple con el formato RR-fecha-correlativo.</value>
+  </Error>
+  <Error code="2674">
+    <value>El dato ingresado  no cumple con el formato de DocumentSerialID, para DocumentTypeCode con valor 20.</value>
+  </Error>
+  <Error code="2675">
+    <value>El dato ingresado  no cumple con el formato de DocumentSerialID, para DocumentTypeCode con valor 40.</value>
+  </Error>
+  <Error code="2676">
+    <value>El XML no contiene el tag o no existe información del número de RUC del emisor</value>
+  </Error>
+  <Error code="2677">
+    <value>El valor ingresado como número de RUC del emisor es incorrecto</value>
+  </Error>
+  <Error code="2678">
+    <value>El XML no contiene el atributo o no existe información del tipo de documento del emisor</value>
+  </Error>
+  <Error code="2679">
+    <value>El XML no contiene el tag o no existe información del número de documento de identidad del cliente</value>
+  </Error>
+  <Error code="2680">
+    <value>El valor ingresado como documento de identidad del cliente es incorrecto</value>
+  </Error>
+  <Error code="2681">
+    <value>El XML no contiene el atributo o no existe información del tipo de documento del cliente</value>
+  </Error>
+  <Error code="2682">
+    <value>El valor ingresado como tipo de documento del cliente es incorrecto</value>
+  </Error>
+  <Error code="2683">
+    <value>El XML no contiene el tag o no existe información del Importe total Percibido</value>
+  </Error>
+  <Error code="2684">
+    <value>El XML no contiene el tag o no existe información de la moneda del Importe total Percibido</value>
+  </Error>
+  <Error code="2685">
+    <value>El valor de la moneda del Importe total Percibido debe ser PEN</value>
+  </Error>
+  <Error code="2686">
+    <value>El XML no contiene el tag o no existe información del Importe total Cobrado</value>
+  </Error>
+  <Error code="2687">
+    <value>El dato ingresado en SUNATTotalCashed debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2689">
+    <value>El XML no contiene el tag o no existe información de la moneda del Importe total Cobrado</value>
+  </Error>
+  <Error code="2690">
+    <value>El valor de la moneda del Importe total Cobrado debe ser PEN</value>
+  </Error>
+  <Error code="2691">
+    <value>El XML no contiene el tag o no existe información del tipo de documento relacionado</value>
+  </Error>
+  <Error code="2692">
+    <value>El tipo de documento relacionado no es válido</value>
+  </Error>
+  <Error code="2693">
+    <value>El XML no contiene el tag o no existe información del número de documento relacionado</value>
+  </Error>
+  <Error code="2694">
+    <value>El número de documento relacionado no está permitido o no es valido</value>
+  </Error>
+  <Error code="2695">
+    <value>El XML no contiene el tag o no existe información del Importe total documento Relacionado</value>
+  </Error>
+  <Error code="2696">
+    <value>El dato ingresado en el importe total documento relacionado debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2697">
+    <value>El XML no contiene el tag o no existe información del número de cobro</value>
+  </Error>
+  <Error code="2698">
+    <value>El dato ingresado en el número de cobro no es válido</value>
+  </Error>
+  <Error code="2699">
+    <value>El XML no contiene el tag o no existe información del Importe del cobro</value>
+  </Error>
+  <Error code="2700">
+    <value>El dato ingresado en el Importe del cobro debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2701">
+    <value>El XML no contiene el tag o no existe información de la moneda del documento Relacionado</value>
+  </Error>
+  <Error code="2702">
+    <value>El XML no contiene el tag o no existe información de la fecha de cobro del documento Relacionado</value>
+  </Error>
+  <Error code="2703">
+    <value>La fecha de cobro del documento relacionado no es válido</value>
+  </Error>
+  <Error code="2704">
+    <value>El XML no contiene el tag o no existe información del Importe percibido</value>
+  </Error>
+  <Error code="2705">
+    <value>El dato ingresado en el Importe percibido debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2706">
+    <value>El XML no contiene el tag o no existe información de la moneda de importe percibido</value>
+  </Error>
+  <Error code="2707">
+    <value>El valor de la moneda de importe percibido debe ser PEN</value>
+  </Error>
+  <Error code="2708">
+    <value>El XML no contiene el tag o no existe información de la Fecha de Percepción</value>
+  </Error>
+  <Error code="2709">
+    <value>La fecha de percepción no es válido</value>
+  </Error>
+  <Error code="2710">
+    <value>El XML no contiene el tag o no existe información del Monto total a cobrar</value>
+  </Error>
+  <Error code="2711">
+    <value>El dato ingresado en el Monto total a cobrar debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2712">
+    <value>El XML no contiene el tag o no existe información de la moneda del Monto total a cobrar</value>
+  </Error>
+  <Error code="2713">
+    <value>El valor de la moneda del Monto total a cobrar debe ser PEN</value>
+  </Error>
+  <Error code="2714">
+    <value>El valor de la moneda de referencia para el tipo de cambio no es válido</value>
+  </Error>
+  <Error code="2715">
+    <value>El valor de la moneda objetivo para la Tasa de Cambio debe ser PEN</value>
+  </Error>
+  <Error code="2716">
+    <value>El dato ingresado en el tipo de cambio debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2717">
+    <value>La fecha de cambio no es válido</value>
+  </Error>
+  <Error code="2718">
+    <value>El valor de la moneda del documento Relacionado no es válido</value>
+  </Error>
+  <Error code="2719">
+    <value>El XML no contiene el tag o no existe información de la moneda de referencia para el tipo de cambio</value>
+  </Error>
+  <Error code="2720">
+    <value>El XML no contiene el tag o no existe información de la moneda objetivo para la Tasa de Cambio</value>
+  </Error>
+  <Error code="2721">
+    <value>El XML no contiene el tag o no existe información del tipo de cambio</value>
+  </Error>
+  <Error code="2722">
+    <value>El XML no contiene el tag o no existe información de la fecha de cambio</value>
+  </Error>
+  <Error code="2723">
+    <value>El XML no contiene el tag o no existe información del número de documento de identidad del proveedor</value>
+  </Error>
+  <Error code="2724">
+    <value>El valor ingresado como documento de identidad del proveedor es incorrecto</value>
+  </Error>
+  <Error code="2725">
+    <value>El XML no contiene el tag o no existe información del Importe total Retenido</value>
+  </Error>
+  <Error code="2726">
+    <value>El XML no contiene el tag o no existe información de la moneda del Importe total Retenido</value>
+  </Error>
+  <Error code="2727">
+    <value>El XML no contiene el tag o no existe información de la moneda del Importe total Retenido</value>
+  </Error>
+  <Error code="2728">
+    <value>El valor de la moneda del Importe total Retenido debe ser PEN</value>
+  </Error>
+  <Error code="2729">
+    <value>El XML no contiene el tag o no existe información del Importe total Pagado</value>
+  </Error>
+  <Error code="2730">
+    <value>El dato ingresado en SUNATTotalPaid debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2731">
+    <value>El XML no contiene el tag o no existe información de la moneda del Importe total Pagado</value>
+  </Error>
+  <Error code="2732">
+    <value>El valor de la moneda del Importe total Pagado debe ser PEN</value>
+  </Error>
+  <Error code="2733">
+    <value>El XML no contiene el tag o no existe información del número de pago</value>
+  </Error>
+  <Error code="2734">
+    <value>El dato ingresado en el número de pago no es válido</value>
+  </Error>
+  <Error code="2735">
+    <value>El XML no contiene el tag o no existe información del Importe del pago</value>
+  </Error>
+  <Error code="2736">
+    <value>El dato ingresado en el Importe del pago debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2737">
+    <value>El XML no contiene el tag o no existe información de la fecha de pago del documento Relacionado</value>
+  </Error>
+  <Error code="2738">
+    <value>La fecha de pago del documento relacionado no es válido</value>
+  </Error>
+  <Error code="2739">
+    <value>El XML no contiene el tag o no existe información del Importe retenido</value>
+  </Error>
+  <Error code="2740">
+    <value>El dato ingresado en el Importe retenido debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2741">
+    <value>El XML no contiene el tag o no existe información de la moneda de importe retenido</value>
+  </Error>
+  <Error code="2742">
+    <value>El valor de la moneda de importe retenido debe ser PEN</value>
+  </Error>
+  <Error code="2743">
+    <value>El XML no contiene el tag o no existe información de la Fecha de Retención</value>
+  </Error>
+  <Error code="2744">
+    <value>La fecha de retención no es válido</value>
+  </Error>
+  <Error code="2745">
+    <value>El XML no contiene el tag o no existe información del Importe total a pagar (neto)</value>
+  </Error>
+  <Error code="2746">
+    <value>El dato ingresado en el Importe total a pagar (neto) debe ser numérico mayor a cero</value>
+  </Error>
+  <Error code="2747">
+    <value>El XML no contiene el tag o no existe información de la Moneda del monto neto pagado</value>
+  </Error>
+  <Error code="2748">
+    <value>El valor de la Moneda del monto neto pagado debe ser PEN</value>
+  </Error>
+  <Error code="2749">
+    <value>La moneda de referencia para el tipo de cambio debe ser la misma que la del documento relacionado </value>
+  </Error>
+  <Error code="2750">
+    <value>El comprobante que se informa debe existir y estar en estado emitido</value>
+  </Error>
+  <Error code="2751">
+    <value>El comprobante que se informa ya se encuentra en estado revertido</value>
+  </Error>
+  <Error code="2752">
+    <value>El número de ítem no puede estar duplicado</value>
+  </Error>
+  <Error code="">
+    <value />
+  </Error>
+  <Error code="4000">
+    <value>El documento ya fue presentado anteriormente.</value>
+  </Error>
+  <Error code="4001">
+    <value>El número de RUC del receptor no existe. </value>
+  </Error>
+  <Error code="4002">
+    <value>Para el TaxTypeCode, está usando un valor que no existe en el catálogo. </value>
+  </Error>
+  <Error code="4003">
+    <value>El comprobante fue registrado previamente como rechazado.</value>
+  </Error>
+  <Error code="4004">
+    <value>El DocumentTypeCode de las guías debe existir y tener 2 posiciones </value>
+  </Error>
+  <Error code="4005">
+    <value>El DocumentTypeCode de las guías debe ser 09 o 31 </value>
+  </Error>
+  <Error code="4006">
+    <value>El ID de las guías debe tener información de la SERIE-NUMERO de guía. </value>
+  </Error>
+  <Error code="4007">
+    <value>El XML no contiene el ID de las guías.</value>
+  </Error>
+  <Error code="4008">
+    <value>El DocumentTypeCode de Otros documentos relacionados no cumple con el estándar. </value>
+  </Error>
+  <Error code="4009">
+    <value>El DocumentTypeCode de Otros documentos relacionados tiene valores incorrectos. </value>
+  </Error>
+  <Error code="4010">
+    <value>El ID de los documentos relacionados no cumplen con el estándar. </value>
+  </Error>
+  <Error code="4011">
+    <value>El XML no contiene el tag ID de documentos relacionados.</value>
+  </Error>
+  <Error code="4012">
+    <value>El ubigeo indicado en el comprobante no es el mismo que está registrado para el contribuyente. </value>
+  </Error>
+  <Error code="4013">
+    <value>El RUC del receptor no está activo </value>
+  </Error>
+  <Error code="4014">
+    <value>El RUC del receptor no está habido </value>
+  </Error>
+  <Error code="4015">
+    <value>Si el tipo de documento del receptor no es RUC, debe tener operaciones de exportación </value>
+  </Error>
+  <Error code="4016">
+    <value>El total valor venta neta de oper. gravadas IGV debe ser mayor a 0.00 o debe existir oper. gravadas onerosas </value>
+  </Error>
+  <Error code="4017">
+    <value>El total valor venta neta de oper. inafectas IGV debe ser mayor a 0.00 o debe existir oper. inafectas onerosas o de export. </value>
+  </Error>
+  <Error code="4018">
+    <value>El total valor venta neta de oper. exoneradas IGV debe ser mayor a 0.00 o debe existir oper. exoneradas </value>
+  </Error>
+  <Error code="4019">
+    <value>El cálculo del IGV no es correcto </value>
+  </Error>
+  <Error code="4020">
+    <value>El ISC no está informado correctamente </value>
+  </Error>
+  <Error code="4021">
+    <value>Si se utiliza la leyenda con código 2000, el importe de percepción debe ser mayor a 0.00 </value>
+  </Error>
+  <Error code="4022">
+    <value>Si se utiliza la leyenda con código 2001, el total de operaciones exoneradas debe ser mayor a 0.00 </value>
+  </Error>
+  <Error code="4023">
+    <value>Si se utiliza la leyenda con código 2002, el total de operaciones exoneradas debe ser mayor a 0.00 </value>
+  </Error>
+  <Error code="4024">
+    <value>Si se utiliza la leyenda con código 2003, el total de operaciones exoneradas debe ser mayor a 0.00 </value>
+  </Error>
+  <Error code="4025">
+    <value>Si usa la leyenda de Transferencia o Servicio gratuito, todos los ítems deben ser no onerosos </value>
+  </Error>
+  <Error code="4026">
+    <value>No se puede indicar Guia de remisión de remitente y Guia de remisión de transportista en el mismo documento </value>
+  </Error>
+  <Error code="4027">
+    <value>El importe total no coincide con la sumatoria de los valores de venta mas los tributos mas los cargos </value>
+  </Error>
+  <Error code="4028">
+    <value>El monto total de la nota de crédito debe ser menor o igual al monto de la factura </value>
+  </Error>
+  <Error code="4029">
+    <value>El ubigeo indicado en el comprobante no es el mismo que está registrado para el contribuyente </value>
+  </Error>
+  <Error code="4030">
+    <value>El ubigeo indicado en el comprobante no es el mismo que está registrado para el contribuyente </value>
+  </Error>
+  <Error code="4031">
+    <value>Debe indicar el nombre comercial </value>
+  </Error>
+  <Error code="4032">
+    <value>Si el código del motivo de emisión de la Nota de Crédito es 03, debe existir la descripción del ítem </value>
+  </Error>
+  <Error code="4033">
+    <value>La fecha de generación de la numeración debe ser menor o igual a la fecha de generación de la comunicación </value>
+  </Error>
+  <Error code="4034">
+    <value>El comprobante fue registrado previamente como baja</value>
+  </Error>
+  <Error code="4035">
+    <value>El comprobante fue registrado previamente como rechazado</value>
+  </Error>
+  <Error code="4036">
+    <value>La fecha de emisión de los rangos debe ser menor o igual a la fecha de generación del resumen </value>
+  </Error>
+  <Error code="4037">
+    <value>El cálculo del Total de IGV del Ítem no es correcto </value>
+  </Error>
+  <Error code="4038">
+    <value>El resumen contiene menos series por tipo de documento que el envío anterior para la misma fecha de emisión </value>
+  </Error>
+  <Error code="4039">
+    <value>No ha consignado información del ubigeo del domicilio fiscal </value>
+  </Error>
+  <Error code="4040">
+    <value>Si el importe de percepción es mayor a 0.00, debe utilizar una leyenda con código 2000 </value>
+  </Error>
+  <Error code="4041">
+    <value>El código de país debe ser PE </value>
+  </Error>
+  <Error code="4042">
+    <value>Para sac:SUNATTransaction/cbc:ID, se está usando un valor que no existe en el catálogo. Nro. 17</value>
+  </Error>
+  <Error code="4043">
+    <value>Para el TransportModeCode, se está usando un valor que no existe en el catálogo Nro. 18</value>
+  </Error>
+  <Error code="4044">
+    <value>PrepaidAmount: Monto total anticipado no coincide con la sumatoria de los montos por documento de anticipo</value>
+  </Error>
+  <Error code="4045">
+    <value>No debe consignar los datos del transportista para la modalidad de transporte 02 – Transporte Privado</value>
+  </Error>
+  <Error code="4046">
+    <value>No debe consignar información adicional en la dirección para los locales anexos</value>
+  </Error>
+  <Error code="4047">
+    <value>sac:SUNATTransaction/cbc:ID debe ser igual a 06 cuando ingrese información para sustentar el traslado</value>
+  </Error>
+  <Error code="4048">
+    <value>cac:AdditionalDocumentReference/cbc:DocumentTypeCode - Contiene un valor no valido para documentos relacionado</value>
+  </Error>
+  <Error code="4049">
+    <value>El número de DNI del receptor no existe</value>
+  </Error>
+  <Error code="4050">
+    <value>El número de RUC del proveedor no existe</value>
+  </Error>
+  <Error code="4051">
+    <value>El RUC del proveedor no está activo</value>
+  </Error>
+  <Error code="4052">
+    <value>El RUC del proveedor no está habido</value>
+  </Error>
+  <Error code="4053">
+    <value>Proveedor no debe ser igual al remitente o destinatario</value>
+  </Error>
+  <Error code="4054">
+    <value>La guía no debe contener datos del proveedor</value>
+  </Error>
+  <Error code="4055">
+    <value>El XML no contiene información en el tag cbc:Information</value>
+  </Error>
+  <Error code="4056">
+    <value>El XML no contiene el tag o no existe información en el tag SplitConsignmentIndicator</value>
+  </Error>
+  <Error code="4057">
+    <value>GrossWeightMeasure – El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4058">
+    <value>cbc:TotalPackageQuantity - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4059">
+    <value>Numero de bultos o pallets - información válida para importación</value>
+  </Error>
+  <Error code="4060">
+    <value>La guía no debe contener datos del transportista</value>
+  </Error>
+  <Error code="4061">
+    <value>El número de RUC del transportista no existe</value>
+  </Error>
+  <Error code="4062">
+    <value>El RUC del transportista no está activo</value>
+  </Error>
+  <Error code="4063">
+    <value>El RUC del transportista no está habido</value>
+  </Error>
+  <Error code="4064">
+    <value>/DespatchAdvice/cac:Shipment/cac:ShipmentStage/cac:TransportMeans/cbc:RegistrationNationalityID - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4065">
+    <value>cac:TransportMeans/cbc:TransportMeansTypeCode - El valor ingresado como tipo de unidad de transporte es incorrecta</value>
+  </Error>
+  <Error code="4066">
+    <value>El número de DNI del conductor no existe</value>
+  </Error>
+  <Error code="4067">
+    <value>El XML no contiene el tag o no existe información del ubigeo del punto de llegada</value>
+  </Error>
+  <Error code="4068">
+    <value>Dirección de punto de llegada - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4069">
+    <value>CityName - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4070">
+    <value>District - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4071">
+    <value>Numero de Contenedor - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4072">
+    <value>Numero de contenedor - información válida para importación</value>
+  </Error>
+  <Error code="4073">
+    <value>TransEquipmentTypeCode - El valor ingresado como tipo de contenedor es incorrecta</value>
+  </Error>
+  <Error code="4074">
+    <value>Numero Precinto - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4075">
+    <value>El XML no contiene el tag o no existe información del ubigeo del punto de partida</value>
+  </Error>
+  <Error code="4076">
+    <value>Dirección de punto de partida - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4077">
+    <value>CityName - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4078">
+    <value>District - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4079">
+    <value>Código de Puerto o Aeropuerto - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4080">
+    <value>Tipo de Puerto o Aeropuerto - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4081">
+    <value>El XML No contiene El tag o No existe información del Numero de orden del ítem</value>
+  </Error>
+  <Error code="4082">
+    <value>Número de Orden del Ítem - El orden del ítem no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4083">
+    <value>Cantidad - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4084">
+    <value>Descripción del Ítem - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4085">
+    <value>Código del Ítem - El dato ingresado no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4086">
+    <value>El emisor y el cliente son Agentes de percepción de combustible en la fecha de emisión.</value>
+  </Error>
+  <Error code="4087">
+    <value>El Comprobante de Pago Electrónico no está Registrado en los Sistemas de la SUNAT.</value>
+  </Error>
+  <Error code="4088">
+    <value>El Comprobante de Pago no está autorizado en los Sistemas de la SUNAT.</value>
+  </Error>
+  <Error code="4089">
+    <value>La operación con este cliente está excluida del sistema de percepción. Es agente de retención.</value>
+  </Error>
+  <Error code="4090">
+    <value>La operación con este cliente está excluida del sistema de percepción. Es entidad exceptuada de la percepción.</value>
+  </Error>
+  <Error code="4091">
+    <value>La operación con este proveedor está excluida del sistema de retención. Es agente de percepción, agente de retención o buen contribuyente.</value>
+  </Error>
+  <Error code="4092">
+    <value>El nombre comercial del emisor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4093">
+    <value>El ubigeo del emisor no cumple con el formato establecido o no es válido</value>
+  </Error>
+  <Error code="4094">
+    <value>La dirección completa y detallada del domicilio fiscal del emisor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4095">
+    <value>La urbanización del domicilio fiscal del emisor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4096">
+    <value>La provincia del domicilio fiscal del emisor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4097">
+    <value>El departamento del domicilio fiscal del emisor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4098">
+    <value>El distrito del domicilio fiscal del emisor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4099">
+    <value>El nombre comercial del cliente no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4100">
+    <value>El ubigeo del cliente no cumple con el formato establecido o no es válido</value>
+  </Error>
+  <Error code="4101">
+    <value>La dirección completa y detallada del domicilio fiscal del cliente no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4102">
+    <value>La urbanización del domicilio fiscal del cliente no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4103">
+    <value>La provincia del domicilio fiscal del cliente no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4104">
+    <value>El departamento del domicilio fiscal del cliente no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4105">
+    <value>El distrito del domicilio fiscal del cliente no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4106">
+    <value>El nombre comercial del proveedor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4107">
+    <value>El ubigeo del proveedor no cumple con el formato establecido o no es válido</value>
+  </Error>
+  <Error code="4108">
+    <value>La dirección completa y detallada del domicilio fiscal del proveedor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4109">
+    <value>La urbanización del domicilio fiscal del proveedor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4110">
+    <value>La provincia del domicilio fiscal del proveedor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4111">
+    <value>El departamento del domicilio fiscal del proveedor no cumple con el formato establecido</value>
+  </Error>
+  <Error code="4112">
+    <value>El distrito del domicilio fiscal del proveedor no cumple con el formato establecido</value>
+  </Error>
+</Errors>

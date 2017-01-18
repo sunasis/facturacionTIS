@@ -1,0 +1,7 @@
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Debug\FacturacionElectronica.GeneradorXml.dll
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Debug\FacturacionElectronica.GeneradorXml.pdb
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Debug\Gs.Ubl.dll
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Debug\Gs.Ubl.xml
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\obj\Debug\FacturacionElectronica.GeneradorXml.csprojResolveAssemblyReference.cache
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\obj\Debug\FacturacionElectronica.GeneradorXml.dll
+E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\obj\Debug\FacturacionElectronica.GeneradorXml.pdb

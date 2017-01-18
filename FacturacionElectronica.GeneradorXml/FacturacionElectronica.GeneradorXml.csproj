@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3935F0D2-9563-46C4-86D9-D459E8A90737}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FacturacionElectronica.GeneradorXml</RootNamespace>
+    <AssemblyName>FacturacionElectronica.GeneradorXml</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\FacturacionElectronica.GeneradorXml.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FacturacionTIS.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gs.Ubl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dfdb6d7a6c403e54, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Gs.Ubl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\CreditNoteHeader.cs" />
+    <Compile Include="Entity\DebitNoteHeader.cs" />
+    <Compile Include="Entity\Misc\DocReferenciaType.cs" />
+    <Compile Include="Entity\Misc\PrecioItemType.cs" />
+    <Compile Include="Entity\NotasBase.cs" />
+    <Compile Include="Entity\Details\InvoiceDetail.cs" />
+    <Compile Include="Entity\Details\SummaryDetail.cs" />
+    <Compile Include="Entity\Details\VoidedDetail.cs" />
+    <Compile Include="Entity\InvoiceHeader.cs" />
+    <Compile Include="Entity\Misc\DireccionType.cs" />
+    <Compile Include="Entity\Misc\GuiaRemisionType.cs" />
+    <Compile Include="Entity\Misc\TotalImporteExtType.cs" />
+    <Compile Include="Entity\Misc\TotalImporteType.cs" />
+    <Compile Include="Entity\Misc\TotalImpuestosType.cs" />
+    <Compile Include="Entity\Misc\TotalTributosType.cs" />
+    <Compile Include="Entity\SummaryHeader.cs" />
+    <Compile Include="Entity\VoidedHeader.cs" />
+    <Compile Include="Res\Enums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Res\OperationResult.cs" />
+    <Compile Include="Entity\SunatDocumentBase.cs" />
+    <Compile Include="Res\UtilsXmlDoc.cs" />
+    <Compile Include="XmlDocGenerator.cs" />
+    <Compile Include="XmlSignatureProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FacturacionTIS.pfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Lib\Gs.Ubl.dll" />
+    <Content Include="Lib\Gs.Ubl.XML" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

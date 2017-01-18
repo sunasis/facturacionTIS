@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FacturacionElectronica.Homologacion" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UrlServiceSunat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService</Value>
+    </Setting>
+    <Setting Name="ServiceCurrent" Type="FacturacionElectronica.Homologacion.Res.ServiceSunatType" Scope="User">
+      <Value Profile="(Default)">Beta</Value>
+    </Setting>
+    <Setting Name="UrlServiceGuia" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://e-beta.sunat.gob.pe/ol-ti-itemision-guia-gem-beta/billService</Value>
+    </Setting>
+    <Setting Name="UrlRetPerc" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://e-beta.sunat.gob.pe/ol-ti-itemision-otroscpe-gem-beta/billService</Value>
+    </Setting>
+    <Setting Name="ServiceRetPer" Type="FacturacionElectronica.Homologacion.Res.ServiceSunatType" Scope="User">
+      <Value Profile="(Default)">Beta</Value>
+    </Setting>
+    <Setting Name="ServiceGuia" Type="FacturacionElectronica.Homologacion.Res.ServiceSunatType" Scope="User">
+      <Value Profile="(Default)">Beta</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
