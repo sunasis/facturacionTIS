@@ -1,7 +1,0 @@
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Release\FacturacionElectronica.GeneradorXml.XML
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Release\FacturacionElectronica.GeneradorXml.dll
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Release\FacturacionElectronica.GeneradorXml.pdb
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Release\Gs.Ubl.dll
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\bin\Release\Gs.Ubl.xml
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\obj\Release\FacturacionElectronica.GeneradorXml.dll
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.GeneradorXml\obj\Release\FacturacionElectronica.GeneradorXml.pdb

@@ -1,1 +1,0 @@
-E:\FacturacionElectronica\FacturacionElectronica\FacturacionElectronica.UI\bin\Release\FacturacionElectronica.UI.exe.config
