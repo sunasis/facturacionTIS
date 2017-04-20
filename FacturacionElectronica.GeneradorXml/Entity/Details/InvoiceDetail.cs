@@ -26,15 +26,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
         public string CodigoProducto
         {
             get { return _codigoproducto; }
-            set
-            {
-                if (!string.IsNullOrEmpty(value.Trim()) && value.Trim().Length <= 30)
-                {
-                    _codigoproducto = value.Trim();
-                }
-                else
-                    throw new ArgumentException("El campo CodigoProducto debe tener como máximo 30 caracteres.");
-            }
+            set { _codigoproducto = value; }
         }
 
         /// <summary>
@@ -91,7 +83,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
                     _descripcionproducto = value.Trim();
                 }
                 else
-                    throw new ArgumentException("El campo CodigoProducto debe tener como máximo 250 caracteres.");
+                    throw new ArgumentException("El campo DescripcionProducto debe tener como máximo 250 caracteres.");
             }
         }
 

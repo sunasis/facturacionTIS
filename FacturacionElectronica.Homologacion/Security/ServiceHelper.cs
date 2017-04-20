@@ -22,8 +22,10 @@ namespace FacturacionElectronica.Homologacion.Security
         {
             ServicePointManager.UseNagleAlgorithm = true;
             ServicePointManager.Expect100Continue = false;
-            ServicePointManager.CheckCertificateRevocationList = true;
-            ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;
+            ServicePointManager.CheckCertificateRevocationList = false;
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls; // Activar por tls sino funciona con ssl3
+
             var binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportWithMessageCredential);
             var elements = binding.CreateBindingElements();
             elements.Find<SecurityBindingElement>().EnableUnsecuredResponse = true;
@@ -39,6 +41,20 @@ namespace FacturacionElectronica.Homologacion.Security
         public static TService GetService<TService>(string url)
         {
             if (_objbinding == null) _objbinding = new ServiceHelper().GetBinding();
+
+            //var channel = new ChannelFactory<TService>(_objbinding, new EndpointAddress(url));
+            //var credentials = new ClientCredentials
+            //{
+            //    UserName =
+            //    {
+            //        UserName = User,
+            //        Password = Password
+            //    }
+            //};
+            //channel.Endpoint.Behaviors.Remove<ClientCredentials>();
+            //channel.Endpoint.Behaviors.Add(credentials);
+            //return channel.CreateChannel();
+
             dynamic ws = (TService)Activator.CreateInstance(typeof(TService), _objbinding, new EndpointAddress(url));
             ws.ClientCredentials.UserName.UserName = User;
             ws.ClientCredentials.UserName.Password = Password;

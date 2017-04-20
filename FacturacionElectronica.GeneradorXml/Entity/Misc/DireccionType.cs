@@ -56,12 +56,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Misc
         public string Zona
         {
             get { return _zona; }
-            set {
-                if (!string.IsNullOrWhiteSpace(value) && value.Length <= 25)
-                    _zona = value;
-                else
-                    throw new ArgumentException("Urbanizacion o Zona no puede estar vacio, ni tener mas de 25 caracteres");
-            }
+            set { _zona = value;  }
         }
         /// <summary>
         /// Departamento
