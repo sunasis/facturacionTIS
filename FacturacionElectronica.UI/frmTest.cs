@@ -58,7 +58,7 @@ namespace FacturacionElectronica.UI
                     TipoDocumento = TipoDocumentoElectronico.Factura,
                     SerieDocumento = "F001",
                     CorrelativoDocumento = "00005214",
-                    FechaEmision = new DateTime(2016, 6,20),
+                    FechaEmision = DateTime.Now,
                     NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA 'O ' S.P.S.A.",
                     NroDocCliente = "20100070970",
                     RucEmisor = "20600995805",
