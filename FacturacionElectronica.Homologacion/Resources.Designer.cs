@@ -85,7 +85,7 @@ namespace FacturacionElectronica.Homologacion {
         ///    &lt;value&gt;El Usuario ingresado no existe &lt;/value&gt;
         ///  &lt;/Error&gt;
         ///  &lt;Error code=&quot;104&quot;&gt;
-        ///    &lt;value&gt;La Cla [resto de la cadena truncado]&quot;;.
+        ///    &lt;value&gt;La Clave ingresada es [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string ListadeErrores {
             get {

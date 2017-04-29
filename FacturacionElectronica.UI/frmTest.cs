@@ -12,6 +12,7 @@ using FacturacionElectronica.GeneradorXml.Res;
 using FacturacionElectronica.Homologacion;
 using FacturacionElectronica.Homologacion.Res;
 using FacturacionElectronica.GeneradorXml.Enums;
+using FacturacionElectronica.UI.Properties;
 using Gs.Ubl.v2;
 using Gs.Ubl.v2.Cac;
 using Gs.Ubl.v2.Ext;
@@ -23,7 +24,7 @@ namespace FacturacionElectronica.UI
     // ReSharper disable once InconsistentNaming
     public partial class frmTest : Form
     {
-        readonly SunatManager _ws;
+        private readonly SunatManager _ws;
         private X509Certificate2 _cert;
 
         public frmTest()
@@ -31,7 +32,7 @@ namespace FacturacionElectronica.UI
             _ws = new SunatManager("20600995805", "MODDATOS", "moddatos");
 
             InitializeComponent();
-            _cert = new X509Certificate2(@"C:\Users\Administrador\Documents\Certificados\SunatCert.pfx", "123456");
+            _cert = new X509Certificate2(@"E:\GIANCARLOS\SFSCert.pfx", "123456");
             cboTipoService.SelectedIndex = (int)SunatManager.CurrentService;
             cboTipoService.SelectedIndexChanged += cboTipoService_SelectedValueChanged;
             cboServiceRet.SelectedIndex = (int) SunatCeR.CurrentService;
@@ -45,7 +46,7 @@ namespace FacturacionElectronica.UI
             };
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             //SendXMl();
             //return;
@@ -58,7 +59,7 @@ namespace FacturacionElectronica.UI
                     TipoDocumento = TipoDocumentoElectronico.Factura,
                     SerieDocumento = "F001",
                     CorrelativoDocumento = "00005214",
-                    FechaEmision = DateTime.Now,
+                    FechaEmision = DateTime.Now.Subtract(TimeSpan.FromDays(2)),
                     NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA 'O ' S.P.S.A.",
                     NroDocCliente = "20100070970",
                     RucEmisor = "20600995805",
@@ -196,7 +197,127 @@ namespace FacturacionElectronica.UI
                 else
                 {
                     MessageBox.Show(
-                        $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                        string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"Error en el llenado de la entidad.", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //new WebServiceClient().Run();
+            //return;
+            //SendXMl();
+            //return;
+            try
+            {
+                #region Se llena la entidad Invoice para pasarla al Xml
+
+                var invoiceHeaderEntity = new InvoiceHeader
+                {
+                    TipoDocumento = TipoDocumentoElectronico.Factura,
+                    SerieDocumento = "F001",
+                    CorrelativoDocumento = "00000003",
+                    FechaEmision = DateTime.Now.Subtract(TimeSpan.FromDays(2)),
+                    NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA 'O ' S.P.S.A.",
+                    NroDocCliente = "20100070970",
+                    RucEmisor = "20600995805",
+                    NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
+                    CodigoMoneda = "PEN",
+                    NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
+                    DocumentoReferenciaTipoDocumento = TipoDocumentoElectronico.Factura,
+                    TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
+                    TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
+                    InfoAddicional = new List<AdditionalPropertyType>()
+                    {
+                      new AdditionalPropertyType
+                      {
+                          ID = "1000",
+                          Value = "MIL QUINIENTOS SETENTE Y TRES CON 60/100"//UtilsFacturacion.ConvertirenLetras(156377.60M)
+                      }
+                    },
+                    DetallesDocumento = new List<InvoiceDetail>
+                    {
+                        new InvoiceDetail
+                        {
+                            CodigoProducto = "PROD001",
+                            Cantidad = 2,
+                            DescripcionProducto = "PRODUCTO PRUEBA 001",
+                            PrecioUnitario = 50,
+                            PrecioAlternativos = new List<PrecioItemType>
+                            {
+                                new PrecioItemType
+                                {
+                                    TipoDePrecio = TipoPrecioVenta.PrecioUnitario,
+                                    Monto = 59
+                                }
+                            },
+                            UnidadMedida = "NIU",
+                            ValorVenta = 118,
+                            Impuesto =
+                                new List<TotalImpuestosType>
+                                {
+                                    new TotalImpuestosType {TipoTributo = TipoTributo.IGV_VAT, Monto = 18, TipoAfectacion=TipoAfectacionIgv.GravadoOperacionOnerosa},
+                                },
+                        }
+                    },
+                    TotalVenta = 118,
+                    TotalTributosAdicionales = new List<TotalTributosType>
+                    {
+                        new TotalTributosType
+                        {
+                            Id = OtrosConceptosTributarios.TotalVentaOperacionesGravadas,
+                            MontoPagable = 100
+                        }
+                    },
+                    Impuesto = new List<TotalImpuestosType>
+                    {
+                        new TotalImpuestosType {TipoTributo = TipoTributo.IGV_VAT, Monto = 18},
+                        new TotalImpuestosType {TipoTributo = TipoTributo.ISC_EXC, Monto = 0M}
+                    },
+                    DireccionEmisor = new DireccionType
+                    {
+                        CodigoUbigueo = "150111",
+                        Direccion = "AV. LOS PRECURSORES #1245",
+                        Departamento = "LIMA",
+                        Provincia = "LIMA",
+                        Distrito = "EL AGUSTINO",
+                        CodigoPais = "PE"
+                    }
+                };
+                #endregion
+
+                var objOperationResult = new OperationResult();
+                var xmlResultPath = new XmlDocGenerator(_cert).GeneraDocumentoInvoice(ref objOperationResult, invoiceHeaderEntity);
+                if (!objOperationResult.Success)
+                {
+                    MessageBox.Show(
+                        objOperationResult.Error + '\n' + objOperationResult.InnerException + '\n' +
+                        objOperationResult.Target, @"Error en el Process.", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(xmlResultPath)) return;
+                if (!File.Exists(xmlResultPath)) return;
+                //xmlResultPath = @"C:\Users\Usuario\Downloads\20600695771-01-F001-00000001.xml";
+                Process.Start(xmlResultPath);
+                var res = _ws.SendDocument(xmlResultPath);
+                if (res.Success)
+                {
+                    if (res.ApplicationResponse == null) return;
+                    File.WriteAllBytes(Path.GetTempPath() + "/fileZip.zip", res.ContentZip);
+                    Process.Start(Path.GetTempPath() + "/fileZip.zip");
+                }
+                else
+                {
+                    MessageBox.Show(
+                        string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                 }
             }
             catch (Exception ex)
@@ -212,7 +333,7 @@ namespace FacturacionElectronica.UI
             {
                 TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
                 RucEmisor = "20600995805",
-                FechaEmision = new DateTime(2016, 05, 04),
+                FechaEmision = DateTime.Now.Subtract(TimeSpan.FromDays(2)),
                 NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
                 NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
                 CorrelativoArchivo = "01",
@@ -248,7 +369,7 @@ namespace FacturacionElectronica.UI
                     else
                     {
                         MessageBox.Show(
-                            $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                            string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                     }
                 }
             }
@@ -324,7 +445,7 @@ namespace FacturacionElectronica.UI
             {
                 TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
                 RucEmisor = "20600995805",
-                FechaEmision = new DateTime(2016, 05, 24),
+                FechaEmision = DateTime.Now.Date,
                 NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
                 NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
                 CorrelativoArchivo = "01",
@@ -450,7 +571,7 @@ namespace FacturacionElectronica.UI
                     else
                     {
                         MessageBox.Show(
-                            $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                            string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                     }
                 }
             }
@@ -480,7 +601,7 @@ namespace FacturacionElectronica.UI
                 else
                 {
                     MessageBox.Show(
-                        $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                        string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                 }
             }
         }
@@ -607,7 +728,7 @@ namespace FacturacionElectronica.UI
                 else
                 {
                     MessageBox.Show(
-                        $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                        string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                 }
             }
         }
@@ -704,7 +825,7 @@ namespace FacturacionElectronica.UI
                 else
                 {
                     MessageBox.Show(
-                        $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                        string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                 }
             }
         }
@@ -1011,7 +1132,7 @@ namespace FacturacionElectronica.UI
             {
                 TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
                 RucEmisor = "20600995805",
-                FechaEmision = new DateTime(2016, 05, 04),
+                FechaEmision = DateTime.Now.Date,
                 NombreRazonSocialEmisor = "K&G Laboratorios",
                 NombreComercialEmisor = "C-K&G Laboratorios",
                 CorrelativoArchivo = "01",
@@ -1048,7 +1169,7 @@ namespace FacturacionElectronica.UI
                     else
                     {
                         MessageBox.Show(
-                            $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                            string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                     }
                 }
             }
@@ -1079,7 +1200,7 @@ namespace FacturacionElectronica.UI
                 else
                 {
                     MessageBox.Show(
-                        $"Errorcode: {res.Error.Code} , \nDescripcion: {res.Error.Description}", @"Error");
+                        string.Format(Resources.frmTest_button1_Click_, res.Error.Code, res.Error.Description), @"Error");
                 }
             }
         }
