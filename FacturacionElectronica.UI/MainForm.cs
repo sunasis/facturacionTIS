@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using FacturacionElectronica.Homologacion;
+using FacturacionElectronica.Homologacion.Res;
 
 namespace FacturacionElectronica.UI
 {
@@ -11,7 +12,14 @@ namespace FacturacionElectronica.UI
         public MainForm()
         {
             InitializeComponent();
-            ws = new SunatManager("20600995805", "MODDATOS", "moddatos");
+            var config = new SolConfig
+            {
+                Ruc = "20600995805",
+                Usuario = "MODDATOS",
+                Clave = "moddatos",
+                Service = ServiceSunatType.Beta
+            };
+            ws = new SunatManager(config);
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)

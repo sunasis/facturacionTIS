@@ -9,32 +9,16 @@ namespace FacturacionElectronica.Homologacion
     /// </summary>
     public class SunatGuiaRemision : SunatCe
     {
-        #region Properties
-        /// <summary>
-        /// Obtiene o estable el Tipo de WebService Actual para la conexion con SUNAT.
-        /// </summary>
-        public static ServiceSunatType CurrentService
-        {
-            get { return Settings.Default.ServiceGuia; }
-            set
-            {
-                SetWebService(value);
-            }
-        }
-        #endregion
-
         #region Construct
 
         /// <summary>
         /// Administrador de WebService de la Sunat. Necesita Clave SOL
         /// </summary>
-        /// <param name="ruc">Ruc del emisor</param>
-        /// <param name="user">Nombre de Usuario en la Sunat</param>
-        /// <param name="clave">Clave SOL</param>
-        public SunatGuiaRemision(string ruc, string user, string clave)
-            : base(ruc, user, clave)
+        /// <param name="config">Configuration</param>
+        public SunatGuiaRemision(SolConfig config)
+            : base(config)
         {
-            BaseUrl = Settings.Default.UrlServiceGuia;
+            BaseUrl = GetUrlService(config.Service);
         }
         #endregion
 
@@ -44,9 +28,9 @@ namespace FacturacionElectronica.Homologacion
         /// </summary>
         /// <param name="service">Tipo de Servicio (Validos <see cref="ServiceSunatType.Beta"/> y <see cref="ServiceSunatType.Produccion"/>)</param>
         /// <exception cref="ArgumentException">Servicio Invalido</exception>
-        private static void SetWebService(ServiceSunatType service)
-        {
-            if (service == Settings.Default.ServiceRetPer) return;          
+        /// <returns>Url of service</returns>
+        private static string GetUrlService(ServiceSunatType service)
+        {         
             string url;
             switch (service)
             {
@@ -59,9 +43,7 @@ namespace FacturacionElectronica.Homologacion
                 default:
                     throw new ArgumentException(@"Servicio Invalido, solo se acepta BETA y Produccion", nameof(service));
             }
-            Settings.Default.UrlServiceGuia = url;
-            Settings.Default.ServiceGuia = service;
-            Settings.Default.Save();
+            return url;
         }
         #endregion
     }

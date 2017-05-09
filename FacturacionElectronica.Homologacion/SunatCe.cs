@@ -13,6 +13,10 @@ namespace FacturacionElectronica.Homologacion
     /// </summary>
     public class SunatCe
     {
+        #region Fields
+        private readonly SolConfig _config;
+        #endregion
+
         #region Properties
         internal string BaseUrl { get; set; }
         #endregion
@@ -21,13 +25,10 @@ namespace FacturacionElectronica.Homologacion
         /// <summary>
         /// Administrador de WebService de la Sunat. Necesita Clave SOL
         /// </summary>
-        /// <param name="ruc">Ruc del emisor</param>
-        /// <param name="user">Nombre de Usuario en la Sunat</param>
-        /// <param name="clave">Clave SOL</param>
-        protected SunatCe(string ruc, string user, string clave)
+        /// <param name="config">The configuration.</param>
+        protected SunatCe(SolConfig config)
         {
-            ServiceHelper.User = string.Concat(ruc, user);
-            ServiceHelper.Password = clave;
+            _config = config;
         }
         #endregion
 
@@ -48,7 +49,7 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(pathFileXml);
-                using (var service = ServiceHelper.GetService<billServiceClient>(BaseUrl))
+                using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
                 {
                     var resultBytes = service.sendBill(nameOfFileZip, zipBytes);
                     var outputXml = ProcessZip.ExtractFile(resultBytes, Path.GetTempPath());
@@ -93,7 +94,7 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(pathFileXml);
-                using (var service = ServiceHelper.GetService<billServiceClient>(BaseUrl))
+                using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
                 {
                     res.Ticket = service.sendSummary(nameOfFileZip, zipBytes);
                     res.Success = true;
@@ -126,7 +127,7 @@ namespace FacturacionElectronica.Homologacion
             var res = new SunatResponse();
             try
             {
-                using (var service = ServiceHelper.GetService<billServiceClient>(BaseUrl))
+                using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
                 {
                     var response = service.getStatus(pstrTicket);
                     switch (response.statusCode)

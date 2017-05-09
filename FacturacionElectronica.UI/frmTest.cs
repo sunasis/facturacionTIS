@@ -24,26 +24,33 @@ namespace FacturacionElectronica.UI
     // ReSharper disable once InconsistentNaming
     public partial class frmTest : Form
     {
-        private readonly SunatManager _ws;
+        private SunatManager _ws;
         private X509Certificate2 _cert;
-
+        private readonly SolConfig _config;
         public frmTest()
         {
-            _ws = new SunatManager("20600995805", "MODDATOS", "moddatos");
+            _config = new SolConfig
+            {
+                Ruc = "20600995805",
+                Usuario = "MODDATOS",
+                Clave = "moddatos",
+                Service = ServiceSunatType.Beta
+            };
+            _ws = new SunatManager(_config);
 
             InitializeComponent();
-            _cert = new X509Certificate2(@"E:\GIANCARLOS\SFSCert.pfx", "123456");
-            cboTipoService.SelectedIndex = (int)SunatManager.CurrentService;
+            _cert = new X509Certificate2(@"E:\data0\facturador\CERT\SFSCert.pfx", "123456");
+            //_cert = new X509Certificate2(@"E:\GIANCARLOS\SFSCert.pfx", "123456");
             cboTipoService.SelectedIndexChanged += cboTipoService_SelectedValueChanged;
-            cboServiceRet.SelectedIndex = (int) SunatCeR.CurrentService;
-            cboServiceRet.SelectedIndexChanged += delegate
-            {
-                if (cboTipoService.SelectedIndex >= 0)
-                {
-                    var en = (ServiceSunatType)Enum.ToObject(typeof(ServiceSunatType), cboServiceRet.SelectedIndex);
-                    SunatCeR.CurrentService = en;
-                }
-            };
+            //cboServiceRet.SelectedIndex = (int) SunatCeR.CurrentService;
+            //cboServiceRet.SelectedIndexChanged += delegate
+            //{
+            //    if (cboTipoService.SelectedIndex >= 0)
+            //    {
+            //        var en = (ServiceSunatType)Enum.ToObject(typeof(ServiceSunatType), cboServiceRet.SelectedIndex);
+            //        SunatCeR.CurrentService = en;
+            //    }
+            //};
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -1069,7 +1076,7 @@ namespace FacturacionElectronica.UI
             if (File.Exists(g))
             {
                 Process.Start(g);
-                var con = new SunatGuiaRemision("20131312955", "MODDATOS", "moddatos");
+                var con = new SunatGuiaRemision(_config);
                 var res = con.SendDocument(g);
                 if (res.Success)
                 {
@@ -1088,7 +1095,8 @@ namespace FacturacionElectronica.UI
             if (cboTipoService.SelectedIndex >= 0)
             {
                 var en = (ServiceSunatType)Enum.ToObject(typeof(ServiceSunatType), cboTipoService.SelectedIndex);
-                SunatManager.CurrentService = en;
+                _config.Service = en;
+                _ws = new SunatManager(_config);
             }
         }
 
@@ -1104,7 +1112,7 @@ namespace FacturacionElectronica.UI
             if (dlg.ShowDialog() != DialogResult.OK) return;
             var firmar = XmlSignatureProvider.SignXmlFileTest(dlg.FileName, _cert);
             Process.Start(firmar.Value);
-            var g = new SunatCeR("20600995805", "MODDATOS", "moddatos");
+            var g = new SunatCeR(_config);
             if (firmar.Key)
             {
                 var resp = g.SendDocument(firmar.Value);
@@ -1159,7 +1167,7 @@ namespace FacturacionElectronica.UI
                 if (File.Exists(xmlResultPath))
                 {
                     Process.Start(xmlResultPath);
-                    var g = new SunatCeR("20600995805", "MODDATOS", "moddatos");
+                    var g = new SunatCeR(_config);
                     TicketResponse res = g.SendSummary(xmlResultPath);
                     if (res.Success)
                     {
@@ -1179,7 +1187,7 @@ namespace FacturacionElectronica.UI
         {
             if (!string.IsNullOrWhiteSpace(txtTicketCre.Text))
             {
-                var ws = new SunatCeR("20600995805", "MODDATOS", "moddatos");
+                var ws = new SunatCeR(_config);
                 var res = ws.GetStatus(txtTicketCre.Text.Trim());
                 if (res.Success)
                 {
@@ -1401,7 +1409,7 @@ namespace FacturacionElectronica.UI
             if (gen.LastResult.Success && File.Exists(pathResult))
             {
                 Process.Start(pathResult);
-                var g = new SunatCeR("20600995805", "MODDATOS", "moddatos");
+                var g = new SunatCeR(_config);
                 var resp = g.SendDocument(pathResult);
 
                 MessageBox.Show(resp.Success
@@ -1618,7 +1626,7 @@ namespace FacturacionElectronica.UI
             if (gen.LastResult.Success && File.Exists(pathResult))
             {
                 Process.Start(pathResult);
-                var g = new SunatCeR("20600995805", "MODDATOS", "moddatos");
+                var g = new SunatCeR(_config);
                 var resp = g.SendDocument(pathResult);
 
                 MessageBox.Show(resp.Success
@@ -1647,7 +1655,7 @@ namespace FacturacionElectronica.UI
             if (dlg.ShowDialog() != DialogResult.OK) return;
             var firmar = XmlSignatureProvider.SignXmlFileTest(dlg.FileName, _cert);
             Process.Start(firmar.Value);
-            var g = new SunatGuiaRemision("20131312955", "MODDATOS", "moddatos");
+            var g = new SunatGuiaRemision(_config);
             if (firmar.Key)
             {
                 var resp = g.SendDocument(firmar.Value);

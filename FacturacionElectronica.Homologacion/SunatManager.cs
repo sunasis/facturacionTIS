@@ -15,31 +15,21 @@ namespace FacturacionElectronica.Homologacion
     /// </summary>
     public class SunatManager
     {
-        #region Properties
-        /// <summary>
-        /// Obtiene o estable el Tipo de WebService Actual para la conexion con SUNAT.
-        /// </summary>
-        public static ServiceSunatType CurrentService
-        {
-            get { return Settings.Default.ServiceCurrent; }
-            set
-            {
-                SetWebService(value);
-            }
-        }
+        #region Fields
+        private readonly SolConfig _config;
+        private readonly string _url; 
         #endregion
 
         #region Construct
+
         /// <summary>
         /// Administrador de WebService de la Sunat. Necesita Clave SOL
         /// </summary>
-        /// <param name="ruc">Ruc del emisor</param>
-        /// <param name="user">Nombre de Usuario en la Sunat</param>
-        /// <param name="clave">Clave SOL</param>
-        public SunatManager(string ruc, string user, string clave)
+        /// <param name="config">Config</param>
+        public SunatManager(SolConfig config)
         {
-            ServiceHelper.User = string.Concat(ruc, user);
-            ServiceHelper.Password = clave;
+            _config = config;
+            _url = GetUrlService(config.Service);
         }
         #endregion
 
@@ -53,14 +43,14 @@ namespace FacturacionElectronica.Homologacion
         {
             var nameOfFileZip = Path.GetFileNameWithoutExtension(pathFileXml) + Resources.ExtensionFile;
 
-            var response = new SunatResponse()
+            var response = new SunatResponse
             {
                 Success = false
             };
             try
             {
                 var zipBytes = ProcessZip.CompressFile(pathFileXml);
-                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(Settings.Default.UrlServiceSunat))
+                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
                 {
                     var resultBytes = service.sendBill(nameOfFileZip, zipBytes);
                     var outputXml = ProcessZip.ExtractFile(resultBytes, Path.GetTempPath());
@@ -103,7 +93,7 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(pathFileXml);
-                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(Settings.Default.UrlServiceSunat))
+                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
                 {                
                     res.Ticket = service.sendSummary(nameOfFileZip, zipBytes);
                     res.Success = true;
@@ -135,7 +125,7 @@ namespace FacturacionElectronica.Homologacion
             var res = new SunatResponse();
             try
             {
-                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(Settings.Default.UrlServiceSunat))
+                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
                 {
                     var response = service.getStatus(pstrTicket);
                     switch (response.statusCode)
@@ -182,7 +172,7 @@ namespace FacturacionElectronica.Homologacion
             var res = new StatusCompResponse();
             try
             {
-                using (var service = ServiceHelper.GetService<ClientServiceConsult.billServiceClient>(Resources.UrlServiceConsult))
+                using (var service = ServiceHelper.GetService<ClientServiceConsult.billServiceClient>(_config, Resources.UrlServiceConsult))
                 {
                     var response = service.getStatusCdr(ruc, comprobante.Tipo, comprobante.Serie, comprobante.Numero);
                     res.Success = true;
@@ -217,10 +207,8 @@ namespace FacturacionElectronica.Homologacion
         /// Establece el Tipo de Servicio que se utilizara para la conexion con el WebService de Sunat.
         /// </summary>
         /// <param name="service">Tipo de Servicio al que se conectara</param>
-        private static void SetWebService(ServiceSunatType service)
+        private static string GetUrlService(ServiceSunatType service)
         {
-            if (service == Settings.Default.ServiceCurrent) return;
-
             string url;
             switch (service)
             {
@@ -234,9 +222,7 @@ namespace FacturacionElectronica.Homologacion
                     url = Resources.UrlBeta;
                     break;
             }
-            Settings.Default.UrlServiceSunat = url;
-            Settings.Default.ServiceCurrent = service;
-            Settings.Default.Save();
+            return url;
         }
         #endregion
     }

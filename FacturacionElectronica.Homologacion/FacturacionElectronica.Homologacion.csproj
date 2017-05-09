@@ -61,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Res\SolConfig.cs" />
     <Compile Include="Res\Enums.cs" />
     <Compile Include="Res\ProcessXML.cs" />
     <Compile Include="Res\ProcessZip.cs" />
@@ -80,11 +81,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SunatCe.cs" />
     <Compile Include="SunatGuiaRemision.cs" />
@@ -121,10 +117,6 @@
     <None Include="Service References\GuiaRemisionService\billService1.wsdl" />
     <None Include="Service References\GuiaRemisionService\FacturacionElectronica.Homologacion.GuiaRemisionService.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

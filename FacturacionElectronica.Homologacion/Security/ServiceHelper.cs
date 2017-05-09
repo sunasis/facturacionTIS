@@ -7,6 +7,7 @@ using System.ServiceModel.Configuration;
 using System.ServiceModel.Description;
 using System.ServiceModel.Security.Tokens;
 using FacturacionElectronica.Homologacion.ClientService;
+using FacturacionElectronica.Homologacion.Res;
 
 namespace FacturacionElectronica.Homologacion.Security
 {
@@ -14,8 +15,6 @@ namespace FacturacionElectronica.Homologacion.Security
     {
         #region Fields & Properties
         private static Binding _objbinding;
-        public static string User;
-        public static string Password;
         #endregion
 
         private ServiceHelper() { }
@@ -41,9 +40,10 @@ namespace FacturacionElectronica.Homologacion.Security
         /// Crea una Instancia de Conexion a WebService.
         /// </summary>
         /// <typeparam name="TService">Type del WebService</typeparam>
-        /// <param name="url">Url del WebService</param>
+        /// <param name="config">configuration</param>
+        /// <param name="url">url del servicio</param>
         /// <returns>Instancia de conexion</returns>
-        public static TService GetService<TService>(string url)
+        public static TService GetService<TService>(SolConfig config, string url)
         {
             if (_objbinding == null) _objbinding = new ServiceHelper().GetBinding();
 
@@ -61,8 +61,8 @@ namespace FacturacionElectronica.Homologacion.Security
             //return channel.CreateChannel();
 
             dynamic ws = (TService)Activator.CreateInstance(typeof(TService), _objbinding, new EndpointAddress(url));
-            ws.ClientCredentials.UserName.UserName = User;
-            ws.ClientCredentials.UserName.Password = Password;
+            ws.ClientCredentials.UserName.UserName = config.Ruc + config.Usuario;
+            ws.ClientCredentials.UserName.Password = config.Clave;
             return ws;
         }
         
