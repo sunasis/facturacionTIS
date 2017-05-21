@@ -39,15 +39,15 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="invoiceHeaderEntity">Entidad Invoice</param>
-        /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GeneraDocumentoInvoice(ref OperationResult pobjOperationResult, InvoiceHeader invoiceHeaderEntity)
+        /// <returns>Retorna el XML generado.</returns>
+        public XmlFileResult GeneraDocumentoInvoice(ref OperationResult pobjOperationResult, InvoiceHeader invoiceHeaderEntity)
         {
             try
             {
                 #region Filename
                 var xmlFilename =
-                    $"{invoiceHeaderEntity.RucEmisor}-{((int) invoiceHeaderEntity.TipoDocumento).ToString("00")}-" +
-                    $"{invoiceHeaderEntity.SerieDocumento}-{invoiceHeaderEntity.CorrelativoDocumento}.xml";
+                    $"{invoiceHeaderEntity.RucEmisor}-{(int) invoiceHeaderEntity.TipoDocumento:00}-" +
+                    $"{invoiceHeaderEntity.SerieDocumento}-{invoiceHeaderEntity.CorrelativoDocumento}";
                 #endregion
 
                 #region Gen Invoice
@@ -108,7 +108,11 @@ namespace FacturacionElectronica.GeneradorXml
                 #endregion
 
                 pobjOperationResult.Success = false;
-                return UtilsXmlDoc.GenFile(ref pobjOperationResult, res, xmlFilename, _certificado);
+                return new XmlFileResult
+                {
+                    FileName = xmlFilename,
+                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, res, _certificado)
+                };
             }
             catch (Exception ex)
             {
@@ -125,14 +129,14 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="voidedHeaderEntity">Entidad Voided</param>
-        /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GenerarDocumentoVoided(ref OperationResult pobjOperationResult, VoidedHeader voidedHeaderEntity)
+        /// <returns>Retorna el XML generado.</returns>
+        public XmlFileResult GenerarDocumentoVoided(ref OperationResult pobjOperationResult, VoidedHeader voidedHeaderEntity)
         {
             try
             {
                 #region Filename
-                string id = $"RA-{DateTime.Today.ToString("yyyyMMdd")}-{voidedHeaderEntity.CorrelativoArchivo}";
-                string xmlFilename = voidedHeaderEntity.RucEmisor + "-" + id + ".xml";
+                var id = $"RA-{DateTime.Today:yyyyMMdd}-{voidedHeaderEntity.CorrelativoArchivo}";
+                var xmlFilename = voidedHeaderEntity.RucEmisor + "-" + id;
                 #endregion
 
                 #region Gen Voided
@@ -155,7 +159,11 @@ namespace FacturacionElectronica.GeneradorXml
                 };
                 #endregion
 
-                return UtilsXmlDoc.GenFile(ref pobjOperationResult, voidedDoc, xmlFilename, _certificado);
+                return new XmlFileResult
+                {
+                    FileName = xmlFilename,
+                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, voidedDoc, _certificado)
+                };
             }
             catch (Exception er)
             {
@@ -171,8 +179,8 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="summaryHeaderEntity">Entidad de Resumen</param>
-        /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GenerarDocumentoSummary(ref OperationResult pobjOperationResult, SummaryHeader summaryHeaderEntity)
+        /// <returns>Retorna el XML generado.</returns>
+        public XmlFileResult GenerarDocumentoSummary(ref OperationResult pobjOperationResult, SummaryHeader summaryHeaderEntity)
         {
             try
             {
@@ -202,7 +210,11 @@ namespace FacturacionElectronica.GeneradorXml
                 };
                 #endregion
 
-                return UtilsXmlDoc.GenFile(ref pobjOperationResult, summaryDoc, xmlFilename, _certificado);
+                return new XmlFileResult
+                {
+                    FileName = xmlFilename,
+                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, summaryDoc, _certificado)
+                };
             }
             catch(Exception er)
             {
@@ -218,8 +230,8 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="creditHeaderEntity">Entidad de Nota de Credito</param>
-        /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GenerarDocumentoCreditNote(ref OperationResult pobjOperationResult, CreditNoteHeader creditHeaderEntity)
+        /// <returns>Retorna el XML generado.</returns>
+        public XmlFileResult GenerarDocumentoCreditNote(ref OperationResult pobjOperationResult, CreditNoteHeader creditHeaderEntity)
         {
             try
             {
@@ -303,7 +315,11 @@ namespace FacturacionElectronica.GeneradorXml
                 creditDoc.AccountingSupplierParty.Party.PostalAddress = UtilsXmlDoc.ObtenerDireccion(creditHeaderEntity.DireccionEmisor);
                 #endregion|
 
-                return UtilsXmlDoc.GenFile(ref pobjOperationResult, creditDoc, xmlFilename, _certificado);
+                return new XmlFileResult
+                {
+                    FileName = xmlFilename,
+                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, creditDoc, _certificado)
+                };
             }
             catch (Exception ex)
             {
@@ -320,8 +336,8 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="debitHeaderEntity">Entidad de Nota de Debito</param>
-        /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GenerarDocumentoDebitNote(ref OperationResult pobjOperationResult, DebitNoteHeader debitHeaderEntity)
+        /// <returns>Retorna el XML generado.</returns>
+        public XmlFileResult GenerarDocumentoDebitNote(ref OperationResult pobjOperationResult, DebitNoteHeader debitHeaderEntity)
         {
             try
             {
@@ -407,7 +423,11 @@ namespace FacturacionElectronica.GeneradorXml
                 debitDoc.AccountingSupplierParty.Party.PostalAddress = UtilsXmlDoc.ObtenerDireccion(debitHeaderEntity.DireccionEmisor);
                 #endregion|
 
-                return UtilsXmlDoc.GenFile(ref pobjOperationResult, debitDoc, xmlFilename, _certificado);
+                return new XmlFileResult
+                {
+                    FileName = xmlFilename,
+                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, debitDoc, _certificado)
+                };
             }
             catch (Exception ex)
             {
@@ -457,11 +477,15 @@ namespace FacturacionElectronica.GeneradorXml
         /// Genera Documento de Retencion.
         /// </summary>
         /// <param name="doc">Retention UBL2.0</param>
-        /// <returns>Path of XML</returns>
-        public string GenerateDocRetention(RetentionType doc)
+        /// <returns>XML</returns>
+        public XmlFileResult GenerateDocRetention(RetentionType doc)
         {
-            var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-20-{doc.ID.Value}.xml";
-            return UtilsXmlDoc.GenFile(ref _result, doc, filename, _certificado);
+            var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-20-{doc.ID.Value}";
+            return new XmlFileResult
+            {
+                FileName = filename,
+                Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
+            };
         }
 
         /// <summary>
@@ -469,35 +493,43 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="doc">Pereception UBL2.0</param>
         /// <returns>Path of XML</returns>
-        public string GenerateDocPerception(PerceptionType doc)
+        public XmlFileResult GenerateDocPerception(PerceptionType doc)
         {
-            var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-40-{doc.ID.Value}.xml";
-            return UtilsXmlDoc.GenFile(ref _result, doc, filename, _certificado);
+            var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-40-{doc.ID.Value}";
+            return new XmlFileResult
+            {
+                FileName = filename,
+                Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
+            };
         }
 
         /// <summary>
         /// Genera y Firma Documento de Guia de Remision.
         /// </summary>
         /// <param name="doc">Guia de Remision UBL2.1</param>
-        /// <returns>Path of XML</returns>
-        public string GenerateDocGuia(DespatchAdviceType doc)
+        /// <returns>XML</returns>
+        public XmlFileResult GenerateDocGuia(DespatchAdviceType doc)
         {
-            var filename = $"{doc.DespatchSupplierParty.CustomerAssignedAccountID.Value}-09-{doc.ID.Value}.xml";
-            return UtilsXmlDoc.GenFile(ref _result, doc, filename, _certificado);
+            var filename = $"{doc.DespatchSupplierParty.CustomerAssignedAccountID.Value}-09-{doc.ID.Value}";
+            return new XmlFileResult
+            {
+                FileName = filename,
+                Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
+            };
         }
 
         /// <summary>
         /// Genera un documento XML para Resumen de Reversion.
         /// </summary>
         /// <param name="voidedHeaderEntity">Entidad Voided</param>
-        /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GenerarDocumentoVoided(VoidedHeader voidedHeaderEntity)
+        /// <returns>XML</returns>
+        public XmlFileResult GenerarDocumentoVoided(VoidedHeader voidedHeaderEntity)
         {
             try
             {
                 #region Filename
-                string id = $"RR-{DateTime.Today.ToString("yyyyMMdd")}-{voidedHeaderEntity.CorrelativoArchivo}";
-                string xmlFilename = voidedHeaderEntity.RucEmisor + "-" + id + ".xml";
+                var id = $"RR-{DateTime.Today:yyyyMMdd}-{voidedHeaderEntity.CorrelativoArchivo}";
+                var xmlFilename = voidedHeaderEntity.RucEmisor + "-" + id;
                 #endregion
 
                 #region Gen Voided
@@ -520,7 +552,11 @@ namespace FacturacionElectronica.GeneradorXml
                 };
                 #endregion
 
-                return UtilsXmlDoc.GenFile(ref _result, voidedDoc, xmlFilename, _certificado);
+                return new XmlFileResult
+                {
+                    FileName = xmlFilename,
+                    Content = UtilsXmlDoc.GenFile(ref _result, voidedDoc, _certificado)
+                };
             }
             catch (Exception er)
             {

@@ -43,9 +43,31 @@ namespace FacturacionElectronica.Homologacion.Res
             using (var zip = new ZipFile())
             {
                 zip.AddFile(pstrRutaFile, string.Empty);
-                var ms = new MemoryStream();
-                zip.Save(ms);
-                return ms.ToArray();
+                return ConvertToArray(zip);
+            }
+        }
+
+        /// <summary>
+        /// Comprime un archivo, y guarda el zip en el mismo directorio con el mismo nombre.
+        /// </summary>
+        /// <param name="filename">filename</param>
+        /// <param name="content">Content of file</param>
+        /// <returns>bytes of zip</returns>
+        public static byte[] CompressFile(string filename, byte[] content)
+        {
+            using (var zip = new ZipFile())
+            {
+                zip.AddEntry(filename, content);
+                return ConvertToArray(zip);
+            }
+        }
+
+        private static byte[] ConvertToArray(ZipFile zip)
+        {
+            using (var mem = new MemoryStream())
+            {
+                zip.Save(mem);
+                return mem.ToArray();
             }
         }
     }

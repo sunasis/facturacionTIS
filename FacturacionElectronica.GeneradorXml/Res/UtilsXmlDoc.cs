@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FacturacionElectronica.GeneradorXml.Res
 {
@@ -7,7 +9,6 @@ namespace FacturacionElectronica.GeneradorXml.Res
     using Entity.Details;
     using Entity.Misc;
     using System.IO;
-    using System.Security.Cryptography;
     using System.Xml;
     using System.Xml.Serialization;
     using Gs.Ubl.v2.Cac;
@@ -23,42 +24,42 @@ namespace FacturacionElectronica.GeneradorXml.Res
         /// <typeparam name="TSunat">Ubl entity</typeparam>
         /// <param name="pobjOperationResult">resultado</param>
         /// <param name="objXml">Obj de Entidad UBL</param>
-        /// <param name="pstrXmlFilename">Nombre del archivo xml de Destino</param>
         /// <param name="certificado">Certificado X509 v3</param>
         /// <exception cref="System.InvalidOperationException"></exception>
         /// <returns></returns>
-        public static string GenFile<TSunat>(ref OperationResult pobjOperationResult,TSunat objXml, string pstrXmlFilename, System.Security.Cryptography.X509Certificates.X509Certificate2 certificado)
+        public static byte[] GenFile<TSunat>(ref OperationResult pobjOperationResult,TSunat objXml, X509Certificate2 certificado)
             where TSunat : Gs.Ubl.v2.UblBaseDocumentType
         {
-            string result = null;
-
-            #region Escritura y Firma del archivo XML Generado.
-            var typeToSerialize = typeof(TSunat);
-            var serializer = new XmlSerializer(typeToSerialize);
-            var memStream = new MemoryStream();
-            serializer.Serialize(memStream, objXml);
-            memStream.Seek(0, SeekOrigin.Begin);
+            var serializer = new XmlSerializer(typeof(TSunat));
             var doc = new XmlDocument();
-            doc.Load(memStream);
-            memStream.Close();
+
+            using (var memXml = new MemoryStream())
+            {
+                serializer.Serialize(memXml, objXml);
+                memXml.Seek(0, SeekOrigin.Begin);
+                doc.Load(memXml);
+            }
+
             #region Se firma el Xml creado.
-            pstrXmlFilename = Path.Combine(Path.GetTempPath(), pstrXmlFilename);
             try
             {
-                XmlSignatureProvider.SignXmlFile(doc, pstrXmlFilename, certificado, typeof(TSunat));
-                result = new FileInfo(pstrXmlFilename).FullName;
-                pobjOperationResult.Success = true;
-                System.Diagnostics.Debug.WriteLine("Archivo XML firmado.");
+                XmlSignatureProvider.SignXmlFile(doc, certificado, typeof(TSunat));
+                using (var mem = new MemoryStream())
+                {
+                    doc.Save(mem);
+                    var res = mem.ToArray();
+                    pobjOperationResult.Success = true;
+                    return res;
+                }
             }
-            catch (CryptographicException e)
+            catch (Exception e)
             {
                 pobjOperationResult.Success = false;
                 pobjOperationResult.Error = e.Message;
             }
             #endregion
-            #endregion
 
-            return result;
+            return null;
         }
 
         /// <summary>

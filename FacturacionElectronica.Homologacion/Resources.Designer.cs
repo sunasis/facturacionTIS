@@ -61,11 +61,20 @@ namespace FacturacionElectronica.Homologacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .zip.
+        ///   Busca una cadena traducida similar a .xml.
         /// </summary>
         internal static string ExtensionFile {
             get {
                 return ResourceManager.GetString("ExtensionFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .zip.
+        /// </summary>
+        internal static string ExtensionZipFile {
+            get {
+                return ResourceManager.GetString("ExtensionZipFile", resourceCulture);
             }
         }
         
@@ -85,7 +94,7 @@ namespace FacturacionElectronica.Homologacion {
         ///    &lt;value&gt;El Usuario ingresado no existe &lt;/value&gt;
         ///  &lt;/Error&gt;
         ///  &lt;Error code=&quot;104&quot;&gt;
-        ///    &lt;value&gt;La Clave ingresada es [resto de la cadena truncado]&quot;;.
+        ///    &lt;value&gt;La Cla [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string ListadeErrores {
             get {

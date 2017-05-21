@@ -34,14 +34,17 @@ namespace FacturacionElectronica.Homologacion
         #endregion
 
         #region Method Sunat
+
         /// <summary>
         /// Recibe la ruta XML con un único formato digital y devuelve la Constancia de Recepción – SUNAT. 
         /// </summary>
-        /// <param name="pathFileXml">Ruta del Archivo XML</param>
+        /// <param name="pathFile">Ruta del Archivo XML</param>
+        /// <param name="content">Contenido del archivo</param>
         /// <returns>La respuesta contenida en el XML de Respuesta de la Sunat, si existe</returns>
-        public SunatResponse SendDocument(string pathFileXml)
+        public SunatResponse SendDocument(string pathFile, byte[] content)
         {
-            var nameOfFileZip = Path.GetFileNameWithoutExtension(pathFileXml) + Resources.ExtensionFile;
+            var fileToZip = pathFile + Resources.ExtensionFile;
+            var nameOfFileZip = pathFile + Resources.ExtensionZipFile;
 
             var response = new SunatResponse
             {
@@ -49,7 +52,7 @@ namespace FacturacionElectronica.Homologacion
             };
             try
             {
-                var zipBytes = ProcessZip.CompressFile(pathFileXml);
+                var zipBytes = ProcessZip.CompressFile(fileToZip, content);
                 using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
                 {
                     var resultBytes = service.sendBill(nameOfFileZip, zipBytes);
@@ -67,7 +70,7 @@ namespace FacturacionElectronica.Homologacion
                 response.Error = new ErrorResponse
                 {
                     Code = ex.Code.Name,
-                    Description = ProcessXml.GetDescriptionError(ex.Code.Name)
+                    Description = ProcessXml.GetDescriptionError(ex.Code.Name) ?? ex.Message
                 };
             }
             catch (Exception er)
@@ -80,19 +83,22 @@ namespace FacturacionElectronica.Homologacion
             
             return response;
         }
+
         /// <summary>
         /// Envia una Resumen de Boletas o Comunicaciones de Baja a Sunat
         /// </summary>
-        /// <param name="pathFileXml">Ruta del archivo XML que contiene el resumen</param>
+        /// <param name="pathFile">Ruta del archivo XML que contiene el resumen</param>
+        /// <param name="content">Contenido del archivo</param>
         /// <returns>Retorna un estado booleano que indica si no hubo errores, con un string que contiene el Nro Ticket,
         /// con el que posteriormente, utilizando el método getStatus se puede obtener Constancia de Recepcióno</returns>
-        public TicketResponse SendSummary(string pathFileXml)
+        public TicketResponse SendSummary(string pathFile, byte[] content)
         {
-            var nameOfFileZip = Path.GetFileNameWithoutExtension(pathFileXml) + Resources.ExtensionFile;
+            var fileToZip = pathFile + Resources.ExtensionFile;
+            var nameOfFileZip = pathFile + Resources.ExtensionZipFile;
             var res = new TicketResponse();
             try
             {
-                var zipBytes = ProcessZip.CompressFile(pathFileXml);
+                var zipBytes = ProcessZip.CompressFile(fileToZip, content);
                 using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
                 {                
                     res.Ticket = service.sendSummary(nameOfFileZip, zipBytes);

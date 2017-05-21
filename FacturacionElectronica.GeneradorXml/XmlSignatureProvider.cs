@@ -14,6 +14,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Text;
@@ -31,10 +32,9 @@ namespace FacturacionElectronica.GeneradorXml
         /// Firma el Xml y lo guarda como un nuevo archvo xml.
         /// </summary>
         /// <param name="doc">Documento XML object</param>
-        /// <param name="signedFileName">Nombre del Archivo XML</param>
         /// <param name="cert">Certificado X509</param>
         /// <param name="typedoc">Tipo del Documento UBL</param>
-        public static void SignXmlFile(XmlDocument doc, string signedFileName, X509Certificate2 cert, Type typedoc)
+        public static void SignXmlFile(XmlDocument doc, X509Certificate2 cert, Type typedoc)
         {
             doc.PreserveWhitespace = true;
             var signedXml = new SignedXml(doc) {SigningKey = cert.PrivateKey};
@@ -45,7 +45,7 @@ namespace FacturacionElectronica.GeneradorXml
             signedXml.AddReference(reference);
             var keyInfo = new KeyInfo();
             var x509KeyInfo = new KeyInfoX509Data(cert);
-            //x509KeyInfo.AddSubjectName("C=PE,ST=SAN MIGUEL,L=Lima,O=GIANSALEX SA,OU=DNI 42819957 RUC 20600695771,OU=DNI 42819957 RUC 20600695771,CN=MACEDO LOPEZ JUAN CARLOS,emailAddress=carlos@llama.pe");
+            //x509KeyInfo.AddSubjectName(cert.SubjectName.Name);
             keyInfo.AddClause(x509KeyInfo);
             signedXml.KeyInfo = keyInfo;
             signedXml.Signature.Id = "SignatureSP";
@@ -63,11 +63,6 @@ namespace FacturacionElectronica.GeneradorXml
             
             var xmlDeclaration = doc.CreateXmlDeclaration("1.0", "ISO-8859-1", "no");
             doc.ReplaceChild(xmlDeclaration, doc.FirstChild);
-            using (var xmltw = new XmlTextWriter(signedFileName, Encoding.GetEncoding("iso-8859-1")))
-            {
-                //xmltw.Formatting = Formatting.Indented;
-                doc.WriteTo(xmltw);
-            }
         }
 
 #if DEBUG

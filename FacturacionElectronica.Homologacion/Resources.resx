@@ -118,6 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExtensionFile" xml:space="preserve">
+    <value>.xml</value>
+    <comment>Extension que tendra el Archivo contenido en el Zip</comment>
+  </data>
+  <data name="ExtensionZipFile" xml:space="preserve">
     <value>.zip</value>
     <comment>Extension que tendra el Archivo enviado a Sunat</comment>
   </data>

@@ -28,7 +28,7 @@ namespace FacturacionElectronica.Homologacion.Res
         /// <returns>Descripcion del error</returns>
         public static string GetDescriptionError(string code)
         {
-            var resp = "";
+            string resp = null;
             try
             {
                 using (TextReader reader= new StringReader(Resources.ListadeErrores))
