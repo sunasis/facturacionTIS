@@ -185,8 +185,8 @@ namespace FacturacionElectronica.GeneradorXml
             try
             {
                 #region Filename
-                string id = $"RC-{DateTime.Today.ToString("yyyyMMdd")}-{summaryHeaderEntity.CorrelativoArchivo}";
-                string xmlFilename = summaryHeaderEntity.RucEmisor + "-" + id + ".xml";
+                string id = $"RC-{DateTime.Today:yyyyMMdd}-{summaryHeaderEntity.CorrelativoArchivo}";
+                string xmlFilename = summaryHeaderEntity.RucEmisor + "-" + id;
                 #endregion
 
                 #region Gen Summary
@@ -237,7 +237,7 @@ namespace FacturacionElectronica.GeneradorXml
             {
                 #region FileName
                 string xmlFilename =
-                    $"{creditHeaderEntity.RucEmisor}-07-{creditHeaderEntity.SerieDocumento}-{creditHeaderEntity.CorrelativoDocumento}.xml";
+                    $"{creditHeaderEntity.RucEmisor}-07-{creditHeaderEntity.SerieDocumento}-{creditHeaderEntity.CorrelativoDocumento}";
                 #endregion
 
                 #region Gen CreditNote
@@ -343,7 +343,7 @@ namespace FacturacionElectronica.GeneradorXml
             {
                 #region FileName
                 string xmlFilename =
-                    $"{debitHeaderEntity.RucEmisor}-08-{debitHeaderEntity.SerieDocumento}-{debitHeaderEntity.CorrelativoDocumento}.xml";
+                    $"{debitHeaderEntity.RucEmisor}-08-{debitHeaderEntity.SerieDocumento}-{debitHeaderEntity.CorrelativoDocumento}";
                 #endregion
 
                 #region Gen DebitNote
