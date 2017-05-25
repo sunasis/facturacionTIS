@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FacturacionElectronica.Homologacion</RootNamespace>
     <AssemblyName>FacturacionElectronica.Homologacion</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\FacturacionElectronica.Homologacion.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -43,6 +45,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,6 +96,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ClientServiceConsult\billConsultService1.wsdl" />
+    <None Include="Service References\ClientServiceConsult\FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClientServiceConsult\FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ClientServiceConsult\FacturacionElectronica.Homologacion.ClientServiceConsult.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -101,6 +110,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ClientService\billService1.wsdl" />
+    <None Include="Service References\ClientService\billService2.wsdl" />
+    <None Include="Service References\ClientService\FacturacionElectronica.Homologacion.ClientService.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClientService\FacturacionElectronica.Homologacion.ClientService.sendBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClientService\FacturacionElectronica.Homologacion.ClientService.sendPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClientService\FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ClientService\FacturacionElectronica.Homologacion.ClientService.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -109,9 +131,31 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\GuiaRemisionService\billService1.wsdl" />
+    <None Include="Service References\GuiaRemisionService\FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuiaRemisionService\FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuiaRemisionService\FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuiaRemisionService\FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\GuiaRemisionService\FacturacionElectronica.Homologacion.GuiaRemisionService.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListadeErrores.xml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ClientServiceConsult\" />
@@ -141,16 +185,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ListadeErrores.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\GuiaRemisionService\configuration91.svcinfo" />

@@ -13,7 +13,16 @@ namespace FacturacionElectronica.Homologacion.ClientService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://service.sunat.gob.pe", ConfigurationName="ClientService.billService")]
-    internal interface billService {
+    public interface billService {
+        
+        // CODEGEN: El parámetro 'status' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        FacturacionElectronica.Homologacion.ClientService.getStatusResponse getStatus(FacturacionElectronica.Homologacion.ClientService.getStatusRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.getStatusResponse> getStatusAsync(FacturacionElectronica.Homologacion.ClientService.getStatusRequest request);
         
         // CODEGEN: El parámetro 'applicationResponse' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendBill", ReplyAction="*")]
@@ -21,11 +30,8 @@ namespace FacturacionElectronica.Homologacion.ClientService {
         [return: System.ServiceModel.MessageParameterAttribute(Name="applicationResponse")]
         FacturacionElectronica.Homologacion.ClientService.sendBillResponse sendBill(FacturacionElectronica.Homologacion.ClientService.sendBillRequest request);
         
-        // CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="urn:sendSummary", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="ticket")]
-        FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse sendSummary(FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendBill", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendBillResponse> sendBillAsync(FacturacionElectronica.Homologacion.ClientService.sendBillRequest request);
         
         // CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendPack", ReplyAction="*")]
@@ -33,138 +39,21 @@ namespace FacturacionElectronica.Homologacion.ClientService {
         [return: System.ServiceModel.MessageParameterAttribute(Name="ticket")]
         FacturacionElectronica.Homologacion.ClientService.sendPackResponse sendPack(FacturacionElectronica.Homologacion.ClientService.sendPackRequest request);
         
-        // CODEGEN: El parámetro 'status' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendPack", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendPackResponse> sendPackAsync(FacturacionElectronica.Homologacion.ClientService.sendPackRequest request);
+        
+        // CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendSummary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
-        FacturacionElectronica.Homologacion.ClientService.getStatusResponse getStatus(FacturacionElectronica.Homologacion.ClientService.getStatusRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBill", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendBillRequest {
+        [return: System.ServiceModel.MessageParameterAttribute(Name="ticket")]
+        FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse sendSummary(FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string fileName;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
-        public byte[] contentFile;
-        
-        public sendBillRequest() {
-        }
-        
-        public sendBillRequest(string fileName, byte[] contentFile) {
-            this.fileName = fileName;
-            this.contentFile = contentFile;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBillResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendBillResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
-        public byte[] applicationResponse;
-        
-        public sendBillResponse() {
-        }
-        
-        public sendBillResponse(byte[] applicationResponse) {
-            this.applicationResponse = applicationResponse;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummary", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendSummaryRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string fileName;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
-        public byte[] contentFile;
-        
-        public sendSummaryRequest() {
-        }
-        
-        public sendSummaryRequest(string fileName, byte[] contentFile) {
-            this.fileName = fileName;
-            this.contentFile = contentFile;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummaryResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendSummaryResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ticket;
-        
-        public sendSummaryResponse() {
-        }
-        
-        public sendSummaryResponse(string ticket) {
-            this.ticket = ticket;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPack", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendPackRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string fileName;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
-        public byte[] contentFile;
-        
-        public sendPackRequest() {
-        }
-        
-        public sendPackRequest(string fileName, byte[] contentFile) {
-            this.fileName = fileName;
-            this.contentFile = contentFile;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPackResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendPackResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ticket;
-        
-        public sendPackResponse() {
-        }
-        
-        public sendPackResponse(string ticket) {
-            this.ticket = ticket;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendSummary", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse> sendSummaryAsync(FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -213,7 +102,7 @@ namespace FacturacionElectronica.Homologacion.ClientService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatus", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusRequest {
+    public partial class getStatusRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -231,7 +120,7 @@ namespace FacturacionElectronica.Homologacion.ClientService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusResponse {
+    public partial class getStatusResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -245,13 +134,136 @@ namespace FacturacionElectronica.Homologacion.ClientService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface billServiceChannel : FacturacionElectronica.Homologacion.ClientService.billService, System.ServiceModel.IClientChannel {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBill", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
+    public partial class sendBillRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string fileName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] contentFile;
+        
+        public sendBillRequest() {
+        }
+        
+        public sendBillRequest(string fileName, byte[] contentFile) {
+            this.fileName = fileName;
+            this.contentFile = contentFile;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class billServiceClient : System.ServiceModel.ClientBase<FacturacionElectronica.Homologacion.ClientService.billService>, FacturacionElectronica.Homologacion.ClientService.billService {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBillResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
+    public partial class sendBillResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] applicationResponse;
+        
+        public sendBillResponse() {
+        }
+        
+        public sendBillResponse(byte[] applicationResponse) {
+            this.applicationResponse = applicationResponse;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPack", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
+    public partial class sendPackRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string fileName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] contentFile;
+        
+        public sendPackRequest() {
+        }
+        
+        public sendPackRequest(string fileName, byte[] contentFile) {
+            this.fileName = fileName;
+            this.contentFile = contentFile;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPackResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
+    public partial class sendPackResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ticket;
+        
+        public sendPackResponse() {
+        }
+        
+        public sendPackResponse(string ticket) {
+            this.ticket = ticket;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummary", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
+    public partial class sendSummaryRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string fileName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] contentFile;
+        
+        public sendSummaryRequest() {
+        }
+        
+        public sendSummaryRequest(string fileName, byte[] contentFile) {
+            this.fileName = fileName;
+            this.contentFile = contentFile;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummaryResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
+    public partial class sendSummaryResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ticket;
+        
+        public sendSummaryResponse() {
+        }
+        
+        public sendSummaryResponse(string ticket) {
+            this.ticket = ticket;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface billServiceChannel : FacturacionElectronica.Homologacion.ClientService.billService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class billServiceClient : System.ServiceModel.ClientBase<FacturacionElectronica.Homologacion.ClientService.billService>, FacturacionElectronica.Homologacion.ClientService.billService {
         
         public billServiceClient() {
         }
@@ -273,6 +285,29 @@ namespace FacturacionElectronica.Homologacion.ClientService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        FacturacionElectronica.Homologacion.ClientService.getStatusResponse FacturacionElectronica.Homologacion.ClientService.billService.getStatus(FacturacionElectronica.Homologacion.ClientService.getStatusRequest request) {
+            return base.Channel.getStatus(request);
+        }
+        
+        public FacturacionElectronica.Homologacion.ClientService.statusResponse getStatus(string ticket) {
+            FacturacionElectronica.Homologacion.ClientService.getStatusRequest inValue = new FacturacionElectronica.Homologacion.ClientService.getStatusRequest();
+            inValue.ticket = ticket;
+            FacturacionElectronica.Homologacion.ClientService.getStatusResponse retVal = ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).getStatus(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.getStatusResponse> FacturacionElectronica.Homologacion.ClientService.billService.getStatusAsync(FacturacionElectronica.Homologacion.ClientService.getStatusRequest request) {
+            return base.Channel.getStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.getStatusResponse> getStatusAsync(string ticket) {
+            FacturacionElectronica.Homologacion.ClientService.getStatusRequest inValue = new FacturacionElectronica.Homologacion.ClientService.getStatusRequest();
+            inValue.ticket = ticket;
+            return ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).getStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         FacturacionElectronica.Homologacion.ClientService.sendBillResponse FacturacionElectronica.Homologacion.ClientService.billService.sendBill(FacturacionElectronica.Homologacion.ClientService.sendBillRequest request) {
             return base.Channel.sendBill(request);
         }
@@ -286,16 +321,15 @@ namespace FacturacionElectronica.Homologacion.ClientService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse FacturacionElectronica.Homologacion.ClientService.billService.sendSummary(FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest request) {
-            return base.Channel.sendSummary(request);
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendBillResponse> FacturacionElectronica.Homologacion.ClientService.billService.sendBillAsync(FacturacionElectronica.Homologacion.ClientService.sendBillRequest request) {
+            return base.Channel.sendBillAsync(request);
         }
         
-        public string sendSummary(string fileName, byte[] contentFile) {
-            FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest inValue = new FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest();
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendBillResponse> sendBillAsync(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.ClientService.sendBillRequest inValue = new FacturacionElectronica.Homologacion.ClientService.sendBillRequest();
             inValue.fileName = fileName;
             inValue.contentFile = contentFile;
-            FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse retVal = ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).sendSummary(inValue);
-            return retVal.ticket;
+            return ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).sendBillAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -312,15 +346,40 @@ namespace FacturacionElectronica.Homologacion.ClientService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FacturacionElectronica.Homologacion.ClientService.getStatusResponse FacturacionElectronica.Homologacion.ClientService.billService.getStatus(FacturacionElectronica.Homologacion.ClientService.getStatusRequest request) {
-            return base.Channel.getStatus(request);
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendPackResponse> FacturacionElectronica.Homologacion.ClientService.billService.sendPackAsync(FacturacionElectronica.Homologacion.ClientService.sendPackRequest request) {
+            return base.Channel.sendPackAsync(request);
         }
         
-        public FacturacionElectronica.Homologacion.ClientService.statusResponse getStatus(string ticket) {
-            FacturacionElectronica.Homologacion.ClientService.getStatusRequest inValue = new FacturacionElectronica.Homologacion.ClientService.getStatusRequest();
-            inValue.ticket = ticket;
-            FacturacionElectronica.Homologacion.ClientService.getStatusResponse retVal = ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).getStatus(inValue);
-            return retVal.status;
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendPackResponse> sendPackAsync(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.ClientService.sendPackRequest inValue = new FacturacionElectronica.Homologacion.ClientService.sendPackRequest();
+            inValue.fileName = fileName;
+            inValue.contentFile = contentFile;
+            return ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).sendPackAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse FacturacionElectronica.Homologacion.ClientService.billService.sendSummary(FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest request) {
+            return base.Channel.sendSummary(request);
+        }
+        
+        public string sendSummary(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest inValue = new FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest();
+            inValue.fileName = fileName;
+            inValue.contentFile = contentFile;
+            FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse retVal = ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).sendSummary(inValue);
+            return retVal.ticket;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse> FacturacionElectronica.Homologacion.ClientService.billService.sendSummaryAsync(FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest request) {
+            return base.Channel.sendSummaryAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientService.sendSummaryResponse> sendSummaryAsync(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest inValue = new FacturacionElectronica.Homologacion.ClientService.sendSummaryRequest();
+            inValue.fileName = fileName;
+            inValue.contentFile = contentFile;
+            return ((FacturacionElectronica.Homologacion.ClientService.billService)(this)).sendSummaryAsync(inValue);
         }
     }
 }

@@ -37,10 +37,9 @@ namespace FacturacionElectronica.GeneradorXml
         /// <summary>
         /// Genera un documento XML para la emision de un comprobante.
         /// </summary>
-        /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="invoiceHeaderEntity">Entidad Invoice</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GeneraDocumentoInvoice(ref OperationResult pobjOperationResult, InvoiceHeader invoiceHeaderEntity)
+        public XmlFileResult GeneraDocumentoInvoice(InvoiceHeader invoiceHeaderEntity)
         {
             try
             {
@@ -53,7 +52,7 @@ namespace FacturacionElectronica.GeneradorXml
                 #region Gen Invoice
                 AmountType.TlsDefaultCurrencyID = invoiceHeaderEntity.CodigoMoneda;
 
-                var res = new InvoiceType
+                var invoice = new InvoiceType
                 {
                     ID = $"{invoiceHeaderEntity.SerieDocumento}-{invoiceHeaderEntity.CorrelativoDocumento}",
                     IssueDate = invoiceHeaderEntity.FechaEmision,
@@ -104,33 +103,23 @@ namespace FacturacionElectronica.GeneradorXml
                     InvoiceLine = UtilsXmlDoc.DevuelveDetallesDelComprobante(invoiceHeaderEntity.DetallesDocumento),
                     TaxTotal = UtilsXmlDoc.DevuelveSubTotalImpuestos(invoiceHeaderEntity.Impuesto)
                 };
-                res.AccountingSupplierParty.Party.PostalAddress = UtilsXmlDoc.ObtenerDireccion(invoiceHeaderEntity.DireccionEmisor);
+                invoice.AccountingSupplierParty.Party.PostalAddress = UtilsXmlDoc.ObtenerDireccion(invoiceHeaderEntity.DireccionEmisor);
                 #endregion
 
-                pobjOperationResult.Success = false;
-                return new XmlFileResult
-                {
-                    FileName = xmlFilename,
-                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, res, _certificado)
-                };
+                return FromDocument(invoice, xmlFilename);
             }
             catch (Exception ex)
             {
-                pobjOperationResult.Success = false;
-                pobjOperationResult.Error = ex.Message;
-                pobjOperationResult.InnerException = ex.InnerException?.Message ?? string.Empty;
-                pobjOperationResult.Target = "XmlGenerator.GeneraDocumentoInvoice()";
+                return FromException(ex);
             }
-            return null;
         }
 
         /// <summary>
         /// Genera un documento XML para Comunicacion de Baja.
         /// </summary>
-        /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="voidedHeaderEntity">Entidad Voided</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoVoided(ref OperationResult pobjOperationResult, VoidedHeader voidedHeaderEntity)
+        public XmlFileResult GenerarDocumentoVoided(VoidedHeader voidedHeaderEntity)
         {
             try
             {
@@ -159,28 +148,20 @@ namespace FacturacionElectronica.GeneradorXml
                 };
                 #endregion
 
-                return new XmlFileResult
-                {
-                    FileName = xmlFilename,
-                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, voidedDoc, _certificado)
-                };
+                return FromDocument(voidedDoc, xmlFilename);
             }
-            catch (Exception er)
+            catch (Exception ex)
             {
-                pobjOperationResult.Success = false;
-                pobjOperationResult.Error = er.Message;
-                pobjOperationResult.Target = "XmlDocGenerator.GenerarDocumentoVoided()";
-                return null;
+                return FromException(ex);
             }
         }
 
         /// <summary>
         /// Genera un documento XML para Resumen Diario.
         /// </summary>
-        /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="summaryHeaderEntity">Entidad de Resumen</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoSummary(ref OperationResult pobjOperationResult, SummaryHeader summaryHeaderEntity)
+        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity)
         {
             try
             {
@@ -210,28 +191,20 @@ namespace FacturacionElectronica.GeneradorXml
                 };
                 #endregion
 
-                return new XmlFileResult
-                {
-                    FileName = xmlFilename,
-                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, summaryDoc, _certificado)
-                };
+                return FromDocument(summaryDoc, xmlFilename);
             }
-            catch(Exception er)
+            catch(Exception ex)
             {
-                pobjOperationResult.Success = false;
-                pobjOperationResult.Error = er.Message;
-                pobjOperationResult.Target = "XmlDocGenerator.GenerarDocumentoSummary()";
-                return null;
+                return FromException(ex);
             }
         }
 
         /// <summary>
         /// Genera un documento XML para Notas de Credito.
         /// </summary>
-        /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="creditHeaderEntity">Entidad de Nota de Credito</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoCreditNote(ref OperationResult pobjOperationResult, CreditNoteHeader creditHeaderEntity)
+        public XmlFileResult GenerarDocumentoCreditNote(CreditNoteHeader creditHeaderEntity)
         {
             try
             {
@@ -315,29 +288,20 @@ namespace FacturacionElectronica.GeneradorXml
                 creditDoc.AccountingSupplierParty.Party.PostalAddress = UtilsXmlDoc.ObtenerDireccion(creditHeaderEntity.DireccionEmisor);
                 #endregion|
 
-                return new XmlFileResult
-                {
-                    FileName = xmlFilename,
-                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, creditDoc, _certificado)
-                };
+                return FromDocument(creditDoc, xmlFilename);
             }
             catch (Exception ex)
             {
-                pobjOperationResult.Success = false;
-                pobjOperationResult.Error = ex.Message;
-                pobjOperationResult.InnerException = ex.InnerException?.Message ?? string.Empty;
-                pobjOperationResult.Target = "XmlGenerator.GenerarDocumentoCreditNote()";
+                return FromException(ex);
             }
-            return null;
         }
 
         /// <summary>
         /// Genera un documento XML para Notas de Debito.
         /// </summary>
-        /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="debitHeaderEntity">Entidad de Nota de Debito</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoDebitNote(ref OperationResult pobjOperationResult, DebitNoteHeader debitHeaderEntity)
+        public XmlFileResult GenerarDocumentoDebitNote(DebitNoteHeader debitHeaderEntity)
         {
             try
             {
@@ -423,20 +387,43 @@ namespace FacturacionElectronica.GeneradorXml
                 debitDoc.AccountingSupplierParty.Party.PostalAddress = UtilsXmlDoc.ObtenerDireccion(debitHeaderEntity.DireccionEmisor);
                 #endregion|
 
-                return new XmlFileResult
-                {
-                    FileName = xmlFilename,
-                    Content = UtilsXmlDoc.GenFile(ref pobjOperationResult, debitDoc, _certificado)
-                };
+                return FromDocument(debitDoc, xmlFilename);
             }
             catch (Exception ex)
             {
-                pobjOperationResult.Success = false;
-                pobjOperationResult.Error = ex.Message;
-                pobjOperationResult.InnerException = ex.InnerException?.Message ?? string.Empty;
-                pobjOperationResult.Target = "XmlGenerator.GenerarDocumentoDebitNote()";
+                return FromException(ex);
             }
-            return null;
+        }
+        #endregion
+
+        #region Internal
+
+        private static XmlFileResult FromException(Exception er)
+        {
+            return new XmlFileResult
+            {
+                Error = er.Message
+            };
+        }
+
+        private XmlFileResult FromDocument<TSunat>(TSunat doc, string filename)
+             where TSunat : UblBaseDocumentType
+        {
+            var pobjOperationResult = new OperationResult();
+            var ct = UtilsXmlDoc.GenFile(ref pobjOperationResult, doc, _certificado);
+
+            var result = new XmlFileResult();
+
+            if (pobjOperationResult.Success)
+            {
+                result.Success = true;
+                result.FileName = filename;
+                result.Content = ct;
+            }
+            else
+                result.Error = pobjOperationResult.Error;
+
+            return result;
         }
         #endregion
     }
@@ -456,7 +443,6 @@ namespace FacturacionElectronica.GeneradorXml
         /// <summary>
         /// Contiene Informacion de la Ultima Operacion.
         /// </summary>
-        public OperationResult LastResult => _result;
 
         #endregion
 

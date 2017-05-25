@@ -13,7 +13,7 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://service.sunat.gob.pe", ConfigurationName="ClientServiceConsult.billService")]
-    internal interface billService {
+    public interface billService {
         
         // CODEGEN: El parámetro 'status' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
@@ -21,15 +21,21 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
         [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
         FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusResponse getStatus(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusResponse> getStatusAsync(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusRequest request);
+        
         // CODEGEN: El parámetro 'statusCdr' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:getStatusCdr", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="statusCdr")]
         FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse getStatusCdr(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:getStatusCdr", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse> getStatusCdrAsync(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -92,7 +98,7 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatus", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusRequest {
+    public partial class getStatusRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -125,7 +131,7 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusResponse {
+    public partial class getStatusResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -143,7 +149,7 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusCdr", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusCdrRequest {
+    public partial class getStatusCdrRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -176,7 +182,7 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusCdrResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusCdrResponse {
+    public partial class getStatusCdrResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -191,12 +197,12 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface billServiceChannel : FacturacionElectronica.Homologacion.ClientServiceConsult.billService, System.ServiceModel.IClientChannel {
+    public interface billServiceChannel : FacturacionElectronica.Homologacion.ClientServiceConsult.billService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class billServiceClient : System.ServiceModel.ClientBase<FacturacionElectronica.Homologacion.ClientServiceConsult.billService>, FacturacionElectronica.Homologacion.ClientServiceConsult.billService {
+    public partial class billServiceClient : System.ServiceModel.ClientBase<FacturacionElectronica.Homologacion.ClientServiceConsult.billService>, FacturacionElectronica.Homologacion.ClientServiceConsult.billService {
         
         public billServiceClient() {
         }
@@ -233,6 +239,20 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusResponse> FacturacionElectronica.Homologacion.ClientServiceConsult.billService.getStatusAsync(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusRequest request) {
+            return base.Channel.getStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusResponse> getStatusAsync(string rucComprobante, string tipoComprobante, string serieComprobante, int numeroComprobante) {
+            FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusRequest inValue = new FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusRequest();
+            inValue.rucComprobante = rucComprobante;
+            inValue.tipoComprobante = tipoComprobante;
+            inValue.serieComprobante = serieComprobante;
+            inValue.numeroComprobante = numeroComprobante;
+            return ((FacturacionElectronica.Homologacion.ClientServiceConsult.billService)(this)).getStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse FacturacionElectronica.Homologacion.ClientServiceConsult.billService.getStatusCdr(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrRequest request) {
             return base.Channel.getStatusCdr(request);
         }
@@ -245,6 +265,20 @@ namespace FacturacionElectronica.Homologacion.ClientServiceConsult {
             inValue.numeroComprobante = numeroComprobante;
             FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse retVal = ((FacturacionElectronica.Homologacion.ClientServiceConsult.billService)(this)).getStatusCdr(inValue);
             return retVal.statusCdr;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse> FacturacionElectronica.Homologacion.ClientServiceConsult.billService.getStatusCdrAsync(FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrRequest request) {
+            return base.Channel.getStatusCdrAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrResponse> getStatusCdrAsync(string rucComprobante, string tipoComprobante, string serieComprobante, int numeroComprobante) {
+            FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrRequest inValue = new FacturacionElectronica.Homologacion.ClientServiceConsult.getStatusCdrRequest();
+            inValue.rucComprobante = rucComprobante;
+            inValue.tipoComprobante = tipoComprobante;
+            inValue.serieComprobante = serieComprobante;
+            inValue.numeroComprobante = numeroComprobante;
+            return ((FacturacionElectronica.Homologacion.ClientServiceConsult.billService)(this)).getStatusCdrAsync(inValue);
         }
     }
 }

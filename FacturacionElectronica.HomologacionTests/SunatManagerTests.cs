@@ -30,7 +30,10 @@ namespace FacturacionElectronica.HomologacionTests
             var filePath = Path.Combine(Environment.CurrentDirectory, "Resources", name + ".xml");
             var content = File.ReadAllBytes(filePath);
 
-            var result = _manager.SendDocument(name, content);
+            var task = _manager.SendDocument(name, content);
+            task.Wait(5000);
+
+            var result = task.Result;
 
             if (!result.Success)
                 Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);

@@ -8,7 +8,6 @@ using FacturacionElectronica.GeneradorXml.Entity;
 using FacturacionElectronica.GeneradorXml.Entity.Details;
 using FacturacionElectronica.GeneradorXml.Entity.Misc;
 using FacturacionElectronica.GeneradorXml.Enums;
-using FacturacionElectronica.GeneradorXml.Res;
 using Gs.Ubl.v2.Sac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -29,7 +28,6 @@ namespace FacturacionElectronica.GeneradorXmlTests
         [TestMethod]
         public void GeneraDocumentoInvoiceTest()
         {
-            var result = new OperationResult();
             var invoice = new InvoiceHeader
             {
                 TipoDocumento = TipoDocumentoElectronico.Factura,
@@ -137,12 +135,12 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 }
             };
 
-            var res = _generator.GeneraDocumentoInvoice(ref result, invoice);
+            var res = _generator.GeneraDocumentoInvoice(invoice);
 
-            if (!result.Success)
-                Trace.WriteLine(result.Error);
+            if (!res.Success)
+                Trace.WriteLine(res.Error);
 
-            Assert.IsTrue(result.Success);
+            Assert.IsTrue(res.Success);
 
             var pathXml = Path.Combine(Path.GetTempPath(), res.FileName + ".xml");
             File.WriteAllBytes(pathXml, res.Content);
@@ -154,7 +152,6 @@ namespace FacturacionElectronica.GeneradorXmlTests
         [TestMethod]
         public void GenerarDocumentoVoidedTest()
         {
-            var result = new OperationResult();
             var voided = new VoidedHeader
             {
                 TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
@@ -180,12 +177,12 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 }
             };
 
-            var res = _generator.GenerarDocumentoVoided(ref result, voided);
+            var res = _generator.GenerarDocumentoVoided(voided);
 
-            if (!result.Success)
-                Trace.WriteLine(result.Error);
+            if (!res.Success)
+                Trace.WriteLine(res.Error);
 
-            Assert.IsTrue(result.Success);
+            Assert.IsTrue(res.Success);
 
             var pathXml = Path.Combine(Path.GetTempPath(), res.FileName + ".xml");
             File.WriteAllBytes(pathXml, res.Content);

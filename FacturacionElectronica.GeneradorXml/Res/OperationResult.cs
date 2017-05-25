@@ -3,7 +3,7 @@
     /// <summary>
     /// Clase que sirve para contener y transportar los errores que pueden surgir en los diferentes métodos hasta la capa de la interfaz.
     /// </summary>
-    public class OperationResult
+    internal class OperationResult
     {
         /// <summary>
         /// Indica si la operación fue exitosa.
