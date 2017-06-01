@@ -141,10 +141,6 @@
     <value>https://www.sunat.gob.pe/ol-ti-itcpgem-sqa/billService</value>
     <comment>WebService para Homologacion, Facturas , Boletas y sus Notas, Resumen y Dar De Baja</comment>
   </data>
-  <data name="UrlHomologacionBeta" xml:space="preserve">
-    <value>https://www.sunat.gob.pe/ol-ti-itcpgem-beta/billService</value>
-    <comment>WebService de Homologacion Beta</comment>
-  </data>
   <data name="UrlProduccion" xml:space="preserve">
     <value>https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService</value>
     <comment>WebService para  produccion</comment>

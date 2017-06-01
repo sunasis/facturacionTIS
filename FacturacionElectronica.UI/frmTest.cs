@@ -32,7 +32,8 @@ namespace FacturacionElectronica.UI
             _ws = new SunatManager("20600995805", "MODDATOS", "moddatos");
 
             InitializeComponent();
-            _cert = new X509Certificate2(@"E:\GIANCARLOS\SFSCert.pfx", "123456");
+            _cert = new X509Certificate2(@"E:\data0\facturador\CERT\SFSCert.pfx", "123456");
+            SunatManager.CurrentService = ServiceSunatType.Beta;
             cboTipoService.SelectedIndex = (int)SunatManager.CurrentService;
             cboTipoService.SelectedIndexChanged += cboTipoService_SelectedValueChanged;
             cboServiceRet.SelectedIndex = (int) SunatCeR.CurrentService;
@@ -460,7 +461,7 @@ namespace FacturacionElectronica.UI
                         Estado = EstadoResumen.Adicionar,
                         SerieDocumento = "BA98",
                         NroCorrelativoInicial = "456",
-                        NroCorrelativoFinal = "764",                           
+                        NroCorrelativoFinal = "764",                   
                         Importe = new List<TotalImporteType>
                         {
                             new TotalImporteType

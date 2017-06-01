@@ -413,9 +413,29 @@ namespace FacturacionElectronica.GeneradorXml.Res
                 {
                     LineID = counter.ToString(),
                     DocumentTypeCode = ((int)item.TipoDocumento).ToString("00"),
-                    DocumentSerialID = item.SerieDocumento,
-                    StartDocumentNumberID = item.NroCorrelativoInicial,
-                    EndDocumentNumberID = item.NroCorrelativoFinal,
+
+                    #region Version 1.0
+                    //DocumentSerialID = item.SerieDocumento,
+                    //StartDocumentNumberID = item.NroCorrelativoInicial,
+                    //EndDocumentNumberID = item.NroCorrelativoFinal,
+                    #endregion
+
+                    #region Version 1.1
+                    ID = item.Documento,
+                    AccountingCustomerParty = new CustomerPartyType
+                    {
+                        CustomerAssignedAccountID = item.NroDocCliente,
+                        AdditionalAccountID = new IdentifierType[]
+                        {
+                            ((int)item.TipoDocumentoIdentidadCliente).ToString()
+                        }
+                    },
+                    Status = new StatusType
+                    {
+                        ConditionCode = ((int)item.Estado).ToString()
+                    },
+                    #endregion
+
                     BillingPayment = item.Importe.Select(i => new PaymentType
                     {
                         PaidAmount = i.Monto,

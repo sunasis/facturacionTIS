@@ -85,7 +85,7 @@ namespace FacturacionElectronica.Homologacion {
         ///    &lt;value&gt;El Usuario ingresado no existe &lt;/value&gt;
         ///  &lt;/Error&gt;
         ///  &lt;Error code=&quot;104&quot;&gt;
-        ///    &lt;value&gt;La Clave ingresada es [resto de la cadena truncado]&quot;;.
+        ///    &lt;value&gt;La Cla [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string ListadeErrores {
             get {
@@ -126,15 +126,6 @@ namespace FacturacionElectronica.Homologacion {
         internal static string UrlHomologacion {
             get {
                 return ResourceManager.GetString("UrlHomologacion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a https://www.sunat.gob.pe/ol-ti-itcpgem-beta/billService.
-        /// </summary>
-        internal static string UrlHomologacionBeta {
-            get {
-                return ResourceManager.GetString("UrlHomologacionBeta", resourceCulture);
             }
         }
         

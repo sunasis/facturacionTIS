@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.ServiceModel.Configuration;
-using System.ServiceModel.Description;
-using System.ServiceModel.Security.Tokens;
-using FacturacionElectronica.Homologacion.ClientService;
 
 namespace FacturacionElectronica.Homologacion.Security
 {
