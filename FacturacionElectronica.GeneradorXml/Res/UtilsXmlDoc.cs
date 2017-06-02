@@ -43,7 +43,7 @@ namespace FacturacionElectronica.GeneradorXml.Res
             #region Se firma el Xml creado.
             try
             {
-                XmlSignatureProvider.SignXmlFile(doc, certificado, typeof(TSunat));
+                XmlSignatureProvider.SignXmlFile(doc, certificado);
                 using (var mem = new MemoryStream())
                 {
                     doc.Save(mem);

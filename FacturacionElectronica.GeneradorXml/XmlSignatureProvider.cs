@@ -10,16 +10,12 @@
 // and place it in the store.
 // makecert -r -pe -n "CN=XMLDSIG_Test" -b 01/01/2005 -e 01/01/2010 -sky signing -ss my
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace FacturacionElectronica.GeneradorXml
 {
@@ -33,8 +29,7 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="doc">Documento XML object</param>
         /// <param name="cert">Certificado X509</param>
-        /// <param name="typedoc">Tipo del Documento UBL</param>
-        public static void SignXmlFile(XmlDocument doc, X509Certificate2 cert, Type typedoc)
+        public static void SignXmlFile(XmlDocument doc, X509Certificate2 cert)
         {
             doc.PreserveWhitespace = true;
             var signedXml = new SignedXml(doc) {SigningKey = cert.PrivateKey};
@@ -50,11 +45,10 @@ namespace FacturacionElectronica.GeneradorXml
             signedXml.KeyInfo = keyInfo;
             signedXml.Signature.Id = "SignatureSP";
             signedXml.ComputeSignature();
-            var nombreSpace = (XmlRootAttribute)Attribute.GetCustomAttribute(typedoc, typeof(XmlRootAttribute));
+
             var nameSpace = new XmlNamespaceManager(doc.NameTable);
-            nameSpace.AddNamespace("tns", nombreSpace.Namespace);
             nameSpace.AddNamespace("ext", "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2");
-            var signNodes = doc.SelectNodes("/tns:" + nombreSpace.ElementName + "/ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent", nameSpace);
+            var signNodes = doc.SelectNodes("//ext:ExtensionContent", nameSpace);
             var xmlDigitalSignature = signedXml.GetXml();
             xmlDigitalSignature.Prefix = "ds";
 
