@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlDocGeneratorTests.cs" />
+    <Compile Include="XmlSignatureProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacturacionElectronica.GeneradorXml\FacturacionElectronica.GeneradorXml.csproj">
@@ -67,6 +68,14 @@
     <None Include="Resources\SFSCert.p">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\20552256647-01-FF12-242.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\20600995805-03-B001-1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
