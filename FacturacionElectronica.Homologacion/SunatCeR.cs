@@ -1,4 +1,5 @@
 ﻿using System;
+using FacturacionElectronica.Homologacion.Properties;
 
 namespace FacturacionElectronica.Homologacion
 {

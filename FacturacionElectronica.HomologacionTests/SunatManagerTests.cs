@@ -41,10 +41,27 @@ namespace FacturacionElectronica.HomologacionTests
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.ApplicationResponse);
             Trace.WriteLine(result.ApplicationResponse.Descripcion);
+        }
 
-            var pathCdr = Path.Combine(Path.GetTempPath(), "R-" + name + ".zip");
-            File.WriteAllBytes(pathCdr, result.ContentZip);
-            Trace.WriteLine(pathCdr);
+        [TestMethod]
+        public void SendDocumentTest_with_Error()
+        {
+            var name = "20600995805-01-F001-00005214";
+            var filePath = Path.Combine(Environment.CurrentDirectory, "Resources", name + ".xml");
+            var content = File.ReadAllBytes(filePath);
+
+            var task = _manager.SendDocument("20604595805-01-F001-00005214", content);
+            task.Wait(5000);
+
+            var result = task.Result;
+
+            if (!result.Success)
+                Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);
+
+            Assert.IsFalse(result.Success);
+            Assert.IsNotNull(result.Error);
+            Trace.WriteLine(result.Error.Description);
+
         }
     }
 }

@@ -3,9 +3,9 @@
  * Method : getStatusCdr();
  */
 using System;
-using System.IO;
 using System.ServiceModel;
 using System.Threading.Tasks;
+using FacturacionElectronica.Homologacion.Properties;
 using FacturacionElectronica.Homologacion.Res;
 using FacturacionElectronica.Homologacion.Security;
 
@@ -58,13 +58,14 @@ namespace FacturacionElectronica.Homologacion
                 {
                     var result = await service.sendBillAsync(nameOfFileZip, zipBytes);
 
-                    var outputXml = ProcessZip.ExtractFile(result.applicationResponse, Path.GetTempPath());
-                    response = new SunatResponse
-                    {
-                        Success = true,
-                        ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
-                        ContentZip = result.applicationResponse
-                    }; 
+                    using (var outputXml = ProcessZip.ExtractFile(result.applicationResponse))
+                        response = new SunatResponse
+                        {
+                            Success = true,
+                            ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
+                            ContentZip = result.applicationResponse
+                        }; 
+                    
                 }
             }
             catch (FaultException ex)
@@ -144,8 +145,9 @@ namespace FacturacionElectronica.Homologacion
                         case "0":
                         case "99":
                             res.Success = true;
-                            var pathXml = ProcessZip.ExtractFile(response.content, Path.GetTempPath());
-                            res.ApplicationResponse = ProcessXml.GetAppResponse(pathXml);
+                            using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                                res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+
                             res.ContentZip = response.content;
                             break;
                         case "98":
@@ -188,8 +190,9 @@ namespace FacturacionElectronica.Homologacion
                     var result = await service.getStatusCdrAsync(ruc, comprobante.Tipo, comprobante.Serie, comprobante.Numero);
                     var response = result.statusCdr;
                     res.Success = true;
-                    var pathXml = ProcessZip.ExtractFile(response.content, Path.GetTempPath());
-                    res.ApplicationResponse = ProcessXml.GetAppResponse(pathXml);
+                    using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                        res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+
                     res.Code = response.statusCode;
                     res.Message = response.statusMessage;
                     res.ContentZip = response.content;

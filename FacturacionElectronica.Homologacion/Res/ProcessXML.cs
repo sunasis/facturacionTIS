@@ -1,11 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Proxies;
-using System.Xml;
 using System.Xml.Linq;
-using System.Xml.Serialization;
-using System.Xml.XPath;
+using FacturacionElectronica.Homologacion.Properties;
 
 namespace FacturacionElectronica.Homologacion.Res
 {
@@ -35,7 +32,8 @@ namespace FacturacionElectronica.Homologacion.Res
                     code = System.Text.RegularExpressions.Regex.Replace(code, @"[^\d]", "");
                     var errors = XElement.Load(reader);
                     var filter = (from x in errors.Elements()
-                                  where x.Attribute("code").Value.Equals(int.Parse(code).ToString())
+                        let o = x.Attribute("code")
+                        where o != null && o.Value.Equals(int.Parse(code).ToString())
                                   select x.Value).ToList();
                     if (filter.Any())
                         resp = filter.FirstOrDefault();
@@ -70,13 +68,6 @@ namespace FacturacionElectronica.Homologacion.Res
             var notes = xml.Elements(cbc + "Note");
             r.Notas = notes.Select(g => g.Value).ToArray();
 
-            //ApplicationResponseType response;
-            //using (var fs = File.OpenRead(pathXml))
-            //{
-            //    var xs = new XmlSerializer(typeof(ApplicationResponseType));
-            //    fs.Position = 0;
-            //    response = (ApplicationResponseType)xs.Deserialize(fs);
-            //}
             return r;
         }
     }

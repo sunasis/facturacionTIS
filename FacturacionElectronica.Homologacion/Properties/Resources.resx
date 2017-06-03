@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ListadeErrores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ListadeErrores.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>..\resources\listadeerrores.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="UrlBeta" xml:space="preserve">
     <value>https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService</value>

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.ServiceModel;
+using FacturacionElectronica.Homologacion.Properties;
 
 namespace FacturacionElectronica.Homologacion
 {
@@ -55,15 +55,13 @@ namespace FacturacionElectronica.Homologacion
                 using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
                 {
                     var resultBytes = service.sendBill(nameOfFileZip, zipBytes);
-                    var outputXml = ProcessZip.ExtractFile(resultBytes, Path.GetTempPath());
-                    response = new SunatResponse
-                    {
-                        Success = true,
-                        ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
-                        ContentZip = resultBytes
-                    };
-
-
+                    using (var xmlCdr = ProcessZip.ExtractFile(resultBytes))
+                        response = new SunatResponse
+                        {
+                            Success = true,
+                            ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr),
+                            ContentZip = resultBytes
+                        };
                 }
             }
             catch (FaultException ex)
@@ -142,8 +140,8 @@ namespace FacturacionElectronica.Homologacion
                         case "0":
                         case "99":
                             res.Success = true;
-                            var pathXml = ProcessZip.ExtractFile(response.content, Path.GetTempPath());
-                            res.ApplicationResponse = ProcessXml.GetAppResponse(pathXml);
+                            using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                                res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
                             res.ContentZip = response.content;
                             break;
                         case "98":
