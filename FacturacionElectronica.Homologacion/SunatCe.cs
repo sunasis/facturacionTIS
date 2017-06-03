@@ -52,9 +52,9 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(fileToZip, content);
-                using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
+                var service = ServiceHelper.GetService<billService>(_config, BaseUrl);
                 {
-                    var resultBytes = service.sendBill(nameOfFileZip, zipBytes);
+                    var resultBytes = service.sendBill(new sendBillRequest(nameOfFileZip, zipBytes)).applicationResponse;
                     using (var xmlCdr = ProcessZip.ExtractFile(resultBytes))
                         response = new SunatResponse
                         {
@@ -99,11 +99,9 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(fileToZip, content);
-                using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
-                {
-                    res.Ticket = service.sendSummary(nameOfFileZip, zipBytes);
-                    res.Success = true;
-                }
+                var service = ServiceHelper.GetService<billService>(_config, BaseUrl);
+                res.Ticket = service.sendSummary(new sendSummaryRequest(nameOfFileZip, zipBytes)).ticket;
+                res.Success = true;
             }
             catch (FaultException ex)
             {
@@ -132,23 +130,21 @@ namespace FacturacionElectronica.Homologacion
             var res = new SunatResponse();
             try
             {
-                using (var service = ServiceHelper.GetService<billServiceClient>(_config, BaseUrl))
+                var service = ServiceHelper.GetService<billService>(_config, BaseUrl);
+                var response = service.getStatus(new getStatusRequest(pstrTicket)).status;
+                switch (response.statusCode)
                 {
-                    var response = service.getStatus(pstrTicket);
-                    switch (response.statusCode)
-                    {
-                        case "0":
-                        case "99":
-                            res.Success = true;
-                            using (var xmlCdr = ProcessZip.ExtractFile(response.content))
-                                res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
-                            res.ContentZip = response.content;
-                            break;
-                        case "98":
-                            res.Success = false;
-                            res.Error = new ErrorResponse { Description = "En Proceso..." };
-                            break;
-                    }
+                    case "0":
+                    case "99":
+                        res.Success = true;
+                        using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                            res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+                        res.ContentZip = response.content;
+                        break;
+                    case "98":
+                        res.Success = false;
+                        res.Error = new ErrorResponse { Description = "En Proceso..." };
+                        break;
                 }
             }
             catch (FaultException ex)
