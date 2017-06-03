@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Res\SecurityHeader.cs" />
     <Compile Include="Res\SolConfig.cs" />
     <Compile Include="Res\Enums.cs" />
     <Compile Include="Res\ProcessXML.cs" />

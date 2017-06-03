@@ -5,6 +5,7 @@
 using System;
 using System.ServiceModel;
 using System.Threading.Tasks;
+using FacturacionElectronica.Homologacion.ClientService;
 using FacturacionElectronica.Homologacion.Properties;
 using FacturacionElectronica.Homologacion.Res;
 using FacturacionElectronica.Homologacion.Security;
@@ -54,19 +55,16 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(fileToZip, content);
-                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
-                {
-                    var result = await service.sendBillAsync(nameOfFileZip, zipBytes);
+                var service = ServiceHelper.GetService<billService>(_config, _url);
+                var result = await service.sendBillAsync(new sendBillRequest(nameOfFileZip, zipBytes));
 
-                    using (var outputXml = ProcessZip.ExtractFile(result.applicationResponse))
-                        response = new SunatResponse
-                        {
-                            Success = true,
-                            ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
-                            ContentZip = result.applicationResponse
-                        }; 
-                    
-                }
+                using (var outputXml = ProcessZip.ExtractFile(result.applicationResponse))
+                    response = new SunatResponse
+                    {
+                        Success = true,
+                        ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
+                        ContentZip = result.applicationResponse
+                    };
             }
             catch (FaultException ex)
             {
@@ -102,12 +100,12 @@ namespace FacturacionElectronica.Homologacion
             try
             {
                 var zipBytes = ProcessZip.CompressFile(fileToZip, content);
-                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
-                {
-                    var result = await service.sendSummaryAsync(nameOfFileZip, zipBytes);
-                    res.Ticket = result.ticket;
-                    res.Success = true;
-                }
+                var service = ServiceHelper.GetService<billService>(_config, _url);
+                
+                var result = await service.sendSummaryAsync(new sendSummaryRequest(nameOfFileZip, zipBytes));
+                res.Ticket = result.ticket;
+                res.Success = true;
+                
             }
             catch (FaultException ex)
             {
@@ -136,25 +134,24 @@ namespace FacturacionElectronica.Homologacion
             var res = new SunatResponse();
             try
             {
-                using (var service = ServiceHelper.GetService<ClientService.billServiceClient>(_config, _url))
+                var service = ServiceHelper.GetService<billService>(_config, _url);
+                
+                var result = await service.getStatusAsync(new getStatusRequest(pstrTicket));
+                var response = result.status;
+                switch (response.statusCode)
                 {
-                    var result = await service.getStatusAsync(pstrTicket);
-                    var response = result.status;
-                    switch (response.statusCode)
-                    {
-                        case "0":
-                        case "99":
-                            res.Success = true;
-                            using (var xmlCdr = ProcessZip.ExtractFile(response.content))
-                                res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+                    case "0":
+                    case "99":
+                        res.Success = true;
+                        using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                            res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
 
-                            res.ContentZip = response.content;
-                            break;
-                        case "98":
-                            res.Success = false;
-                            res.Error = new ErrorResponse { Description = "En Proceso..."};
-                            break;
-                    }
+                        res.ContentZip = response.content;
+                        break;
+                    case "98":
+                        res.Success = false;
+                        res.Error = new ErrorResponse { Description = "En Proceso..."};
+                        break;
                 }
             }
             catch (FaultException ex)
@@ -185,18 +182,21 @@ namespace FacturacionElectronica.Homologacion
             var res = new StatusCompResponse();
             try
             {
-                using (var service = ServiceHelper.GetService<ClientServiceConsult.billServiceClient>(_config, Resources.UrlServiceConsult))
-                {
-                    var result = await service.getStatusCdrAsync(ruc, comprobante.Tipo, comprobante.Serie, comprobante.Numero);
-                    var response = result.statusCdr;
-                    res.Success = true;
-                    using (var xmlCdr = ProcessZip.ExtractFile(response.content))
-                        res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+                var service = ServiceHelper
+                    .GetService<ClientServiceConsult.billService>(_config, Resources.UrlServiceConsult);
 
-                    res.Code = response.statusCode;
-                    res.Message = response.statusMessage;
-                    res.ContentZip = response.content;
-                }
+                var result = await service.getStatusCdrAsync(
+                    new ClientServiceConsult.getStatusCdrRequest(ruc, comprobante.Tipo, comprobante.Serie, comprobante.Numero)
+                );
+
+                var response = result.statusCdr;
+                res.Success = true;
+                using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                    res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+
+                res.Code = response.statusCode;
+                res.Message = response.statusMessage;
+                res.ContentZip = response.content;
             }
             catch (FaultException ex)
             {
