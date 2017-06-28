@@ -1,4 +1,5 @@
 ﻿using System;
+using FacturacionElectronica.Homologacion.Properties;
 
 namespace FacturacionElectronica.Homologacion
 {
@@ -8,31 +9,16 @@ namespace FacturacionElectronica.Homologacion
     /// </summary>
     public class SunatCeR : SunatCe
     {
-        #region Properties
-        /// <summary>
-        /// Obtiene o estable el Tipo de WebService Actual para la conexion con SUNAT.
-        /// </summary>
-        public static ServiceSunatType CurrentService
-        {
-            get { return Settings.Default.ServiceRetPer; }
-            set
-            {
-                SetWebService(value);
-            }
-        }
-        #endregion
-
         #region Construct
+
         /// <summary>
         /// Administrador de WebService de la Sunat. Necesita Clave SOL
         /// </summary>
-        /// <param name="ruc">Ruc del emisor</param>
-        /// <param name="user">Nombre de Usuario en la Sunat</param>
-        /// <param name="clave">Clave SOL</param>
-        public SunatCeR(string ruc, string user, string clave)
-            : base(ruc, user, clave)
+        /// <param name="config"></param>
+        public SunatCeR(SolConfig config)
+            : base(config)
         {
-            BaseUrl = Settings.Default.UrlRetPerc;
+            BaseUrl = GetUrlService(config.Service);
         }
         #endregion
 
@@ -42,10 +28,9 @@ namespace FacturacionElectronica.Homologacion
         /// </summary>
         /// <param name="service">Tipo de Servicio (Validos <see cref="ServiceSunatType.Beta"/> y <see cref="ServiceSunatType.Produccion"/>)</param>
         /// <exception cref="ArgumentException">Servicio Invalido</exception>
-        private static void SetWebService(ServiceSunatType service)
+        /// <returns>url of service</returns>
+        private static string GetUrlService(ServiceSunatType service)
         {
-            if (service == Settings.Default.ServiceRetPer) return;
-
             string url;
             switch (service)
             {
@@ -58,9 +43,7 @@ namespace FacturacionElectronica.Homologacion
                 default:
                     throw new ArgumentException(@"Servicio Invalido, solo se acepta BETA y Produccion", nameof(service));
             }
-            Settings.Default.UrlRetPerc = url;
-            Settings.Default.ServiceRetPer = service;
-            Settings.Default.Save();
+           return url;
         }
 
         #endregion

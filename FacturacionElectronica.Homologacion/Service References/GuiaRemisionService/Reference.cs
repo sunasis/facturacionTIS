@@ -13,7 +13,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://service.sunat.gob.pe", ConfigurationName="GuiaRemisionService.billService")]
-    internal interface billService {
+    public interface billService {
         
         // CODEGEN: El parámetro 'status' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
@@ -21,11 +21,17 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
         [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
         FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusResponse getStatus(FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusResponse> getStatusAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusRequest request);
+        
         // CODEGEN: El parámetro 'applicationResponse' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendBill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="applicationResponse")]
         FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse sendBill(FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendBill", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse> sendBillAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillRequest request);
         
         // CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendPack", ReplyAction="*")]
@@ -33,15 +39,21 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
         [return: System.ServiceModel.MessageParameterAttribute(Name="ticket")]
         FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackResponse sendPack(FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendPack", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackResponse> sendPackAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackRequest request);
+        
         // CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendSummary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="ticket")]
         FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse sendSummary(FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:sendSummary", ReplyAction="*")]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse> sendSummaryAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryRequest request);
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -90,7 +102,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatus", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusRequest {
+    public partial class getStatusRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -108,7 +120,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class getStatusResponse {
+    public partial class getStatusResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -126,7 +138,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendBill", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendBillRequest {
+    public partial class sendBillRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -149,7 +161,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendBillResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendBillResponse {
+    public partial class sendBillResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
@@ -167,7 +179,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendPack", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendPackRequest {
+    public partial class sendPackRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -190,7 +202,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendPackResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendPackResponse {
+    public partial class sendPackResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -208,7 +220,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummary", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendSummaryRequest {
+    public partial class sendSummaryRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -231,7 +243,7 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummaryResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
-    internal partial class sendSummaryResponse {
+    public partial class sendSummaryResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -246,12 +258,12 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface billServiceChannel : FacturacionElectronica.Homologacion.GuiaRemisionService.billService, System.ServiceModel.IClientChannel {
+    public interface billServiceChannel : FacturacionElectronica.Homologacion.GuiaRemisionService.billService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class billServiceClient : System.ServiceModel.ClientBase<FacturacionElectronica.Homologacion.GuiaRemisionService.billService>, FacturacionElectronica.Homologacion.GuiaRemisionService.billService {
+    public partial class billServiceClient : System.ServiceModel.ClientBase<FacturacionElectronica.Homologacion.GuiaRemisionService.billService>, FacturacionElectronica.Homologacion.GuiaRemisionService.billService {
         
         public billServiceClient() {
         }
@@ -285,6 +297,17 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusResponse> FacturacionElectronica.Homologacion.GuiaRemisionService.billService.getStatusAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusRequest request) {
+            return base.Channel.getStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusResponse> getStatusAsync(string ticket) {
+            FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusRequest inValue = new FacturacionElectronica.Homologacion.GuiaRemisionService.getStatusRequest();
+            inValue.ticket = ticket;
+            return ((FacturacionElectronica.Homologacion.GuiaRemisionService.billService)(this)).getStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse FacturacionElectronica.Homologacion.GuiaRemisionService.billService.sendBill(FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillRequest request) {
             return base.Channel.sendBill(request);
         }
@@ -295,6 +318,18 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
             inValue.contentFile = contentFile;
             FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse retVal = ((FacturacionElectronica.Homologacion.GuiaRemisionService.billService)(this)).sendBill(inValue);
             return retVal.applicationResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse> FacturacionElectronica.Homologacion.GuiaRemisionService.billService.sendBillAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillRequest request) {
+            return base.Channel.sendBillAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillResponse> sendBillAsync(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillRequest inValue = new FacturacionElectronica.Homologacion.GuiaRemisionService.sendBillRequest();
+            inValue.fileName = fileName;
+            inValue.contentFile = contentFile;
+            return ((FacturacionElectronica.Homologacion.GuiaRemisionService.billService)(this)).sendBillAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -311,6 +346,18 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackResponse> FacturacionElectronica.Homologacion.GuiaRemisionService.billService.sendPackAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackRequest request) {
+            return base.Channel.sendPackAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackResponse> sendPackAsync(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackRequest inValue = new FacturacionElectronica.Homologacion.GuiaRemisionService.sendPackRequest();
+            inValue.fileName = fileName;
+            inValue.contentFile = contentFile;
+            return ((FacturacionElectronica.Homologacion.GuiaRemisionService.billService)(this)).sendPackAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse FacturacionElectronica.Homologacion.GuiaRemisionService.billService.sendSummary(FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryRequest request) {
             return base.Channel.sendSummary(request);
         }
@@ -321,6 +368,18 @@ namespace FacturacionElectronica.Homologacion.GuiaRemisionService {
             inValue.contentFile = contentFile;
             FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse retVal = ((FacturacionElectronica.Homologacion.GuiaRemisionService.billService)(this)).sendSummary(inValue);
             return retVal.ticket;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse> FacturacionElectronica.Homologacion.GuiaRemisionService.billService.sendSummaryAsync(FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryRequest request) {
+            return base.Channel.sendSummaryAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryResponse> sendSummaryAsync(string fileName, byte[] contentFile) {
+            FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryRequest inValue = new FacturacionElectronica.Homologacion.GuiaRemisionService.sendSummaryRequest();
+            inValue.fileName = fileName;
+            inValue.contentFile = contentFile;
+            return ((FacturacionElectronica.Homologacion.GuiaRemisionService.billService)(this)).sendSummaryAsync(inValue);
         }
     }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f4a82f4f-f1a1-4667-aff9-8466b7f6b879" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2575c053-8ce4-4d81-9b7d-0ee42f636b1c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
-    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
     <CollectionMappings />
@@ -21,9 +22,9 @@
     <MetadataSource Address="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="billService.wsdl" MetadataType="Wsdl" ID="f7b4768f-5501-44b3-9f4e-e112d4564504" SourceId="1" SourceUrl="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService?wsdl" />
-    <MetadataFile FileName="billService1.wsdl" MetadataType="Wsdl" ID="24cd6036-20a7-41b1-9731-ae706a98fdf9" SourceId="1" SourceUrl="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService?ns1.wsdl" />
-    <MetadataFile FileName="billService.xsd" MetadataType="Schema" ID="841763fe-9ca8-4498-889e-8aca4f925e40" SourceId="1" SourceUrl="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService.xsd2.xsd" />
+    <MetadataFile FileName="billService.wsdl" MetadataType="Wsdl" ID="daf38fdb-731d-4a84-a213-310691b4adf8" SourceId="1" SourceUrl="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService?wsdl" />
+    <MetadataFile FileName="billService1.wsdl" MetadataType="Wsdl" ID="bcacfdb8-527b-43be-91ba-64fa7b909a82" SourceId="1" SourceUrl="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService?ns1.wsdl" />
+    <MetadataFile FileName="billService.xsd" MetadataType="Schema" ID="0394f10a-ae18-4ccb-af30-54171e9ce22c" SourceId="1" SourceUrl="https://e-guiaremision.sunat.gob.pe/ol-ti-itemision-guia-gem/billService.xsd2.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

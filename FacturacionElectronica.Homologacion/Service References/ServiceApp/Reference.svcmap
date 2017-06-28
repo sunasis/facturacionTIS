@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1fbf84e7-2803-466e-b0d3-4324548b143d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.sunat.gob.pe/ol-ti-itcpgem-sqa/billService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="billService.xsd" MetadataType="Schema" ID="b469fc57-755e-4a86-ab41-bc3ea674f816" SourceId="1" SourceUrl="https://www.sunat.gob.pe/ol-ti-itcpgem-sqa/billService?xsd=1" />
+    <MetadataFile FileName="billService.wsdl" MetadataType="Wsdl" ID="e9fc7d2d-a04e-4b85-a8ef-20370b49c6b7" SourceId="1" SourceUrl="https://www.sunat.gob.pe/ol-ti-itcpgem-sqa/billService?wsdl" />
+    <MetadataFile FileName="billService1.wsdl" MetadataType="Wsdl" ID="a227a7d1-ab03-4ab3-a2d7-2f17827a0ceb" SourceId="1" SourceUrl="https://www.sunat.gob.pe/ol-ti-itcpgem-sqa/billService?wsdl=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

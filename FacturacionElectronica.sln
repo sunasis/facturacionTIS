@@ -1,28 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.UI", "FacturacionElectronica.UI\FacturacionElectronica.UI.csproj", "{2A8CED1C-28F0-44F3-9F17-C26F7E019C01}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.Homologacion", "FacturacionElectronica.Homologacion\FacturacionElectronica.Homologacion.csproj", "{65510B7D-524E-424E-9BC5-6B1200389A6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.GeneradorXml", "FacturacionElectronica.GeneradorXml\FacturacionElectronica.GeneradorXml.csproj", "{3935F0D2-9563-46C4-86D9-D459E8A90737}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.GeneradorXmlTests", "FacturacionElectronica.GeneradorXmlTests\FacturacionElectronica.GeneradorXmlTests.csproj", "{F44DE84B-3294-40A6-8196-66D0AEE16ECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.HomologacionTests", "FacturacionElectronica.HomologacionTests\FacturacionElectronica.HomologacionTests.csproj", "{743DC64C-CFAF-48C5-BAA4-BDA794407F32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{04E83904-650C-4020-9045-851343A209AA}"
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2A8CED1C-28F0-44F3-9F17-C26F7E019C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A8CED1C-28F0-44F3-9F17-C26F7E019C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A8CED1C-28F0-44F3-9F17-C26F7E019C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A8CED1C-28F0-44F3-9F17-C26F7E019C01}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65510B7D-524E-424E-9BC5-6B1200389A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65510B7D-524E-424E-9BC5-6B1200389A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65510B7D-524E-424E-9BC5-6B1200389A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,8 +27,24 @@ Global
 		{3935F0D2-9563-46C4-86D9-D459E8A90737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3935F0D2-9563-46C4-86D9-D459E8A90737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3935F0D2-9563-46C4-86D9-D459E8A90737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44DE84B-3294-40A6-8196-66D0AEE16ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44DE84B-3294-40A6-8196-66D0AEE16ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44DE84B-3294-40A6-8196-66D0AEE16ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44DE84B-3294-40A6-8196-66D0AEE16ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{743DC64C-CFAF-48C5-BAA4-BDA794407F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{743DC64C-CFAF-48C5-BAA4-BDA794407F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{743DC64C-CFAF-48C5-BAA4-BDA794407F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{743DC64C-CFAF-48C5-BAA4-BDA794407F32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F44DE84B-3294-40A6-8196-66D0AEE16ECF} = {04E83904-650C-4020-9045-851343A209AA}
+		{743DC64C-CFAF-48C5-BAA4-BDA794407F32} = {04E83904-650C-4020-9045-851343A209AA}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

@@ -70,6 +70,7 @@
     <Compile Include="Res\OperationResult.cs" />
     <Compile Include="Entity\SunatDocumentBase.cs" />
     <Compile Include="Res\UtilsXmlDoc.cs" />
+    <Compile Include="Res\XmlFileResult.cs" />
     <Compile Include="XmlDocGenerator.cs" />
     <Compile Include="XmlSignatureProvider.cs" />
   </ItemGroup>

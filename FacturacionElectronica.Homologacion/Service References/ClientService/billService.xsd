@@ -8,24 +8,13 @@
   <xs:element name="sendPackResponse" type="tns:sendPackResponse" />
   <xs:element name="sendSummary" type="tns:sendSummary" />
   <xs:element name="sendSummaryResponse" type="tns:sendSummaryResponse" />
-  <xs:complexType name="sendBill">
+  <xs:complexType name="sendSummary">
     <xs:sequence>
       <xs:element minOccurs="0" name="fileName" type="xs:string" />
       <xs:element xmlns:ns1="http://www.w3.org/2005/05/xmlmime" ns1:expectedContentTypes="application/octet-stream" minOccurs="0" name="contentFile" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="sendBillResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="applicationResponse" type="xs:base64Binary" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="sendPack">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="fileName" type="xs:string" />
-      <xs:element xmlns:ns2="http://www.w3.org/2005/05/xmlmime" ns2:expectedContentTypes="application/octet-stream" minOccurs="0" name="contentFile" type="xs:base64Binary" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="sendPackResponse">
+  <xs:complexType name="sendSummaryResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="ticket" type="xs:string" />
     </xs:sequence>
@@ -46,15 +35,26 @@
       <xs:element minOccurs="0" name="statusCode" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="sendSummary">
+  <xs:complexType name="sendPack">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fileName" type="xs:string" />
+      <xs:element xmlns:ns2="http://www.w3.org/2005/05/xmlmime" ns2:expectedContentTypes="application/octet-stream" minOccurs="0" name="contentFile" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendPackResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendBill">
     <xs:sequence>
       <xs:element minOccurs="0" name="fileName" type="xs:string" />
       <xs:element xmlns:ns3="http://www.w3.org/2005/05/xmlmime" ns3:expectedContentTypes="application/octet-stream" minOccurs="0" name="contentFile" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="sendSummaryResponse">
+  <xs:complexType name="sendBillResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ticket" type="xs:string" />
+      <xs:element minOccurs="0" name="applicationResponse" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

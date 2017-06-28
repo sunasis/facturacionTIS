@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+﻿using System.Net;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
+using FacturacionElectronica.Homologacion.Res;
+=======
 ﻿using System;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+>>>>>>> master
 
 namespace FacturacionElectronica.Homologacion.Security
 {
@@ -9,8 +17,6 @@ namespace FacturacionElectronica.Homologacion.Security
     {
         #region Fields & Properties
         private static Binding _objbinding;
-        public static string User;
-        public static string Password;
         #endregion
 
         private ServiceHelper() { }
@@ -36,30 +42,19 @@ namespace FacturacionElectronica.Homologacion.Security
         /// Crea una Instancia de Conexion a WebService.
         /// </summary>
         /// <typeparam name="TService">Type del WebService</typeparam>
-        /// <param name="url">Url del WebService</param>
+        /// <param name="config">configuration</param>
+        /// <param name="url">url del servicio</param>
         /// <returns>Instancia de conexion</returns>
-        public static TService GetService<TService>(string url)
+        public static TService GetService<TService>(SolConfig config, string url)
         {
             if (_objbinding == null) _objbinding = new ServiceHelper().GetBinding();
 
-            //var channel = new ChannelFactory<TService>(_objbinding, new EndpointAddress(url));
-            //var credentials = new ClientCredentials
-            //{
-            //    UserName =
-            //    {
-            //        UserName = User,
-            //        Password = Password
-            //    }
-            //};
-            //channel.Endpoint.Behaviors.Remove<ClientCredentials>();
-            //channel.Endpoint.Behaviors.Add(credentials);
-            //return channel.CreateChannel();
+            var channel = new ChannelFactory<TService>(_objbinding);
 
-            dynamic ws = (TService)Activator.CreateInstance(typeof(TService), _objbinding, new EndpointAddress(url));
-            ws.ClientCredentials.UserName.UserName = User;
-            ws.ClientCredentials.UserName.Password = Password;
-            return ws;
+            var cred = channel.Endpoint.Behaviors.Find<ClientCredentials>();
+            cred.UserName.UserName = config.Ruc + config.Usuario;
+            cred.UserName.Password = config.Clave;
+            return channel.CreateChannel(new EndpointAddress(url));
         }
-        
     }
 }
