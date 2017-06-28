@@ -175,7 +175,7 @@ namespace FacturacionElectronica.GeneradorXml
                 var summaryDoc = new SummaryDocumentsType
                 {
                     ID = id,
-                    CustomizationID = "1.0", // 2017 = 1.1
+                    CustomizationID = "1.1", // 2017 = 1.1
                     ReferenceDate = summaryHeaderEntity.FechaEmision,
                     IssueDate = DateTime.Today.Date,
                     UBLExtensions = new[]

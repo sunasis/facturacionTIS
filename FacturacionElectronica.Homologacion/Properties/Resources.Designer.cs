@@ -139,15 +139,6 @@ namespace FacturacionElectronica.Homologacion.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://www.sunat.gob.pe/ol-ti-itcpgem-beta/billService.
-        /// </summary>
-        internal static string UrlHomologacionBeta {
-            get {
-                return ResourceManager.GetString("UrlHomologacionBeta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService.
         /// </summary>
         internal static string UrlProduccion {

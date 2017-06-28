@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 ﻿using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using FacturacionElectronica.Homologacion.Res;
+=======
+﻿using System;
+using System.Net;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+>>>>>>> master
 
 namespace FacturacionElectronica.Homologacion.Security
 {
