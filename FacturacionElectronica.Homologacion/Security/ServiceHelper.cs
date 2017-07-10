@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 ﻿using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using FacturacionElectronica.Homologacion.Res;
-=======
-﻿using System;
-using System.Net;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
->>>>>>> master
+
 
 namespace FacturacionElectronica.Homologacion.Security
 {
@@ -51,7 +45,8 @@ namespace FacturacionElectronica.Homologacion.Security
 
             var channel = new ChannelFactory<TService>(_objbinding);
 
-            var cred = channel.Endpoint.Behaviors.Find<ClientCredentials>();
+            var cred = channel.Endpoint
+                .Behaviors.Find<ClientCredentials>();
             cred.UserName.UserName = config.Ruc + config.Usuario;
             cred.UserName.Password = config.Clave;
             return channel.CreateChannel(new EndpointAddress(url));
