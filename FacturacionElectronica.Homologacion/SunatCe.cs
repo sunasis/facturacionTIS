@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ServiceModel;
+using System.Threading.Tasks;
 using FacturacionElectronica.Homologacion.Properties;
 
 namespace FacturacionElectronica.Homologacion
@@ -40,7 +41,7 @@ namespace FacturacionElectronica.Homologacion
         /// <param name="pathFile">Ruta del Archivo XML</param>
         /// <param name="content"></param>
         /// <returns>La respuesta contenida en el XML de Respuesta de la Sunat, si existe</returns>
-        public SunatResponse SendDocument(string pathFile, byte[] content)
+        public async Task<SunatResponse> SendDocument(string pathFile, byte[] content)
         {
             var fileToZip = pathFile + Resources.ExtensionFile;
             var nameOfFileZip = pathFile + Resources.ExtensionZipFile;
@@ -53,23 +54,25 @@ namespace FacturacionElectronica.Homologacion
             {
                 var zipBytes = ProcessZip.CompressFile(fileToZip, content);
                 var service = ServiceHelper.GetService<billService>(_config, BaseUrl);
-                {
-                    var resultBytes = service.sendBill(new sendBillRequest(nameOfFileZip, zipBytes)).applicationResponse;
-                    using (var xmlCdr = ProcessZip.ExtractFile(resultBytes))
-                        response = new SunatResponse
-                        {
-                            Success = true,
-                            ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr),
-                            ContentZip = resultBytes
-                        };
-                }
+                var result = await service.sendBillAsync(new sendBillRequest(nameOfFileZip, zipBytes));
+                using (var xmlCdr = ProcessZip.ExtractFile(result.applicationResponse))
+                    response = new SunatResponse
+                    {
+                        Success = true,
+                        ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr),
+                        ContentZip = result.applicationResponse
+                    };
             }
             catch (FaultException ex)
             {
+                var msg = ex.CreateMessageFault();
+
                 response.Error = new ErrorResponse
                 {
                     Code = ex.Message,
-                    Description = ProcessXml.GetDescriptionError(ex.Message)
+                    Description = msg.HasDetail 
+                    ? msg.GetReaderAtDetailContents().ReadElementString("message")
+                    : ProcessXml.GetDescriptionError(ex.Message)
                 };
             }
             catch (Exception er)
@@ -90,7 +93,7 @@ namespace FacturacionElectronica.Homologacion
         /// <param name="content"></param>
         /// <returns>Retorna un estado booleano que indica si no hubo errores, con un string que contiene el Nro Ticket,
         /// con el que posteriormente, utilizando el método getStatus se puede obtener Constancia de Recepcióno</returns>
-        public TicketResponse SendSummary(string pathFile, byte[] content)
+        public async Task<TicketResponse> SendSummary(string pathFile, byte[] content)
         {
             var fileToZip = pathFile + Resources.ExtensionFile;
             var nameOfFileZip = pathFile + Resources.ExtensionZipFile;
@@ -100,7 +103,8 @@ namespace FacturacionElectronica.Homologacion
             {
                 var zipBytes = ProcessZip.CompressFile(fileToZip, content);
                 var service = ServiceHelper.GetService<billService>(_config, BaseUrl);
-                res.Ticket = service.sendSummary(new sendSummaryRequest(nameOfFileZip, zipBytes)).ticket;
+                var result = await service.sendSummaryAsync(new sendSummaryRequest(nameOfFileZip, zipBytes));
+                res.Ticket = result.ticket;
                 res.Success = true;
             }
             catch (FaultException ex)
@@ -125,13 +129,14 @@ namespace FacturacionElectronica.Homologacion
         /// </summary>
         /// <param name="pstrTicket">Ticket proporcionado por la sunat</param>
         /// <returns>Estado del Ticket, y la ruta de la respuesta si existe</returns>
-        public SunatResponse GetStatus(string pstrTicket)
+        public async Task<SunatResponse> GetStatus(string pstrTicket)
         {
             var res = new SunatResponse();
             try
             {
                 var service = ServiceHelper.GetService<billService>(_config, BaseUrl);
-                var response = service.getStatus(new getStatusRequest(pstrTicket)).status;
+                var result = await service.getStatusAsync(new getStatusRequest(pstrTicket));
+                var response = result.status;
                 switch (response.statusCode)
                 {
                     case "0":

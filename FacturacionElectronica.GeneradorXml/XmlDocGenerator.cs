@@ -469,6 +469,7 @@ namespace FacturacionElectronica.GeneradorXml
             var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-20-{doc.ID.Value}";
             return new XmlFileResult
             {
+                Success = true,
                 FileName = filename,
                 Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
             };
@@ -484,6 +485,7 @@ namespace FacturacionElectronica.GeneradorXml
             var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-40-{doc.ID.Value}";
             return new XmlFileResult
             {
+                Success = true,
                 FileName = filename,
                 Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
             };
@@ -499,6 +501,7 @@ namespace FacturacionElectronica.GeneradorXml
             var filename = $"{doc.DespatchSupplierParty.CustomerAssignedAccountID.Value}-09-{doc.ID.Value}";
             return new XmlFileResult
             {
+                Success = true,
                 FileName = filename,
                 Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
             };
@@ -540,6 +543,7 @@ namespace FacturacionElectronica.GeneradorXml
 
                 return new XmlFileResult
                 {
+                    Success = true,
                     FileName = xmlFilename,
                     Content = UtilsXmlDoc.GenFile(ref _result, voidedDoc, _certificado)
                 };
