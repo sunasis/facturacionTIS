@@ -32,7 +32,9 @@ namespace FacturacionElectronica.UI
             _ws = new SunatManager("20600995805", "MODDATOS", "moddatos");
 
             InitializeComponent();
-            _cert = new X509Certificate2(@"E:\GIANCARLOS\SFSCert.pfx", "123456");
+            var pathCert = Path.Combine(Environment.CurrentDirectory, "Resources", "SFSCert.p");
+
+            _cert = new X509Certificate2(pathCert, "123456");
             cboTipoService.SelectedIndex = (int)SunatManager.CurrentService;
             cboTipoService.SelectedIndexChanged += cboTipoService_SelectedValueChanged;
             cboServiceRet.SelectedIndex = (int) SunatCeR.CurrentService;
