@@ -36,9 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gs.Ubl">
-      <HintPath>..\FacturacionElectronica.GeneradorXml\Lib\Gs.Ubl.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -63,6 +60,10 @@
     <ProjectReference Include="..\FacturacionElectronica.GeneradorXml\FacturacionElectronica.GeneradorXml.csproj">
       <Project>{3935F0D2-9563-46C4-86D9-D459E8A90737}</Project>
       <Name>FacturacionElectronica.GeneradorXml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gs.Ubl\Gs.Ubl.csproj">
+      <Project>{5727fafc-62ff-426d-84ef-62a1d0fd5dfa}</Project>
+      <Name>Gs.Ubl</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
