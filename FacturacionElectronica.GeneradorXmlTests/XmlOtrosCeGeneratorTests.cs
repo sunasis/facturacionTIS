@@ -99,24 +99,24 @@ namespace FacturacionElectronica.GeneradorXmlTests
                         }
                     }
                 },
-                SellerSupplierParty = new SupplierPartyType
-                {
-                    CustomerAssignedAccountID = new IdentifierType
-                    {
-                        Value = "20100070970",
-                        schemeID = "6"
-                    },
-                    Party = new PartyType
-                    {
-                        PartyLegalEntity = new[]
-                        {
-                            new PartyLegalEntityType
-                            {
-                                RegistrationName = "PLAZA VEA"
-                            }
-                        }
-                    }
-                },
+                //SellerSupplierParty = new SupplierPartyType
+                //{
+                //    CustomerAssignedAccountID = new IdentifierType
+                //    {
+                //        Value = "20100070970",
+                //        schemeID = "6"
+                //    },
+                //    Party = new PartyType
+                //    {
+                //        PartyLegalEntity = new[]
+                //        {
+                //            new PartyLegalEntityType
+                //            {
+                //                RegistrationName = "PLAZA VEA"
+                //            }
+                //        }
+                //    }
+                //},
                 Shipment = new ShipmentType
                 {
                     ID = "1",
@@ -206,10 +206,10 @@ namespace FacturacionElectronica.GeneradorXmlTests
                         ID = "150123", // 8 characters segun Guia
                         StreetName = "CAR. PANAM SUR KM 25 NO. 25050 NRO. 050 Z.I. CONCHAN"
                     },
-                    FirstArrivalPortLocation = new LocationType1
-                    {
-                        ID = "PAI"
-                    }
+                    //FirstArrivalPortLocation = new LocationType1
+                    //{
+                    //    ID = "PAI"
+                    //}
                 },
                 DespatchLine = new[]
                 {
