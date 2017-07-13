@@ -12063,7 +12063,8 @@ namespace Gs.Ubl.v2.Cac
         private LocationType1 unloadingPortLocationField;
         
         private LocationType1 transshipPortLocationField;
-        
+
+        private PartyIdentificationType driverPerson;
         /// <summary>
         ///  Identifies a shipment stage.
         ///  Example: "1","2", etc..
@@ -12251,6 +12252,22 @@ namespace Gs.Ubl.v2.Cac
             set
             {
                 this.transshipPortLocationField = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the driver person.
+        /// </summary>
+        /// <value>The driver person.</value>
+        public PartyIdentificationType DriverPerson
+        {
+            get
+            {
+                return driverPerson;
+            }
+            set
+            {
+                driverPerson = value;
             }
         }
     }

@@ -32,6 +32,7 @@ namespace FacturacionElectronica.GeneradorXmlTests
             Assert.IsNotNull(res);
             Assert.IsTrue(res.Success);
             Assert.IsNotNull(res.Content);
+            Assert.IsTrue(res.Content.Length > 0);
             File.WriteAllBytes(Path.Combine(Path.GetTempPath(), res.FileName + ".xml"), res.Content);
         }
 
@@ -166,7 +167,15 @@ namespace FacturacionElectronica.GeneradorXmlTests
                                 RoadTransport = new RoadTransportType
                                 {
                                     LicensePlateID = "PGY-0988"
-                                },
+                                }
+                            },
+                            DriverPerson = new PartyIdentificationType
+                            {
+                                ID = new IdentifierType
+                                {
+                                    schemeID = "1",
+                                    Value = "10101010"
+                                }
                             }
                         }
                     },
@@ -182,7 +191,14 @@ namespace FacturacionElectronica.GeneradorXmlTests
                     {
                         new TransportHandlingUnitType
                         {
-                            ID = "120606"
+                            ID = "PGY-0988",
+                            TransportEquipment = new []
+                            {
+                                new TransportEquipmentType
+                                {
+                                    ID = "PGY-645"
+                                }
+                            }
                         }
                     },
                     OriginAddress = new AddressType

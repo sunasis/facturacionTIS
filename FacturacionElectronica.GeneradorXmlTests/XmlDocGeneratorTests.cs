@@ -141,12 +141,8 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 Trace.WriteLine(res.Error);
 
             Assert.IsTrue(res.Success);
-
-            var pathXml = Path.Combine(Path.GetTempPath(), res.FileName + ".xml");
-            File.WriteAllBytes(pathXml, res.Content);
-
-            Assert.IsTrue(File.Exists(pathXml));
-            Trace.WriteLine("Ruta: " + pathXml);
+            Assert.IsNotNull(res.Content);
+            Assert.IsTrue(res.Content.Length > 0);
         }
 
         [TestMethod]
@@ -183,12 +179,8 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 Trace.WriteLine(res.Error);
 
             Assert.IsTrue(res.Success);
-
-            var pathXml = Path.Combine(Path.GetTempPath(), res.FileName + ".xml");
-            File.WriteAllBytes(pathXml, res.Content);
-
-            Assert.IsTrue(File.Exists(pathXml));
-            Trace.WriteLine("Ruta: " + pathXml);
+            Assert.IsNotNull(res.Content);
+            Assert.IsTrue(res.Content.Length > 0);
         }
     }
 }

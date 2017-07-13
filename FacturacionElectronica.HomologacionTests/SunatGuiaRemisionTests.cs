@@ -41,7 +41,7 @@ namespace FacturacionElectronica.HomologacionTests
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.ApplicationResponse);
             Trace.WriteLine(result.ApplicationResponse.Descripcion);
-            StringAssert.Contains(result.ApplicationResponse.Descripcion, "Aceptado");
+            StringAssert.Contains(result.ApplicationResponse.Descripcion, "aceptado");
         }
     }
 }

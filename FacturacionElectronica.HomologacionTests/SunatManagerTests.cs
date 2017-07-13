@@ -40,6 +40,7 @@ namespace FacturacionElectronica.HomologacionTests
 
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.ApplicationResponse);
+            StringAssert.Contains(result.ApplicationResponse.Descripcion, "aceptada");
             Trace.WriteLine(result.ApplicationResponse.Descripcion);
         }
 
@@ -55,13 +56,11 @@ namespace FacturacionElectronica.HomologacionTests
 
             var result = task.Result;
 
-            if (!result.Success)
-                Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);
-
             Assert.IsFalse(result.Success);
             Assert.IsNotNull(result.Error);
-            Trace.WriteLine(result.Error.Description);
+            StringAssert.Contains(result.Error.Code, "Client.1034");
 
+            Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);
         }
     }
 }
