@@ -64,11 +64,7 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                response.Error = new ErrorResponse
-                {
-                    Code = ex.Message,
-                    Description = ProcessXml.GetDescriptionError(ex.Message)
-                };
+                response.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
@@ -101,11 +97,7 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                res.Error = new ErrorResponse
-                {
-                    Code = ex.Message,
-                    Description = ProcessXml.GetDescriptionError(ex.Message)
-                };
+                res.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
@@ -147,11 +139,7 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                res.Error = new ErrorResponse
-                {
-                    Code = ex.Message,
-                    Description = ProcessXml.GetDescriptionError(ex.Message),
-                };
+                res.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
@@ -162,6 +150,29 @@ namespace FacturacionElectronica.Homologacion
             }
             return res;
         }
+        #endregion
+
+        #region Private Methods
+
+        private static ErrorResponse GetErrorFromFault(FaultException ex)
+        {
+            var errMsg = ProcessXml.GetDescriptionError(ex.Message);
+            if (string.IsNullOrEmpty(errMsg))
+            {
+                var msg = ex.CreateMessageFault();
+                if (msg.HasDetail)
+                {
+                    var dets = msg.GetReaderAtDetailContents();
+                    errMsg = dets.ReadElementString(dets.Name);
+                }
+            }
+            return new ErrorResponse
+            {
+                Code = ex.Message,
+                Description = errMsg
+            };
+        }
+
         #endregion
     }
 }
