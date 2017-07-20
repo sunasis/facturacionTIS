@@ -180,9 +180,6 @@
   <Error code="1003">
     <value>InvoiceTypeCode - El valor del tipo de documento es invalido o no coincide con el nombre del archivo </value>
   </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
-  </Error>
   <Error code="1004">
     <value>El XML no contiene el tag o no existe información de InvoiceTypeCode </value>
   </Error>
@@ -317,9 +314,6 @@
   </Error>
   <Error code="1048">
     <value>El XML no contiene el tag o no existe información de PrepaidAmount para un documento con anticipo</value>
-  </Error>
-  <Error code="">
-    <value />
   </Error>
   <Error code="1049">
     <value>ID - Serie y Número del archivo no coincide con el consignado en el contenido del XML</value>
@@ -1956,9 +1950,6 @@
   <Error code="2580">
     <value>El XML No contiene el tag o no existe información de la cantidad del ítem</value>
   </Error>
-  <Error code="">
-    <value />
-  </Error>
   <Error code="2600">
     <value>El comprobante fue enviado fuera del plazo permitido.</value>
   </Error>
@@ -2408,9 +2399,6 @@
   </Error>
   <Error code="2752">
     <value>El número de ítem no puede estar duplicado</value>
-  </Error>
-  <Error code="">
-    <value />
   </Error>
   <Error code="4000">
     <value>El documento ya fue presentado anteriormente.</value>
