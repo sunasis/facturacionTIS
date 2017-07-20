@@ -474,9 +474,6 @@
   <Error code="2035">
     <value>cac:TaxCategory/cac:TaxScheme/cbc:ID El dato ingresado no cumple con el estándar </value>
   </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
-  </Error>
   <Error code="2036">
     <value>El código del tributo es invalido </value>
   </Error>
@@ -665,9 +662,6 @@
   </Error>
   <Error code="2098">
     <value>ext:UBLExtensions/.../ds:Signature/ds:SignatureValue - No cumple con el estándar </value>
-  </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
   </Error>
   <Error code="2099">
     <value>El XML no contiene el tag ext:UBLExtensions/.../ds:Signature/ds:SignatureValue </value>
@@ -858,9 +852,6 @@
   <Error code="2161">
     <value>CustomizationID - La versión del documento no es correcta</value>
   </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
-  </Error>
   <Error code="2162">
     <value>El XML no contiene el tag o no existe información de CustomizationID</value>
   </Error>
@@ -1049,9 +1040,6 @@
   </Error>
   <Error code="2224">
     <value>Numero de RUC SOL no coincide con RUC emisor</value>
-  </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
   </Error>
   <Error code="2225">
     <value>Numero de RUC del emisor no existe</value>
@@ -1242,9 +1230,6 @@
   <Error code="2287">
     <value>AdditionalAccountID - El dato ingresado no cumple con el estándar </value>
   </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
-  </Error>
   <Error code="2288">
     <value>El XML no contiene el tag AdditionalAccountID del emisor del documento </value>
   </Error>
@@ -1434,9 +1419,6 @@
   <Error code="2350">
     <value>Debe consignar solo un elemento sac:AdditionalMonetaryTotal con cbc:ID igual a 1002 </value>
   </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
-  </Error>
   <Error code="2351">
     <value>Debe consignar solo un elemento sac:AdditionalMonetaryTotal con cbc:ID igual a 1003 </value>
   </Error>
@@ -1625,9 +1607,6 @@
   </Error>
   <Error code="2413">
     <value>Se ha consignado más de un motivo o sustento de la nota (tag cac:DiscrepancyResponse/cbc:Description) </value>
-  </Error>
-  <Error code="CODIGO">
-    <value>DESCRIPCION </value>
   </Error>
   <Error code="2414">
     <value>No se ha consignado en la nota el tag cac:DiscrepancyResponse </value>
