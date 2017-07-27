@@ -160,9 +160,9 @@ namespace FacturacionElectronica.GeneradorXml
             var xmlDigitalSignature = signedXml.GetXml();
             xmlDigitalSignature.Prefix = "ds";
             var nameSpace = new XmlNamespaceManager(doc.NameTable);
-            nameSpace.AddNamespace("tns", "urn:sunat:names:specification:ubl:peru:schema:xsd:SummaryDocuments-1"); // Namespace del Xml (Cambiar)
+            //nameSpace.AddNamespace("tns", "urn:sunat:names:specification:ubl:peru:schema:xsd:SummaryDocuments-1"); // Namespace del Xml (Cambiar)
             nameSpace.AddNamespace("ext", "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2");
-            var signNodes = doc.SelectNodes("/tns:SummaryDocuments/ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent", nameSpace); // PathExtions del Xml (Cambiar)
+            var signNodes = doc.SelectNodes("//ext:ExtensionContent", nameSpace); // PathExtions del Xml (Cambiar)
 
             if (signNodes != null && signNodes.Count > 0)
                 signNodes[signNodes.Count - 1].AppendChild(doc.ImportNode(xmlDigitalSignature, true));
