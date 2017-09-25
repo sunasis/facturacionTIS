@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="FacturacionElectronica.Homologacion.nuspec" />
     <None Include="FacturacionTIS.pfx" />
     <None Include="packages.config" />
     <None Include="Service References\ClientServiceConsult\billConsultService.wsdl" />

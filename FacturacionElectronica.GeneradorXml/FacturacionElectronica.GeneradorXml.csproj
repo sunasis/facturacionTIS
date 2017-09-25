@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Entity\CreditNoteHeader.cs" />
     <Compile Include="Entity\DebitNoteHeader.cs" />
+    <Compile Include="Entity\Misc\AnticipoType.cs" />
     <Compile Include="Entity\Misc\DocReferenciaType.cs" />
     <Compile Include="Entity\Misc\PrecioItemType.cs" />
     <Compile Include="Entity\NotasBase.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="XmlSignatureProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FacturacionElectronica.GeneradorXml.nuspec" />
     <None Include="FacturacionTIS.pfx" />
   </ItemGroup>
   <ItemGroup>
