@@ -38,6 +38,10 @@
     <AssemblyOriginatorKeyFile>FacturacionTIS.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gs.Ubl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4730f6f819969f08, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gs.Ubl.1.0.0\lib\net40\Gs.Ubl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />
@@ -74,12 +78,7 @@
   <ItemGroup>
     <None Include="FacturacionElectronica.GeneradorXml.nuspec" />
     <None Include="FacturacionTIS.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gs.Ubl\Gs.Ubl.csproj">
-      <Project>{5727fafc-62ff-426d-84ef-62a1d0fd5dfa}</Project>
-      <Name>Gs.Ubl</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
