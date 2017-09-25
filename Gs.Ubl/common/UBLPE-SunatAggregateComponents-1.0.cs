@@ -706,6 +706,10 @@ namespace Gs.Ubl.v2.Sac
 
         private SUNATRoadTransportType[] sUNATRoadTransportField;
 
+        private TransportModeCodeType _transportModeCode;
+
+        private Udt.MeasureType _grossWeightMeasureField;
+
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")]
         public AddressType DeliveryAddress
@@ -771,6 +775,39 @@ namespace Gs.Ubl.v2.Sac
             set
             {
                 this.sUNATRoadTransportField = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the transport mode code.
+        /// </summary>
+        /// <value>The transport mode code.</value>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        public TransportModeCodeType TransportModeCode
+        {
+            get
+            {
+                return this._transportModeCode;
+            }
+            set
+            {
+                this._transportModeCode = value;
+            }
+        }
+
+        /// <summary>
+        ///  The total gross weight of a shipment; the weight of the goods plus packaging plus transport equipment.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        public Udt.MeasureType GrossWeightMeasure
+        {
+            get
+            {
+                return this._grossWeightMeasureField;
+            }
+            set
+            {
+                this._grossWeightMeasureField = value;
             }
         }
     }
