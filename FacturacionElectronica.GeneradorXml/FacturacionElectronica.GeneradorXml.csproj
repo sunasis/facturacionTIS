@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Entity\CreditNoteHeader.cs" />
     <Compile Include="Entity\DebitNoteHeader.cs" />
+    <Compile Include="Entity\Misc\AnticipoType.cs" />
     <Compile Include="Entity\Misc\DocReferenciaType.cs" />
     <Compile Include="Entity\Misc\PrecioItemType.cs" />
     <Compile Include="Entity\NotasBase.cs" />

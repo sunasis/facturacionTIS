@@ -24,6 +24,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity
         private decimal _descuentoGlobal;
         #endregion
 
+        public TipoOperacion? TipoOperacion { get; set; }
         /// <summary>
         /// Tipo de comprobante que se está emitiendo.
         /// </summary>
@@ -183,6 +184,12 @@ namespace FacturacionElectronica.GeneradorXml.Entity
         }
 
         /// <summary>
+        /// Gets or sets the total anticipos que es la suma de los montos en <see cref="Anticipos"/>.
+        /// </summary>
+        /// <value>The total anticipos.</value>
+        public decimal? TotalAnticipos { get; set; }
+
+        /// <summary>
         /// Especifica la Direccion del Emisor Electronico
         /// </summary>
         public DireccionType DireccionEmisor;
@@ -207,5 +214,17 @@ namespace FacturacionElectronica.GeneradorXml.Entity
         /// Ver Catalogo Nro. 15
         /// </summary>
         public List<AdditionalPropertyType> InfoAddicional;
+
+        /// <summary>
+        /// Gets or sets the guia embebida.
+        /// </summary>
+        /// <value>The guia embebida.</value>
+        public SUNATEmbededDespatchAdviceType GuiaEmbebida { get; set; }
+
+        /// <summary>
+        /// Gets or sets the anticipos.
+        /// </summary>
+        /// <value>The anticipos.</value>
+        public List<AnticipoType> Anticipos { get; set; }
     }
 }

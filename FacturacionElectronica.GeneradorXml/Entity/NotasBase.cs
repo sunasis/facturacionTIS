@@ -103,10 +103,10 @@ namespace FacturacionElectronica.GeneradorXml.Entity
                 return _motivo;
             }
             set {
-                if (Validar(value, i => i <= 250))
+                if (Validar(value, i => i <= 100))
                     _motivo = value;
                 else
-                    throw new ArgumentException("El motivo debe tener de 1 - 250 caracteres");
+                    throw new ArgumentException("La descripcion debe tener de 1 - 100 caracteres");
             }
         }
 
