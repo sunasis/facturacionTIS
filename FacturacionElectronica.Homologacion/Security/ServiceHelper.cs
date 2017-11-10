@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.ServiceModel.Configuration;
-using System.ServiceModel.Description;
-using System.ServiceModel.Security.Tokens;
-using FacturacionElectronica.Homologacion.ClientService;
 
 namespace FacturacionElectronica.Homologacion.Security
 {
     internal class ServiceHelper
     {
         #region Fields & Properties
-        private static Binding _objbinding;
         public static string User;
         public static string Password;
         #endregion
@@ -45,22 +39,9 @@ namespace FacturacionElectronica.Homologacion.Security
         /// <returns>Instancia de conexion</returns>
         public static TService GetService<TService>(string url)
         {
-            if (_objbinding == null) _objbinding = new ServiceHelper().GetBinding();
+            var objbinding = new ServiceHelper().GetBinding();
 
-            //var channel = new ChannelFactory<TService>(_objbinding, new EndpointAddress(url));
-            //var credentials = new ClientCredentials
-            //{
-            //    UserName =
-            //    {
-            //        UserName = User,
-            //        Password = Password
-            //    }
-            //};
-            //channel.Endpoint.Behaviors.Remove<ClientCredentials>();
-            //channel.Endpoint.Behaviors.Add(credentials);
-            //return channel.CreateChannel();
-
-            dynamic ws = (TService)Activator.CreateInstance(typeof(TService), _objbinding, new EndpointAddress(url));
+            dynamic ws = (TService)Activator.CreateInstance(typeof(TService), objbinding, new EndpointAddress(url));
             ws.ClientCredentials.UserName.UserName = User;
             ws.ClientCredentials.UserName.Password = Password;
             return ws;
