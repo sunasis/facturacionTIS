@@ -122,12 +122,12 @@ namespace FacturacionElectronica.GeneradorXml.Res
                     new IdentifierType[] { ((int)entidad.TipoDocumentoIdentidadEmisor).ToString() },
                 Party = new PartyType
                 {
-                    PartyName = new PartyNameType[] { entidad.NombreRazonSocialEmisor },
+                    PartyName = new PartyNameType[] { entidad.NombreComercialEmisor },
                     PartyLegalEntity = new[]
                     {
                         new PartyLegalEntityType
                         {
-                            RegistrationName = entidad.NombreComercialEmisor,
+                            RegistrationName = entidad.NombreRazonSocialEmisor,
                         }
                     },
                 }
