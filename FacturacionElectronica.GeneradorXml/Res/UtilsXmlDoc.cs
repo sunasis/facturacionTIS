@@ -448,6 +448,7 @@ namespace FacturacionElectronica.GeneradorXml.Res
                     DocumentSerialID = item.SerieDocumento,
                     StartDocumentNumberID = item.NroCorrelativoInicial,
                     EndDocumentNumberID = item.NroCorrelativoFinal,
+                    TotalAmount = item.Total,
                     BillingPayment = item.Importe.Select(i => new PaymentType
                     {
                         PaidAmount = i.Monto,
@@ -478,11 +479,6 @@ namespace FacturacionElectronica.GeneradorXml.Res
                         }
                     }).ToArray()
                 };
-                checked
-                {
-                    line.TotalAmount = line.BillingPayment.Sum(i => i.PaidAmount.Value) + line.TaxTotal.Sum(i => i.TaxAmount.Value) +
-                        line.AllowanceCharge.Where(i => i.ChargeIndicator.Value).Sum(i => i.Amount.Value);//TODO: Debe sumarse antes de redondearse
-                }
                 result.Add(line);
                 counter++;
             }

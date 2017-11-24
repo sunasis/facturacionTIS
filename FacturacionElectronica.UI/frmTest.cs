@@ -462,7 +462,8 @@ namespace FacturacionElectronica.UI
                         Estado = EstadoResumen.Adicionar,
                         SerieDocumento = "BA98",
                         NroCorrelativoInicial = "456",
-                        NroCorrelativoFinal = "764",                           
+                        NroCorrelativoFinal = "764",
+                        Total = 100,                       
                         Importe = new List<TotalImporteType>
                         {
                             new TotalImporteType
@@ -499,7 +500,7 @@ namespace FacturacionElectronica.UI
                             new TotalImpuestosType
                             {
                                 Monto = 1200,
-                                TipoTributo = TipoTributo.OTROS_OTH
+                                TipoTributo = TipoTributo.ISC_EXC
                             }
                         }
                     },
@@ -512,6 +513,7 @@ namespace FacturacionElectronica.UI
                         SerieDocumento = "BC23",
                         NroCorrelativoInicial = "789",
                         NroCorrelativoFinal = "932",
+                        Total = 200,
                         //Referencia = new List<DocReferenciaType>()
                         //{
                         //  new DocReferenciaType()
@@ -538,20 +540,18 @@ namespace FacturacionElectronica.UI
                                 Monto = 45,
                             }
                         },
-                        OtroImporte = new List<TotalImporteExtType>
-                        {
-                            new TotalImporteExtType
-                            {
-                                Indicador = true,
-                                Monto = 0
-                            }
-                        },
+                        OtroImporte = new List<TotalImporteExtType>(),
                         Impuesto = new List<TotalImpuestosType>
                         {
                             new TotalImpuestosType
                             {
                                 Monto = 14080.14M,
                                 TipoTributo = TipoTributo.IGV_VAT
+                            },
+                            new TotalImpuestosType
+                            {
+                                Monto = 0,
+                                TipoTributo = TipoTributo.ISC_EXC
                             }
                         }
                     }

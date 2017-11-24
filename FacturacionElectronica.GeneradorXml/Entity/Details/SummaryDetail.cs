@@ -146,5 +146,12 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
         /// Muestra la información relacionada con los impuestos.
         /// </summary>
         public List<TotalImpuestosType> Impuesto;
+
+        /// <summary>
+        /// Gets or sets the total.
+        /// </summary>
+        /// <value>The total.</value>
+        public decimal Total { get; set; }
+
     }
 }
