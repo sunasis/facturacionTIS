@@ -9,11 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.Homo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.GeneradorXml", "FacturacionElectronica.GeneradorXml\FacturacionElectronica.GeneradorXml.csproj", "{3935F0D2-9563-46C4-86D9-D459E8A90737}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{F6AC3CB4-608A-47EE-859A-B6D8482B252E}"
+	ProjectSection(SolutionItems) = preProject
+		libs\Gs.Ubl.dll = libs\Gs.Ubl.dll
+		libs\Gs.Ubl.XML = libs\Gs.Ubl.XML
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -34,5 +36,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

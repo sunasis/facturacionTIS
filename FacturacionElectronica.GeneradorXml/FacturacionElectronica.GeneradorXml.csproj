@@ -38,9 +38,9 @@
     <AssemblyOriginatorKeyFile>FacturacionTIS.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gs.Ubl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dfdb6d7a6c403e54, processorArchitecture=MSIL">
+    <Reference Include="Gs.Ubl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4730f6f819969f08, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\Gs.Ubl.dll</HintPath>
+      <HintPath>..\libs\Gs.Ubl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -78,10 +78,6 @@
     <None Include="FacturacionTIS.pfx" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Lib\Gs.Ubl.dll" />
-    <Content Include="Lib\Gs.Ubl.XML" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

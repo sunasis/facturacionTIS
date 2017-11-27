@@ -69,8 +69,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gs.Ubl">
-      <HintPath>..\FacturacionElectronica.GeneradorXml\Lib\Gs.Ubl.dll</HintPath>
+    <Reference Include="Gs.Ubl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4730f6f819969f08, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Gs.Ubl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

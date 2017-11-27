@@ -5,25 +5,23 @@ using System.ServiceModel.Channels;
 
 namespace FacturacionElectronica.Homologacion.Security
 {
-    internal class ServiceHelper
+    internal static class ServiceHelper
     {
         #region Fields & Properties
         public static string User;
         public static string Password;
         #endregion
 
-        private ServiceHelper() { }
-
         /// <summary>
         /// Inicializa el Binding por unica vez
         /// </summary>
-        private Binding GetBinding()
+        private static Binding GetBinding()
         {
             ServicePointManager.UseNagleAlgorithm = true;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.CheckCertificateRevocationList = false;
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls; // Activar por tls sino funciona con ssl3
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls; // Activar por tls sino funciona con ssl3
 
             var binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportWithMessageCredential);
             var elements = binding.CreateBindingElements();
@@ -39,7 +37,7 @@ namespace FacturacionElectronica.Homologacion.Security
         /// <returns>Instancia de conexion</returns>
         public static TService GetService<TService>(string url)
         {
-            var objbinding = new ServiceHelper().GetBinding();
+            var objbinding = GetBinding();
 
             dynamic ws = (TService)Activator.CreateInstance(typeof(TService), objbinding, new EndpointAddress(url));
             ws.ClientCredentials.UserName.UserName = User;
