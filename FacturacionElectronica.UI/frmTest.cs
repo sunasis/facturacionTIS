@@ -62,7 +62,7 @@ namespace FacturacionElectronica.UI
                     SerieDocumento = "F001",
                     CorrelativoDocumento = "00005214",
                     FechaEmision = DateTime.Now.Subtract(TimeSpan.FromDays(2)),
-                    NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA 'O ' S.P.S.A.",
+                    NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANÓNIMA 'O ' S.P.S.A.",
                     NroDocCliente = "20100070970",
                     RucEmisor = "20600995805",
                     NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
@@ -226,7 +226,7 @@ namespace FacturacionElectronica.UI
                     SerieDocumento = "F001",
                     CorrelativoDocumento = "00000003",
                     FechaEmision = DateTime.Now.Subtract(TimeSpan.FromDays(2)),
-                    NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA 'O ' S.P.S.A.",
+                    NombreRazonSocialCliente = "SUPERMERCADOS PERUANOS SOCIEDAD ANÓNIMA 'O ' S.P.S.A.",
                     NroDocCliente = "20100070970",
                     RucEmisor = "20600995805",
                     NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
@@ -1314,7 +1314,7 @@ namespace FacturacionElectronica.UI
                     {
                         new PartyLegalEntityType()
                         {
-                            RegistrationName = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA O S.P.S.A"
+                            RegistrationName = "SUPERMERCADOS PERUANOS SOCIEDAD ANÓNIMA O S.P.S.A"
                         }
                     }
                 },
@@ -1530,7 +1530,7 @@ namespace FacturacionElectronica.UI
                     {
                         new PartyLegalEntityType()
                         {
-                            RegistrationName = "SUPERMERCADOS PERUANOS SOCIEDAD ANONIMA O S.P.S.A"
+                            RegistrationName = "SUPERMERCADOS PERUANOS SOCIEDAD ANÓNIMA O S.P.S.A"
                         }
                     }
                 },
