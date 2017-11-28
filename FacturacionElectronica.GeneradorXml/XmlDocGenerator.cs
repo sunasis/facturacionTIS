@@ -167,14 +167,15 @@ namespace FacturacionElectronica.GeneradorXml
         /// Genera un documento XML para Resumen Diario.
         /// </summary>
         /// <param name="summaryHeaderEntity">Entidad de Resumen</param>
+        /// <param name="version2">version 2</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity)
+        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity, bool version2 = false)
         {
             try
             {
                 #region Filename
-                string id = $"RC-{DateTime.Today:yyyyMMdd}-{summaryHeaderEntity.CorrelativoArchivo}";
-                string xmlFilename = summaryHeaderEntity.RucEmisor + "-" + id;
+                var id = $"RC-{DateTime.Today:yyyyMMdd}-{summaryHeaderEntity.CorrelativoArchivo}";
+                var xmlFilename = summaryHeaderEntity.RucEmisor + "-" + id;
                 #endregion
 
                 #region Gen Summary
@@ -182,7 +183,7 @@ namespace FacturacionElectronica.GeneradorXml
                 var summaryDoc = new SummaryDocumentsType
                 {
                     ID = id,
-                    CustomizationID = "1.1", // 2017 = 1.1
+                    CustomizationID = version2 ? "1.1" : "1.0", // 2018 = 1.1
                     ReferenceDate = summaryHeaderEntity.FechaEmision,
                     IssueDate = DateTime.Today.Date,
                     UBLExtensions = new[]
@@ -194,7 +195,7 @@ namespace FacturacionElectronica.GeneradorXml
                     },
                     Signature = UtilsXmlDoc.GetSignature(summaryHeaderEntity),
                     AccountingSupplierParty = UtilsXmlDoc.GetInfoEmisor(summaryHeaderEntity),
-                    SummaryDocumentsLine = UtilsXmlDoc.GetSummaryLines(summaryHeaderEntity.DetallesDocumento)
+                    SummaryDocumentsLine = UtilsXmlDoc.GetSummaryLines(summaryHeaderEntity.DetallesDocumento, version2)
                 };
                 #endregion
 

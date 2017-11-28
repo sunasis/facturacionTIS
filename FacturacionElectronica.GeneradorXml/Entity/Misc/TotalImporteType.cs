@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace FacturacionElectronica.GeneradorXml.Entity.Misc
 {
     using Enums;
@@ -26,9 +28,9 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Misc
             get { return _monto; }
             set {
                 if (value >= 0)
-                    _monto = decimal.Round(value, 2);
+                    _monto = decimal.Round(value, 2, MidpointRounding.AwayFromZero);
                 else
-                    throw new System.ArgumentException("El campo Monto es obligatorio y debe ser mayor a 0");
+                    throw new ArgumentException("El campo Monto es obligatorio y debe ser mayor a 0");
             }
         }
     }

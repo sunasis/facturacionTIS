@@ -58,7 +58,7 @@ namespace FacturacionElectronica.GeneradorXml
             if (signNodes?.Count > 0)
                 signNodes[signNodes.Count - 1].AppendChild(doc.ImportNode(xmlDigitalSignature, true)); // Firma y agrega al doc XML
             
-            var xmlDeclaration = doc.CreateXmlDeclaration("1.0", "ISO-8859-1", "no");
+            var xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", "no");
             doc.ReplaceChild(xmlDeclaration, doc.FirstChild);
         }
 
