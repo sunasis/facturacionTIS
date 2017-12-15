@@ -152,6 +152,13 @@ namespace FacturacionElectronica.Homologacion
                         res.Success = false;
                         res.Error = new ErrorResponse { Description = "En Proceso..."};
                         break;
+                    default:
+                        res.Error = new ErrorResponse
+                        {
+                            Code = response.statusCode,
+                            Description = ProcessXml.GetDescriptionError(response.statusCode),
+                        };
+                        break;
                 }
             }
             catch (FaultException ex)

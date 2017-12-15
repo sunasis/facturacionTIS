@@ -40,6 +40,7 @@ namespace FacturacionElectronica.HomologacionTests
 
             Assert.IsTrue(result.Success);
             Assert.IsNotNull(result.ApplicationResponse);
+            StringAssert.Contains(result.ApplicationResponse.Descripcion, "aceptada");
             Trace.WriteLine(result.ApplicationResponse.Descripcion);
         }
 
@@ -55,13 +56,52 @@ namespace FacturacionElectronica.HomologacionTests
 
             var result = task.Result;
 
+            Assert.IsFalse(result.Success);
+            Assert.IsNotNull(result.Error);
+            StringAssert.Contains(result.Error.Code, "Client.1034");
+
+            Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);
+        }
+
+        [TestMethod]
+        public void SendSummaryTest()
+        {
+            var name = "20600995805-RC-20171128-01";
+            var filePath = Path.Combine(Environment.CurrentDirectory, "Resources", name + ".xml");
+            var content = File.ReadAllBytes(filePath);
+
+            var task = _manager.SendSummary(name, content);
+            task.Wait(5000);
+
+            var result = task.Result;
+
             if (!result.Success)
                 Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);
 
-            Assert.IsFalse(result.Success);
-            Assert.IsNotNull(result.Error);
-            Trace.WriteLine(result.Error.Description);
+            Assert.IsTrue(result.Success);
+            Assert.IsNotNull(result.Ticket);
 
+            Trace.WriteLine("Ticket: " + result.Ticket);
+        }
+
+        [TestMethod]
+        public void GetStatusTest()
+        {
+            var ticket = "1511910611566";
+            var task = _manager.GetStatus(ticket);
+            task.Wait(5000);
+
+            var result = task.Result;
+
+            if (!result.Success)
+            {
+                Trace.WriteLine(result.Error.Code + " - " + result.Error.Description);
+                return;
+            }
+
+            Assert.IsTrue(result.Success);
+            Assert.IsNotNull(result.ApplicationResponse);
+            StringAssert.Contains(result.ApplicationResponse.Descripcion, "aceptado");
         }
     }
 }

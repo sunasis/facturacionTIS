@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5727FAFC-62FF-426D-84EF-62A1D0FD5DFA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gs.Ubl</RootNamespace>
+    <AssemblyName>Gs.Ubl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Gs.Ubl.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Gs.Ubl.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FacturacionTIS.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\UBL-CommonAggregateComponents-2.0.cs" />
+    <Compile Include="common\UBL-CommonExtensionComponents-2.0.cs" />
+    <Compile Include="common\UBL-QualifiedDatatypes-2.0.cs" />
+    <Compile Include="common\UBLPE-SunatAggregateComponents-1.0.cs" />
+    <Compile Include="common\UnqualifiedDataTypeSchemaModule-2.0.cs" />
+    <Compile Include="common\UnqualifiedDataTypeSchemaModule-2.0.partials.cs" />
+    <Compile Include="maindoc\UBL-ApplicationResponse-2.0.cs" />
+    <Compile Include="maindoc\UBL-BaseDocument-2.0.cs" />
+    <Compile Include="maindoc\UBL-BaseDocument-2.0.partial.cs" />
+    <Compile Include="maindoc\UBL-CreditNote-2.0.cs" />
+    <Compile Include="maindoc\UBL-DebitNote-2.0.cs" />
+    <Compile Include="maindoc\UBL-DespatchAdvice-2.0.cs" />
+    <Compile Include="maindoc\UBL-Invoice-2.0.cs" />
+    <Compile Include="maindoc\UBLPE-Perception-1.0.cs" />
+    <Compile Include="maindoc\UBLPE-Retention-1.0.cs" />
+    <Compile Include="maindoc\UBLPE-SummaryDocuments-1.0.cs" />
+    <Compile Include="maindoc\UBLPE-VoidedDocuments-1.0.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FacturacionTIS.pfx" />
+    <None Include="Gs.Ubl.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

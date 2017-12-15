@@ -17,6 +17,10 @@ namespace FacturacionElectronica.GeneradorXml.Res
 
     internal static class UtilsXmlDoc
     {
+        /// <summary>
+        /// The ruc identifier document
+        /// </summary>
+        private const string RucIdDocument = "6";
         #region General
         /// <summary>
         /// Genera y Firma un Doc XML
@@ -121,12 +125,12 @@ namespace FacturacionElectronica.GeneradorXml.Res
                     new IdentifierType[] { ((int)entidad.TipoDocumentoIdentidadEmisor).ToString() },
                 Party = new PartyType
                 {
-                    PartyName = new PartyNameType[] { entidad.NombreRazonSocialEmisor },
+                    PartyName = new PartyNameType[] { entidad.NombreComercialEmisor },
                     PartyLegalEntity = new[]
                     {
                         new PartyLegalEntityType
                         {
-                            RegistrationName = entidad.NombreComercialEmisor,
+                            RegistrationName = entidad.NombreRazonSocialEmisor,
                         }
                     },
                 }
@@ -336,6 +340,36 @@ namespace FacturacionElectronica.GeneradorXml.Res
         }
 
         /// <summary>
+        /// Gets the anticipos.
+        /// </summary>
+        /// <param name="anticipos">The anticipos.</param>
+        /// <returns>Gs.Ubl.v2.Cac.PaymentType[].</returns>
+        public static PaymentType[] GetAnticipos(List<AnticipoType> anticipos)
+        {
+            if (anticipos == null || anticipos.Count == 0)
+            {
+                return null;
+            }
+
+            var elements = anticipos.Select(item => new PaymentType
+            {
+                ID = new IdentifierType
+                {
+                    schemeID = ((int)item.TipoDocRel).ToString("00"),
+                    Value = item.NroDocumentRel
+                },
+                PaidAmount = item.MontoAnticipo,
+                InstructionID = new IdentifierType
+                {
+                    schemeID = RucIdDocument,
+                    Value = item.RucEmisorDoc
+                }
+            });
+
+            return elements.ToArray();
+        }
+
+        /// <summary>
         /// Obtiene la direccion a UBL 2.0
         /// </summary>
         /// <param name="direccion">Entidad Direccion</param>
@@ -399,12 +433,14 @@ namespace FacturacionElectronica.GeneradorXml.Res
         #endregion
 
         #region Summary
+
         /// <summary>
         /// Genera las lineas de un documento de Resumen Diario
         /// </summary>
         /// <param name="summaryDetails">Entidad Detalles de Resumen</param>
+        /// <param name="version2">Es version 2</param>
         /// <returns>Entidad en Estandar UBL2.0</returns>
-        public static SummaryDocumentsLineType[] GetSummaryLines(IEnumerable<SummaryDetail> summaryDetails)
+        public static SummaryDocumentsLineType[] GetSummaryLines(IEnumerable<SummaryDetail> summaryDetails, bool version2 = false)
         {
             var result = new List<SummaryDocumentsLineType>();
             var counter = 1;
@@ -414,29 +450,7 @@ namespace FacturacionElectronica.GeneradorXml.Res
                 {
                     LineID = counter.ToString(),
                     DocumentTypeCode = ((int)item.TipoDocumento).ToString("00"),
-
-                    #region Version 1.0
-                    //DocumentSerialID = item.SerieDocumento,
-                    //StartDocumentNumberID = item.NroCorrelativoInicial,
-                    //EndDocumentNumberID = item.NroCorrelativoFinal,
-                    #endregion
-
-                    #region Version 1.1
-                    ID = item.Documento,
-                    AccountingCustomerParty = new CustomerPartyType
-                    {
-                        CustomerAssignedAccountID = item.NroDocCliente,
-                        AdditionalAccountID = new IdentifierType[]
-                        {
-                            ((int)item.TipoDocumentoIdentidadCliente).ToString()
-                        }
-                    },
-                    Status = new StatusType
-                    {
-                        ConditionCode = ((int)item.Estado).ToString()
-                    },
-                    #endregion
-
+                    TotalAmount = item.Total,
                     BillingPayment = item.Importe.Select(i => new PaymentType
                     {
                         PaidAmount = i.Monto,
@@ -467,11 +481,29 @@ namespace FacturacionElectronica.GeneradorXml.Res
                         }
                     }).ToArray()
                 };
-                checked
+                if (version2)
                 {
-                    line.TotalAmount = line.BillingPayment.Sum(i => i.PaidAmount.Value) + line.TaxTotal.Sum(i => i.TaxAmount.Value) +
-                        line.AllowanceCharge.Where(i => i.ChargeIndicator.Value).Sum(i => i.Amount.Value);//TODO: Debe sumarse antes de redondearse
+                    line.ID = item.Documento;
+                    line.AccountingCustomerParty = new CustomerPartyType
+                    {
+                        CustomerAssignedAccountID = item.NroDocCliente,
+                        AdditionalAccountID = new IdentifierType[]
+                        {
+                            ((int) item.TipoDocumentoIdentidadCliente).ToString()
+                        }
+                    };
+                    line.Status = new StatusType
+                    {
+                        ConditionCode = ((int) item.Estado).ToString()
+                    };
                 }
+                else
+                {
+                    line.DocumentSerialID = item.SerieDocumento;
+                    line.StartDocumentNumberID = item.NroCorrelativoInicial;
+                    line.EndDocumentNumberID = item.NroCorrelativoFinal;
+                }
+
                 result.Add(line);
                 counter++;
             }

@@ -68,13 +68,18 @@ namespace FacturacionElectronica.GeneradorXml
                                 {
                                     AdditionalInformation = new AdditionalInformationType{
                                         AdditionalMonetaryTotal = UtilsXmlDoc.DevuelveTributosAdicionales(invoiceHeaderEntity.TotalTributosAdicionales),
-                                        AdditionalProperty = invoiceHeaderEntity.InfoAddicional.ToArray()
+                                        AdditionalProperty = invoiceHeaderEntity.InfoAddicional.ToArray(),
+                                        SUNATEmbededDespatchAdvice = invoiceHeaderEntity.GuiaEmbebida,
+                                        SUNATTransaction = invoiceHeaderEntity.TipoOperacion.HasValue ? new SUNATTransactionType
+                                        {
+                                            ID = ((int)invoiceHeaderEntity.TipoOperacion).ToString("00")
+                                        }: null 
                                     }
                                 }
                         },
                         new UBLExtensionType
                         {
-                            ExtensionContent = new AdditionalsInformationType()
+                            ExtensionContent = new AdditionalsInformationType(),
                         }
                     },
                     Signature = UtilsXmlDoc.GetSignature(invoiceHeaderEntity),
@@ -95,9 +100,11 @@ namespace FacturacionElectronica.GeneradorXml
                             }
                         },
                     },
+                    PrepaidPayment = UtilsXmlDoc.GetAnticipos(invoiceHeaderEntity.Anticipos),
                     LegalMonetaryTotal = new MonetaryTotalType
                     {
                         AllowanceTotalAmount = invoiceHeaderEntity.DescuentoGlobal > 0 ? new AmountType {Value = invoiceHeaderEntity.DescuentoGlobal} : null,
+                        PrepaidAmount = invoiceHeaderEntity.TotalAnticipos.HasValue ? new AmountType {Value = invoiceHeaderEntity.TotalAnticipos.Value } : null,
                         PayableAmount = invoiceHeaderEntity.TotalVenta
                     },
                     InvoiceLine = UtilsXmlDoc.DevuelveDetallesDelComprobante(invoiceHeaderEntity.DetallesDocumento),
@@ -160,14 +167,15 @@ namespace FacturacionElectronica.GeneradorXml
         /// Genera un documento XML para Resumen Diario.
         /// </summary>
         /// <param name="summaryHeaderEntity">Entidad de Resumen</param>
+        /// <param name="version2">version 2</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity)
+        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity, bool version2 = false)
         {
             try
             {
                 #region Filename
-                string id = $"RC-{DateTime.Today:yyyyMMdd}-{summaryHeaderEntity.CorrelativoArchivo}";
-                string xmlFilename = summaryHeaderEntity.RucEmisor + "-" + id;
+                var id = $"RC-{DateTime.Today:yyyyMMdd}-{summaryHeaderEntity.CorrelativoArchivo}";
+                var xmlFilename = summaryHeaderEntity.RucEmisor + "-" + id;
                 #endregion
 
                 #region Gen Summary
@@ -175,7 +183,7 @@ namespace FacturacionElectronica.GeneradorXml
                 var summaryDoc = new SummaryDocumentsType
                 {
                     ID = id,
-                    CustomizationID = "1.1", // 2017 = 1.1
+                    CustomizationID = version2 ? "1.1" : "1.0", // 2018 = 1.1
                     ReferenceDate = summaryHeaderEntity.FechaEmision,
                     IssueDate = DateTime.Today.Date,
                     UBLExtensions = new[]
@@ -187,7 +195,7 @@ namespace FacturacionElectronica.GeneradorXml
                     },
                     Signature = UtilsXmlDoc.GetSignature(summaryHeaderEntity),
                     AccountingSupplierParty = UtilsXmlDoc.GetInfoEmisor(summaryHeaderEntity),
-                    SummaryDocumentsLine = UtilsXmlDoc.GetSummaryLines(summaryHeaderEntity.DetallesDocumento)
+                    SummaryDocumentsLine = UtilsXmlDoc.GetSummaryLines(summaryHeaderEntity.DetallesDocumento, version2)
                 };
                 #endregion
 
@@ -469,6 +477,7 @@ namespace FacturacionElectronica.GeneradorXml
             var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-20-{doc.ID.Value}";
             return new XmlFileResult
             {
+                Success = true,
                 FileName = filename,
                 Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
             };
@@ -484,6 +493,7 @@ namespace FacturacionElectronica.GeneradorXml
             var filename = $"{doc.AgentParty.PartyIdentification[0].ID.Value}-40-{doc.ID.Value}";
             return new XmlFileResult
             {
+                Success = true,
                 FileName = filename,
                 Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
             };
@@ -499,6 +509,7 @@ namespace FacturacionElectronica.GeneradorXml
             var filename = $"{doc.DespatchSupplierParty.CustomerAssignedAccountID.Value}-09-{doc.ID.Value}";
             return new XmlFileResult
             {
+                Success = true,
                 FileName = filename,
                 Content = UtilsXmlDoc.GenFile(ref _result, doc, _certificado)
             };
@@ -540,6 +551,7 @@ namespace FacturacionElectronica.GeneradorXml
 
                 return new XmlFileResult
                 {
+                    Success = true,
                     FileName = xmlFilename,
                     Content = UtilsXmlDoc.GenFile(ref _result, voidedDoc, _certificado)
                 };

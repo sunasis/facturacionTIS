@@ -17,6 +17,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
         private string _seriedocumento;
         private string _initDoc;
         private string _endDoc;
+        private decimal _total;
         #endregion
 
         /// <summary>
@@ -146,5 +147,15 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
         /// Muestra la información relacionada con los impuestos.
         /// </summary>
         public List<TotalImpuestosType> Impuesto;
+
+        ///<summary>
+        /// Gets or sets the total.
+        /// </summary>
+        /// <value>The total.</value>
+        public decimal Total
+        {
+            get { return _total; }
+            set { _total = decimal.Round(value, 2, MidpointRounding.AwayFromZero);}   
+        }
     }
 }

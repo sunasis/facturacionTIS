@@ -7,24 +7,18 @@ using FacturacionElectronica.Homologacion.Res;
 
 namespace FacturacionElectronica.Homologacion.Security
 {
-    internal class ServiceHelper
+    internal static class ServiceHelper
     {
-        #region Fields & Properties
-        private static Binding _objbinding;
-        #endregion
-
-        private ServiceHelper() { }
-
         /// <summary>
         /// Inicializa el Binding por unica vez
         /// </summary>
-        private Binding GetBinding()
+        private static Binding GetBinding()
         {
             ServicePointManager.UseNagleAlgorithm = true;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.CheckCertificateRevocationList = false;
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls; // Activar por tls sino funciona con ssl3
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
 
             var binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportWithMessageCredential);
             var elements = binding.CreateBindingElements();
@@ -41,9 +35,9 @@ namespace FacturacionElectronica.Homologacion.Security
         /// <returns>Instancia de conexion</returns>
         public static TService GetService<TService>(SolConfig config, string url)
         {
-            if (_objbinding == null) _objbinding = new ServiceHelper().GetBinding();
+            var binding = GetBinding();
 
-            var channel = new ChannelFactory<TService>(_objbinding);
+            var channel = new ChannelFactory<TService>(binding);
 
             var cred = channel.Endpoint
                 .Behaviors.Find<ClientCredentials>();
