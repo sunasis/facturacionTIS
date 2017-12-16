@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.Homologacion", "FacturacionElectronica.Homologacion\FacturacionElectronica.Homologacion.csproj", "{65510B7D-524E-424E-9BC5-6B1200389A6C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{04E83904-650C-4020-9045-851343A209AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gs.Ubl", "Gs.Ubl\Gs.Ubl.csproj", "{5727FAFC-62FF-426D-84EF-62A1D0FD5DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.Validador", "FacturacionElectronica.Validador\FacturacionElectronica.Validador.csproj", "{226F4677-5999-4BC5-B014-0F7C697D94A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{5727FAFC-62FF-426D-84EF-62A1D0FD5DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5727FAFC-62FF-426D-84EF-62A1D0FD5DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5727FAFC-62FF-426D-84EF-62A1D0FD5DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
