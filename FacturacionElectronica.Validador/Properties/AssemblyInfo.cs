@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("FacturacionElectronica.RetencionXml")]
+[assembly: AssemblyTitle("FacturacionElectronica.Validador")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FacturacionElectronica.RetencionXml")]
+[assembly: AssemblyProduct("FacturacionElectronica.Validador")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("1a6ec933-2f8a-4210-91fa-a37e46681a44")]
+[assembly: Guid("226f4677-5999-4bc5-b014-0f7c697d94a6")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
