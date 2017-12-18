@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gs.Ubl", "Gs.Ubl\Gs.Ubl.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.Validador", "FacturacionElectronica.Validador\FacturacionElectronica.Validador.csproj", "{226F4677-5999-4BC5-B014-0F7C697D94A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionElectronica.ValidadorTests", "FacturacionElectronica.ValidadorTests\FacturacionElectronica.ValidadorTests.csproj", "{5D2367DB-683F-4FC2-9900-A073DB3CB041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{226F4677-5999-4BC5-B014-0F7C697D94A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2367DB-683F-4FC2-9900-A073DB3CB041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2367DB-683F-4FC2-9900-A073DB3CB041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2367DB-683F-4FC2-9900-A073DB3CB041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2367DB-683F-4FC2-9900-A073DB3CB041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F44DE84B-3294-40A6-8196-66D0AEE16ECF} = {04E83904-650C-4020-9045-851343A209AA}
 		{743DC64C-CFAF-48C5-BAA4-BDA794407F32} = {04E83904-650C-4020-9045-851343A209AA}
+		{5D2367DB-683F-4FC2-9900-A073DB3CB041} = {04E83904-650C-4020-9045-851343A209AA}
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
