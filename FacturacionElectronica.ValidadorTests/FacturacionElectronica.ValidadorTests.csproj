@@ -55,6 +55,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale\InvoiceValidatorTests.cs" />
+    <Compile Include="Summary\SummaryValidatorTests.cs" />
     <Compile Include="Voided\VoidedValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
