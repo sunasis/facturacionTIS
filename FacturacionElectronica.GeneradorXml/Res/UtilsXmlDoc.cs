@@ -430,12 +430,14 @@ namespace FacturacionElectronica.GeneradorXml.Res
         #endregion
 
         #region Summary
+
         /// <summary>
         /// Genera las lineas de un documento de Resumen Diario
         /// </summary>
         /// <param name="summaryDetails">Entidad Detalles de Resumen</param>
+        /// <param name="version2"></param>
         /// <returns>Entidad en Estandar UBL2.0</returns>
-        public static SummaryDocumentsLineType[] GetSummaryLines(IEnumerable<SummaryDetail> summaryDetails)
+        public static SummaryDocumentsLineType[] GetSummaryLines(IEnumerable<SummaryDetail> summaryDetails, bool version2 = false)
         {
             var result = new List<SummaryDocumentsLineType>();
             var counter = 1;
@@ -445,9 +447,6 @@ namespace FacturacionElectronica.GeneradorXml.Res
                 {
                     LineID = counter.ToString(),
                     DocumentTypeCode = ((int)item.TipoDocumento).ToString("00"),
-                    DocumentSerialID = item.SerieDocumento,
-                    StartDocumentNumberID = item.NroCorrelativoInicial,
-                    EndDocumentNumberID = item.NroCorrelativoFinal,
                     TotalAmount = item.Total,
                     BillingPayment = item.Importe.Select(i => new PaymentType
                     {
@@ -479,9 +478,33 @@ namespace FacturacionElectronica.GeneradorXml.Res
                         }
                     }).ToArray()
                 };
+                if (version2)
+                {
+                    line.ID = item.Documento;
+                    line.AccountingCustomerParty = new CustomerPartyType
+                    {
+                        CustomerAssignedAccountID = item.NroDocCliente,
+                        AdditionalAccountID = new IdentifierType[]
+                        {
+                            ((int) item.TipoDocumentoIdentidadCliente).ToString()
+                        }
+                    };
+                    line.Status = new StatusType
+                    {
+                        ConditionCode = ((int) item.Estado).ToString()
+                    };
+                }
+                else
+                {
+                    line.DocumentSerialID = item.SerieDocumento;
+                    line.StartDocumentNumberID = item.NroCorrelativoInicial;
+                    line.EndDocumentNumberID = item.NroCorrelativoFinal;
+                }
+
                 result.Add(line);
                 counter++;
             }
+
             return result.ToArray();
         }
         #endregion

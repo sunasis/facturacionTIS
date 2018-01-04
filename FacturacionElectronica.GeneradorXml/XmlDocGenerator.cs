@@ -178,8 +178,9 @@ namespace FacturacionElectronica.GeneradorXml
         /// </summary>
         /// <param name="pobjOperationResult">Resultado de la Operacion</param>
         /// <param name="summaryHeaderEntity">Entidad de Resumen</param>
+        /// <param name="version2">if set to <c>true</c> [version2].</param>
         /// <returns>Retorna la ruta del archivo XML generado.</returns>
-        public string GenerarDocumentoSummary(ref OperationResult pobjOperationResult, SummaryHeader summaryHeaderEntity)
+        public string GenerarDocumentoSummary(ref OperationResult pobjOperationResult, SummaryHeader summaryHeaderEntity, bool version2 = false)
         {
             try
             {
@@ -193,7 +194,7 @@ namespace FacturacionElectronica.GeneradorXml
                 var summaryDoc = new SummaryDocumentsType
                 {
                     ID = id,
-                    CustomizationID = "1.0", // 2017 = 1.1
+                    CustomizationID = version2 ? "1.1" : "1.0",
                     ReferenceDate = summaryHeaderEntity.FechaEmision,
                     IssueDate = DateTime.Today.Date,
                     UBLExtensions = new[]
@@ -205,7 +206,7 @@ namespace FacturacionElectronica.GeneradorXml
                     },
                     Signature = UtilsXmlDoc.GetSignature(summaryHeaderEntity),
                     AccountingSupplierParty = UtilsXmlDoc.GetInfoEmisor(summaryHeaderEntity),
-                    SummaryDocumentsLine = UtilsXmlDoc.GetSummaryLines(summaryHeaderEntity.DetallesDocumento)
+                    SummaryDocumentsLine = UtilsXmlDoc.GetSummaryLines(summaryHeaderEntity.DetallesDocumento, version2)
                 };
                 #endregion
 
