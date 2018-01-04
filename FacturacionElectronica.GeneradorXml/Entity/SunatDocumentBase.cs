@@ -84,10 +84,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity
             get { return _fechaEmision; }
             set
             {
-                if (value.Date.Year == DateTime.Today.Year)
-                    _fechaEmision = value;
-                else
-                    throw new ArgumentException("El campo FechaEmision debe ser del año actual.");
+                _fechaEmision = value;
             }
         }
 
