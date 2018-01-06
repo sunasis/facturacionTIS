@@ -496,6 +496,19 @@ namespace FacturacionElectronica.GeneradorXml.Res
                     {
                         ConditionCode = ((int) item.Estado).ToString()
                     };
+
+                    if (item.Referencia != null && item.Referencia.Count > 0)
+                    {
+                        var docRef = item.Referencia[0];
+                        line.BillingReference = new [] {new BillingReferenceType
+                        {
+                            InvoiceDocumentReference = new DocumentReferenceType
+                            {
+                                ID = docRef.Documento,
+                                DocumentTypeCode = ((int)docRef.TipoDocumento).ToString("00")
+                            }
+                        } };
+                    }
                 }
                 else
                 {
