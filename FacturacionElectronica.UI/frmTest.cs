@@ -459,10 +459,10 @@ namespace FacturacionElectronica.UI
                         Documento = "B001-1",
                         TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.DocumentoNacionalIdentidad,
                         NroDocCliente = "99887766",
-                        Estado = EstadoResumen.Adicionar,
-                        SerieDocumento = "BA98",
-                        NroCorrelativoInicial = "456",
-                        NroCorrelativoFinal = "764",
+                        Estado = EstadoResumen.Anulado,
+                        //SerieDocumento = "BA98",
+                        //NroCorrelativoInicial = "456",
+                        //NroCorrelativoFinal = "764",
                         Total = 100,                       
                         Importe = new List<TotalImporteType>
                         {
@@ -508,12 +508,20 @@ namespace FacturacionElectronica.UI
                         TipoDocumento = TipoDocumentoElectronico.Boleta,
                         Documento = "B001-00000001",
                         TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.DocumentoNacionalIdentidad,
-                        Estado = EstadoResumen.Anulado,
+                        Estado = EstadoResumen.Adicionar,
                         NroDocCliente = "55443322",
-                        SerieDocumento = "BC23",
-                        NroCorrelativoInicial = "789",
-                        NroCorrelativoFinal = "932",
-                        Total = 200,
+                        //SerieDocumento = "BC23",
+                        //NroCorrelativoInicial = "789",
+                        //NroCorrelativoFinal = "932",
+                        Percepcion = new PerceptionSummaryType
+                        {
+                            CodRegimen = RegimenPercepcion.ADQUISICION_COMBUSTIBLE,
+                            Tasa = 1.00M,
+                            MontoBase = 100.00M,
+                            Monto = 1.00M,
+                            MontoTotal = 101.00M,
+                        },
+                        Total = 100.00M,
                         //Referencia = new List<DocReferenciaType>()
                         //{
                         //  new DocReferenciaType()
@@ -558,7 +566,7 @@ namespace FacturacionElectronica.UI
                 }
             };
             var objOperationResult = new OperationResult();
-            string xmlResultPath = new XmlDocGenerator(_cert).GenerarDocumentoSummary(ref objOperationResult, summary);
+            string xmlResultPath = new XmlDocGenerator(_cert).GenerarDocumentoSummary(ref objOperationResult, summary, true);
             if (objOperationResult.Success)
             {
                 if (File.Exists(xmlResultPath))

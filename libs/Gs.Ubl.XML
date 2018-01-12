@@ -3678,6 +3678,12 @@
              An association to the port location of transshipment.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Cac.ShipmentStageType.DriverPerson">
+            <summary>
+            Gets or sets the driver person.
+            </summary>
+            <value>The driver person.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Cac.TransportMeansType">
             <summary>
              The particular vehicle used for the transport of goods or persons.
@@ -5637,90 +5643,216 @@
              The set of possible ways in which communication can be made (eg. Phone, email, etc).
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.ChannelCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.ChannelCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.ChannelCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.ChipCodeType">
             <summary>
              Distinction between CHIP and MAG STRIPE cards
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.ChipCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.ChipCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.ChipCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.ContainerSizeTypeCodeType">
             <summary>
              The set of code values for classifying series 1 freight containers based on external dimensions, associated ratings and, where appropriate, the minimum internal and door opening dimensions for certain types of containers.
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.ContainerSizeTypeCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.ContainerSizeTypeCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.ContainerSizeTypeCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.CountryIdentificationCodeType">
             <summary>
              The set of countries of the world.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.CountryIdentificationCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.CountryIdentificationCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.CountryIdentificationCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.CurrencyCodeType">
             <summary>
              The set of world currencies.
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.CurrencyCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.CurrencyCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.CurrencyCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.DocumentStatusCodeType">
             <summary>
              The set of possible statuses of a document with regard to its original state.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.DocumentStatusCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.DocumentStatusCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.DocumentStatusCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.LatitudeDirectionCodeType">
             <summary>
              The possible directions of latitude
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.LatitudeDirectionCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.LatitudeDirectionCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.LatitudeDirectionCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.LineStatusCodeType">
             <summary>
              The set of possible statuses of a line in a transaction with regard to its original state.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.LineStatusCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.LineStatusCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.LineStatusCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.LongitudeDirectionCodeType">
             <summary>
              The possible directions of longitude
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.LongitudeDirectionCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.LongitudeDirectionCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.LongitudeDirectionCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.OperatorCodeType">
             <summary>
              The set of valid arithmetic operators
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.OperatorCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.OperatorCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.OperatorCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.PackagingTypeCodeType">
             <summary>
              The set of code values for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.PackagingTypeCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.PackagingTypeCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.PackagingTypeCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.PaymentMeansCodeType">
             <summary>
              The set of valid means of paying the debt incurred.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.PaymentMeansCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.PaymentMeansCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.PaymentMeansCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.PortCodeType">
             <summary>
              The set of code values for Trade and Transport Locations
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.PortCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.PortCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.PortCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.SubstitutionStatusCodeType">
             <summary>
              The set of values that indicate the status of an OrderItem in relation to substitution, denoting an acceptable substitute in the Order, an original for which an alternative is offered in the Order Confirmation, or an original for which an actual replacement is advised in the Despatch Advice.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.SubstitutionStatusCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.SubstitutionStatusCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.SubstitutionStatusCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.TransportationStatusCodeType">
             <summary>
              The set of code values for Trade and Transport Status
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.TransportationStatusCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.TransportationStatusCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.TransportationStatusCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.TransportEquipmentTypeCodeType">
             <summary>
              The set of code values for qualifying a type of equipment used in the transportation of goods.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.TransportEquipmentTypeCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.TransportEquipmentTypeCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.TransportEquipmentTypeCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Qdt.TransportModeCodeType">
             <summary>
              The set of code values for modes of transport
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Qdt.TransportModeCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.TransportModeCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.TransportModeCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:Gs.Ubl.v2.Qdt.UnitOfMeasureCodeType">
             <summary>
              The set of code values for Units of Measure Used in International Trade
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Qdt.UnitOfMeasureCodeType.op_Implicit(System.String)~Gs.Ubl.v2.Qdt.UnitOfMeasureCodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Qdt.UnitOfMeasureCodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:Gs.Ubl.v2.Sac.SummaryDocumentsLineType">
             <summary>
@@ -5827,6 +5959,12 @@
             <summary>
              AdditionalInformationType fue agregado modificando el código fuente de la dll, por motivos que son Tags que la SUNAT agregó al requerimiento.
             </summary>
+        </member>
+        <member name="P:Gs.Ubl.v2.Sac.AdditionalsInformationType.AdditionalInformation">
+            <summary>
+            Gets or sets the additional information.
+            </summary>
+            <value>The additional information.</value>
         </member>
         <member name="T:Gs.Ubl.v2.Sac.AdditionalInformationType">
             <summary>
@@ -5937,6 +6075,17 @@
         </member>
         <member name="P:Gs.Ubl.v2.Sac.SUNATEmbededDespatchAdviceType.SUNATRoadTransport">
             <comentarios/>
+        </member>
+        <member name="P:Gs.Ubl.v2.Sac.SUNATEmbededDespatchAdviceType.TransportModeCode">
+            <summary>
+            Gets or sets the transport mode code.
+            </summary>
+            <value>The transport mode code.</value>
+        </member>
+        <member name="P:Gs.Ubl.v2.Sac.SUNATEmbededDespatchAdviceType.GrossWeightMeasure">
+            <summary>
+             The total gross weight of a shipment; the weight of the goods plus packaging plus transport equipment.
+            </summary>
         </member>
         <member name="T:Gs.Ubl.v2.Sac.SUNATShipmentType">
             <summary>
@@ -6186,6 +6335,9 @@
             <summary>
              A number of monetary units specified in a currency where the unit of the currency is explicit or implied.
             </summary>
+            <summary>
+            Class AmountType.
+            </summary>
         </member>
         <member name="M:Gs.Ubl.v2.Udt.AmountType.op_Implicit(System.Decimal)~Gs.Ubl.v2.Udt.AmountType">
             <summary>
@@ -6198,15 +6350,33 @@
              The currency of the amount.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.AmountType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="F:Gs.Ubl.v2.Udt.AmountType.TlsDefaultCurrencyID">
             <summary>
             Thread local variable for default currency. Will be undefined if a context switch occurs. Thread handling is not part of the library.
+            </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.AmountType.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gs.Ubl.v2.Udt.AmountType"/> class.
             </summary>
         </member>
         <member name="T:Gs.Ubl.v2.Udt.BinaryObjectType">
             <summary>
              A set of finite-length sequences of binary octets.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.BinaryObjectType.op_Implicit(System.Byte[])~Gs.Ubl.v2.Udt.BinaryObjectType">
+            <summary>
+            Performs an implicit conversion to <see cref="T:Gs.Ubl.v2.Udt.BinaryObjectType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.BinaryObjectType.format">
             <summary>
@@ -6238,10 +6408,23 @@
              The filename of the binary object.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.BinaryObjectType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.GraphicType">
             <summary>
              A diagram, graph, mathematical curves, or similar representation.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.GraphicType.op_Implicit(System.Byte[])~Gs.Ubl.v2.Udt.GraphicType">
+            <summary>
+            Performs an implicit conversion to <see cref="T:Gs.Ubl.v2.Udt.GraphicType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.GraphicType.format">
             <summary>
@@ -6268,10 +6451,23 @@
              The filename of the graphic object.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.GraphicType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.PictureType">
             <summary>
              A diagram, graph, mathematical curves, or similar representation.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.PictureType.op_Implicit(System.Byte[])~Gs.Ubl.v2.Udt.PictureType">
+            <summary>
+            Performs an implicit conversion to <see cref="T:Gs.Ubl.v2.Udt.PictureType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.PictureType.format">
             <summary>
@@ -6298,10 +6494,23 @@
              The filename of the picture object.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.PictureType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.SoundType">
             <summary>
              A diagram, graph, mathematical curves, or similar representation.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.SoundType.op_Implicit(System.Byte[])~Gs.Ubl.v2.Udt.SoundType">
+            <summary>
+            Performs an implicit conversion to <see cref="T:Gs.Ubl.v2.Udt.SoundType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.SoundType.format">
             <summary>
@@ -6328,10 +6537,23 @@
              The filename of the sound object.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.SoundType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.VideoType">
             <summary>
              A diagram, graph, mathematical curves, or similar representation.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.VideoType.op_Implicit(System.Byte[])~Gs.Ubl.v2.Udt.VideoType">
+            <summary>
+            Performs an implicit conversion to <see cref="T:Gs.Ubl.v2.Udt.VideoType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.VideoType.format">
             <summary>
@@ -6358,10 +6580,23 @@
              The filename of the video object.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.VideoType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.CodeType">
             <summary>
              A character string (letters, figures, or symbols) that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute together with relevant supplementary information.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.CodeType.op_Implicit(System.String)~Gs.Ubl.v2.Udt.CodeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Udt.CodeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.CodeType.listID">
             <summary>
@@ -6408,10 +6643,23 @@
              The Uniform Resource Identifier that identifies where the code list scheme is located.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.CodeType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.IdentifierType">
             <summary>
              A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.IdentifierType.op_Implicit(System.String)~Gs.Ubl.v2.Udt.IdentifierType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Udt.IdentifierType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.IdentifierType.schemeID">
             <summary>
@@ -6448,75 +6696,223 @@
              The Uniform Resource Identifier that identifies where the identification scheme is located.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.IdentifierType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.MeasureType">
             <summary>
              A numeric value determined by measuring an object along with the specified unit of measure.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.MeasureType.op_Implicit(System.Decimal)~Gs.Ubl.v2.Udt.MeasureType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Decimal"/> to <see cref="T:Gs.Ubl.v2.Udt.MeasureType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.MeasureType.unitCode">
             <summary>
              The type of unit of measure.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.MeasureType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.QuantityType">
             <summary>
              A counted number of non-monetary units possibly including fractions.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.QuantityType.op_Implicit(System.Decimal)~Gs.Ubl.v2.Udt.QuantityType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Decimal" /> to <see cref="T:Gs.Ubl.v2.Udt.QuantityType" />.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.QuantityType.unitCode">
             <summary>
              The unit of the quantity
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.QuantityType.unitCodeSpecified">
+            <summary>
+            Gets or sets a value indicating whether [unit code specified].
+            </summary>
+            <value><c>true</c> if [unit code specified]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.QuantityType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.TextType">
             <summary>
              A character string (i.e. a finite set of characters) generally in the form of words of a language.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.TextType.op_Implicit(System.String)~Gs.Ubl.v2.Udt.TextType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Udt.TextType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.TextType.languageID">
             <summary>
              The identifier of the language used in the content component.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.TextType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.NameType">
             <summary>
              A character string that consititues the distinctive designation of a person, place, thing or concept.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.NameType.op_Implicit(System.String)~Gs.Ubl.v2.Udt.NameType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.String"/> to <see cref="T:Gs.Ubl.v2.Udt.NameType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:Gs.Ubl.v2.Udt.NameType.languageID">
             <summary>
              The identifier of the language used in the content component.
             </summary>
         </member>
+        <member name="P:Gs.Ubl.v2.Udt.NameType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.NameType.CDataValue">
+            <summary>
+            Gets or sets the c data value.
+            </summary>
+            <value>The c data value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.DateType">
             <summary>
              One calendar day according the Gregorian calendar.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.DateType.op_Implicit(System.DateTime)~Gs.Ubl.v2.Udt.DateType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.DateTime"/> to <see cref="T:Gs.Ubl.v2.Udt.DateType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.DateType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
         </member>
         <member name="T:Gs.Ubl.v2.Udt.TimeType">
             <summary>
              The instance of time that occurs every day.
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Udt.TimeType.op_Implicit(System.DateTime)~Gs.Ubl.v2.Udt.TimeType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.DateTime"/> to <see cref="T:Gs.Ubl.v2.Udt.TimeType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.TimeType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.IndicatorType">
             <summary>
              A list of two mutually exclusive Boolean values that express the only possible states of a property.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.IndicatorType.op_Implicit(System.Boolean)~Gs.Ubl.v2.Udt.IndicatorType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Boolean"/> to <see cref="T:Gs.Ubl.v2.Udt.IndicatorType"/>.
+            </summary>
+            <param name="value">if set to <c>true</c> [value].</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.IndicatorType.Value">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Gs.Ubl.v2.Udt.IndicatorType"/> is value.
+            </summary>
+            <value><c>true</c> if value; otherwise, <c>false</c>.</value>
         </member>
         <member name="T:Gs.Ubl.v2.Udt.NumericType">
             <summary>
              Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Udt.NumericType.op_Implicit(System.Decimal)~Gs.Ubl.v2.Udt.NumericType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Decimal"/> to <see cref="T:Gs.Ubl.v2.Udt.NumericType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.NumericType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.PercentType">
             <summary>
              Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
             </summary>
         </member>
+        <member name="M:Gs.Ubl.v2.Udt.PercentType.op_Implicit(System.Decimal)~Gs.Ubl.v2.Udt.PercentType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Decimal"/> to <see cref="T:Gs.Ubl.v2.Udt.PercentType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.PercentType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Gs.Ubl.v2.Udt.RateType">
             <summary>
              Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measuret.
             </summary>
+        </member>
+        <member name="M:Gs.Ubl.v2.Udt.RateType.op_Implicit(System.Decimal)~Gs.Ubl.v2.Udt.RateType">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Decimal"/> to <see cref="T:Gs.Ubl.v2.Udt.RateType"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:Gs.Ubl.v2.Udt.RateType.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
         </member>
         <member name="T:Gs.Ubl.v2.ApplicationResponseType">
             <summary>
