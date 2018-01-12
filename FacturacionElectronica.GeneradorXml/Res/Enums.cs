@@ -488,4 +488,13 @@ namespace FacturacionElectronica.GeneradorXml.Enums
         /// </summary>
         BoletaAnticipos = 3,
     }
+    public enum RegimenPercepcion
+    {
+        // 2%
+        VENTA_INTERNA = 1,
+        // 1%
+        ADQUISICION_COMBUSTIBLE = 2,
+        // 0.5%
+        AGENTER_PERCEPCION = 3
+    }
 }

@@ -492,6 +492,20 @@ namespace FacturacionElectronica.GeneradorXml.Res
                             ((int) item.TipoDocumentoIdentidadCliente).ToString()
                         }
                     };
+
+                    if (item.Percepcion != null)
+                    {
+                        var perc = item.Percepcion;
+                        line.SUNATPerceptionSummaryDocumentReference = new SUNATPerceptionSummaryDocumentReferenceType
+                        {
+                            SUNATPerceptionSystemCode = ((int)perc.CodRegimen).ToString("00"),
+                            SUNATPerceptionPercent = perc.Tasa,
+                            TotalInvoiceAmount = perc.Monto,
+                            SUNATTotalCashed = perc.MontoTotal,
+                            TaxableAmount = perc.MontoBase,
+                        };
+                    }
+
                     line.Status = new StatusType
                     {
                         ConditionCode = ((int) item.Estado).ToString()

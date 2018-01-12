@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Gs.Ubl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4730f6f819969f08, processorArchitecture=MSIL">
-      <HintPath>..\packages\Gs.Ubl.1.0.2\lib\net40\Gs.Ubl.dll</HintPath>
+      <HintPath>..\packages\Gs.Ubl.1.0.3\lib\net40\Gs.Ubl.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -52,6 +52,7 @@
     <Compile Include="Entity\DebitNoteHeader.cs" />
     <Compile Include="Entity\Misc\AnticipoType.cs" />
     <Compile Include="Entity\Misc\DocReferenciaType.cs" />
+    <Compile Include="Entity\Misc\PerceptionSummaryType.cs" />
     <Compile Include="Entity\Misc\PrecioItemType.cs" />
     <Compile Include="Entity\NotasBase.cs" />
     <Compile Include="Entity\Details\InvoiceDetail.cs" />

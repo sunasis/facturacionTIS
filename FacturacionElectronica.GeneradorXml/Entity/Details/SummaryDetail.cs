@@ -88,6 +88,12 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
         }
 
         /// <summary>
+        /// Gets or sets the percepcion.
+        /// </summary>
+        /// <value>The percepcion.</value>
+        public PerceptionSummaryType Percepcion { get; set; }
+
+        /// <summary>
         /// Gets or sets the Estado del item.
         /// </summary>
         /// <value>The estado.</value>

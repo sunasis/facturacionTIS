@@ -452,6 +452,14 @@ namespace FacturacionElectronica.GeneradorXmlTests
                         NroDocCliente = "99887766",
                         Estado = EstadoResumen.Adicionar,
                         Total = 100.422M,
+                        Percepcion = new PerceptionSummaryType
+                        {
+                            CodRegimen = RegimenPercepcion.VENTA_INTERNA,
+                            Tasa = 2,
+                            Monto = 2,
+                            MontoTotal = 102,
+                            MontoBase = 100
+                        },
                         Importe = new List<TotalImporteType>
                         {
                             new TotalImporteType
