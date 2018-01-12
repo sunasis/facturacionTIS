@@ -42,6 +42,8 @@ namespace Gs.Ubl.v2.Sac
 
         private CustomerPartyType _accountingCustomerPartyField;
 
+        private SUNATPerceptionSummaryDocumentReferenceType _sUNATPerceptionSummaryDocumentReference;
+
         private StatusType _statusField;
 
         private BillingReferenceType[] _billingReferenceField;
@@ -177,6 +179,12 @@ namespace Gs.Ubl.v2.Sac
             {
                 this._billingReferenceField = value;
             }
+        }
+
+        public SUNATPerceptionSummaryDocumentReferenceType SUNATPerceptionSummaryDocumentReference
+        {
+            get { return _sUNATPerceptionSummaryDocumentReference; }
+            set { _sUNATPerceptionSummaryDocumentReference = value; }
         }
 
         /// <summary>
@@ -1796,6 +1804,56 @@ namespace Gs.Ubl.v2.Sac
     #endregion
 
     #region Percepcion
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("ublxsd", "2.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace =  "urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1")]
+    [System.Xml.Serialization.XmlRootAttribute("SUNATPerceptionSummaryDocumentReference",
+        Namespace = "urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1", IsNullable = false)]
+    public partial class SUNATPerceptionSummaryDocumentReferenceType
+    {
+        private IdentifierType _sUNATPerceptionSystemCode;
+        private PercentType _sUNATPerceptionPercent;
+        private AmountType _totalInvoiceAmount;
+        private AmountType _sUNATTotalCashed;
+        private AmountType _taxableAmount;
+        public IdentifierType SUNATPerceptionSystemCode
+        {
+            get { return _sUNATPerceptionSystemCode; }
+            set { _sUNATPerceptionSystemCode = value; }
+        }
+        
+
+        public PercentType SUNATPerceptionPercent
+        {
+            get { return _sUNATPerceptionPercent; }
+            set { _sUNATPerceptionPercent = value; }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        public AmountType TotalInvoiceAmount
+        {
+            get { return _totalInvoiceAmount; }
+            set { _totalInvoiceAmount = value; }
+        }
+
+
+        public AmountType SUNATTotalCashed
+        {
+            get { return _sUNATTotalCashed; }
+            set { _sUNATTotalCashed = value; }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")]
+        public AmountType TaxableAmount
+        {
+            get { return _taxableAmount; }
+            set { _taxableAmount = value; }
+        }
+
+    }
     /// <summary>
     /// Sunat Percepcion Informacion
     /// </summary>
