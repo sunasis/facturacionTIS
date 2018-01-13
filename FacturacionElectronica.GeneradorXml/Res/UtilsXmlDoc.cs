@@ -177,6 +177,11 @@ namespace FacturacionElectronica.GeneradorXml.Res
             });
             return result.ToArray();
         }
+
+        private static decimal Round(decimal value, int decimals = 2)
+        {
+            return decimal.Round(value, decimals, MidpointRounding.AwayFromZero);
+        }
         #endregion
 
         #region Invoice
@@ -499,10 +504,10 @@ namespace FacturacionElectronica.GeneradorXml.Res
                         line.SUNATPerceptionSummaryDocumentReference = new SUNATPerceptionSummaryDocumentReferenceType
                         {
                             SUNATPerceptionSystemCode = ((int)perc.CodRegimen).ToString("00"),
-                            SUNATPerceptionPercent = perc.Tasa,
-                            TotalInvoiceAmount = perc.Monto,
-                            SUNATTotalCashed = perc.MontoTotal,
-                            TaxableAmount = perc.MontoBase,
+                            SUNATPerceptionPercent = Round(perc.Tasa),
+                            TotalInvoiceAmount = Round(perc.Monto),
+                            SUNATTotalCashed = Round(perc.MontoTotal),
+                            TaxableAmount = Round(perc.MontoBase),
                         };
                     }
 
