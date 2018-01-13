@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace FacturacionElectronica.GeneradorXml.Res
@@ -496,10 +497,10 @@ namespace FacturacionElectronica.GeneradorXml.Res
                         line.SUNATPerceptionSummaryDocumentReference = new SUNATPerceptionSummaryDocumentReferenceType
                         {
                             SUNATPerceptionSystemCode = ((int)perc.CodRegimen).ToString("00"),
-                            SUNATPerceptionPercent = perc.Tasa,
-                            TotalInvoiceAmount = perc.Monto,
-                            SUNATTotalCashed = perc.MontoTotal,
-                            TaxableAmount = perc.MontoBase,
+                            SUNATPerceptionPercent = Round(perc.Tasa),
+                            TotalInvoiceAmount = Round(perc.Monto),
+                            SUNATTotalCashed = Round(perc.MontoTotal),
+                            TaxableAmount = Round(perc.MontoBase),
                         };
                     }
 
@@ -536,5 +537,11 @@ namespace FacturacionElectronica.GeneradorXml.Res
         }
         #endregion
 
+        private static decimal Round(decimal value, int decimals = 2)
+        {
+            return decimal.Round(value, decimals, MidpointRounding.AwayFromZero);
+        }
     }
+
+    
 }
