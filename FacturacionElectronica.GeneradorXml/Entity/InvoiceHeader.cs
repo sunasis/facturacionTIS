@@ -114,6 +114,12 @@ namespace FacturacionElectronica.GeneradorXml.Entity
         }
 
         /// <summary>
+        /// Gets or sets the correo cliente.
+        /// </summary>
+        /// <value>The correo cliente.</value>
+        public string CorreoCliente { get; set; }
+
+        /// <summary>
         /// Código internacional de la moneda del comprobante de venta.
         /// </summary>
         /// <value>The codigo moneda.</value>
@@ -194,6 +200,11 @@ namespace FacturacionElectronica.GeneradorXml.Entity
         /// </summary>
         public DireccionType DireccionEmisor;
 
+        /// <summary>
+        /// Gets or sets the compra.
+        /// </summary>
+        /// <value>The compra.</value>
+        public string Compra { get; set; }
         /// <summary>
         /// Indica la guía o guías de remision referenciadas al documento electrónico.
         /// </summary>

@@ -36,11 +36,13 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 FechaEmision = DateTime.Now.Subtract(TimeSpan.FromDays(2)),
                 NombreRazonSocialCliente = "SUPERMERCADOS Ñro <xml> íó PERUANOS SOCIEDAD ANóNIMA 'O ' S.P.S.A.",
                 NroDocCliente = "20100070970",
+                CorreoCliente = "juan@gmail.com",
                 RucEmisor = "20600995805",
                 NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
                 CodigoMoneda = "PEN",
                 NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
                 DocumentoReferenciaNumero = "F001-2233",
+                Compra = "00000043",
                 DocumentoReferenciaTipoDocumento = TipoDocumentoElectronico.Factura,
                 TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
                 TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
@@ -138,12 +140,21 @@ namespace FacturacionElectronica.GeneradorXmlTests
             var res = _generator.GeneraDocumentoInvoice(invoice);
 
             if (!res.Success)
+            {
                 Trace.WriteLine(res.Error);
-
-            //File.WriteAllBytes("inv.xml", res.Content);
+            }
             Assert.IsTrue(res.Success);
+
+            var name = res.FileName + ".xml";
+            File.WriteAllBytes(name, res.Content);
+            
             Assert.IsNotNull(res.Content);
             Assert.IsTrue(res.Content.Length > 0);
+
+            if (Environment.GetEnvironmentVariable("CI") == null)
+            {
+                Process.Start(name);
+            }
         }
 
 

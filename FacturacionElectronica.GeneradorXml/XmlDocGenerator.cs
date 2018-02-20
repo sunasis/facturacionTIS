@@ -59,6 +59,7 @@ namespace FacturacionElectronica.GeneradorXml
                     InvoiceTypeCode = ((int)invoiceHeaderEntity.TipoDocumento).ToString("00"),
                     DocumentCurrencyCode = invoiceHeaderEntity.CodigoMoneda,
                     CustomizationID = "1.0",
+                    OrderReference = invoiceHeaderEntity.Compra != null ? new OrderReferenceType { ID = invoiceHeaderEntity.Compra} : null,
                     DespatchDocumentReference = UtilsXmlDoc.DevuelveGuiasRemisionReferenciadas(invoiceHeaderEntity.GuiaRemisionReferencia),
                     AdditionalDocumentReference = UtilsXmlDoc.DevuelveDocumentosReferencia(invoiceHeaderEntity),
                     UBLExtensions = new[]
@@ -99,6 +100,7 @@ namespace FacturacionElectronica.GeneradorXml
                                 }
                             }
                         },
+                        BuyerContact = invoiceHeaderEntity.CorreoCliente != null ? new ContactType { ElectronicMail = invoiceHeaderEntity.CorreoCliente } : null
                     },
                     PrepaidPayment = UtilsXmlDoc.GetAnticipos(invoiceHeaderEntity.Anticipos),
                     LegalMonetaryTotal = new MonetaryTotalType
