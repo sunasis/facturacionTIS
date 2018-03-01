@@ -39,7 +39,8 @@ namespace FacturacionElectronica.GeneradorXml.Entity
         /// Tipo de comprobante que se está referenciando.
         /// </summary>
         public TipoDocumentoElectronico DocumentoReferenciaTipoDocumento { get; set; }
-
+        
+        public DateTime? Vencimiento { get; set; }
         /// <summary>
         /// Serie del Documento de Venta
         /// </summary>
@@ -94,6 +95,9 @@ namespace FacturacionElectronica.GeneradorXml.Entity
             }
         }
 
+        public string VendedorCodigo { get; set; }
+        public string VendedorNombre { get; set; }
+   
         /// <summary>
         /// Numero de Documento de la empresa o persona a la que se está emitiendo el comprobante.
         /// </summary>

@@ -85,6 +85,14 @@ namespace FacturacionElectronica.GeneradorXml
                     },
                     Signature = UtilsXmlDoc.GetSignature(invoiceHeaderEntity),
                     AccountingSupplierParty =UtilsXmlDoc.GetInfoEmisor(invoiceHeaderEntity),
+                    SellerSupplierParty = invoiceHeaderEntity.VendedorCodigo != null || invoiceHeaderEntity.VendedorNombre != null ? new SupplierPartyType
+                    {
+                        CustomerAssignedAccountID = invoiceHeaderEntity.VendedorCodigo,
+                        Party = new PartyType
+                        {
+                            PartyName = new PartyNameType[] { invoiceHeaderEntity.VendedorNombre }
+                        }
+                    }: null,
                     AccountingCustomerParty = new CustomerPartyType
                     {
                         CustomerAssignedAccountID = invoiceHeaderEntity.NroDocCliente,
@@ -102,6 +110,14 @@ namespace FacturacionElectronica.GeneradorXml
                         },
                         BuyerContact = invoiceHeaderEntity.CorreoCliente != null ? new ContactType { ElectronicMail = invoiceHeaderEntity.CorreoCliente } : null
                     },
+                    PaymentMeans = invoiceHeaderEntity.Vencimiento != null ? new []
+                    {
+                        new PaymentMeansType
+                        {
+                            ID = "1",
+                            PaymentDueDate = invoiceHeaderEntity.Vencimiento.Value
+                        }
+                    }: null,
                     PrepaidPayment = UtilsXmlDoc.GetAnticipos(invoiceHeaderEntity.Anticipos),
                     LegalMonetaryTotal = new MonetaryTotalType
                     {

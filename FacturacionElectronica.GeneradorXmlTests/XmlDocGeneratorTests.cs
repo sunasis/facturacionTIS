@@ -43,6 +43,8 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
                 DocumentoReferenciaNumero = "F001-2233",
                 Compra = "00000043",
+                VendedorCodigo = "112",
+                VendedorNombre = "JUAN PEREZ",
                 DocumentoReferenciaTipoDocumento = TipoDocumentoElectronico.Factura,
                 TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
                 TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
