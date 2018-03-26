@@ -66,6 +66,7 @@ namespace FacturacionElectronica.HomologacionTests
         [TestMethod]
         public void SendSummaryTest()
         {
+            //TODO: update v2.1
             var name = "20600995805-RC-20171128-01";
             var filePath = Path.Combine(Environment.CurrentDirectory, "Resources", name + ".xml");
             var content = File.ReadAllBytes(filePath);

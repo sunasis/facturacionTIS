@@ -25,15 +25,29 @@ namespace FacturacionElectronica.Homologacion.Res
         public static string GetDescriptionError(string code)
         {
             string resp = null;
+
+            if (code == null)
+            {
+                return null;
+            }
+
             try
             {
+                code = System.Text.RegularExpressions.Regex.Replace(code, @"[^\d]", "");
+                int value;
+                if (!int.TryParse(code, out value))
+                {
+                    return null;
+                }
+                code = value.ToString();
+
                 using (TextReader reader= new StringReader(Resources.ListadeErrores))
                 {
-                    code = System.Text.RegularExpressions.Regex.Replace(code, @"[^\d]", "");
+                    
                     var errors = XElement.Load(reader);
                     var filter = (from x in errors.Elements()
                         let o = x.Attribute("code")
-                        where o != null && o.Value.Equals(int.Parse(code).ToString())
+                        where o != null && o.Value.Equals(code)
                                   select x.Value).ToList();
                     if (filter.Any())
                         resp = filter.FirstOrDefault();

@@ -48,7 +48,7 @@ namespace FacturacionElectronica.Homologacion
             var fileToZip = pathFile + Resources.ExtensionFile;
             var nameOfFileZip = pathFile + Resources.ExtensionZipFile;
 
-            var response = new SunatResponse
+            var res = new SunatResponse
             {
                 Success = false
             };
@@ -59,7 +59,7 @@ namespace FacturacionElectronica.Homologacion
                 var result = await service.sendBillAsync(new sendBillRequest(nameOfFileZip, zipBytes));
 
                 using (var outputXml = ProcessZip.ExtractFile(result.applicationResponse))
-                    response = new SunatResponse
+                    res = new SunatResponse
                     {
                         Success = true,
                         ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
@@ -68,21 +68,17 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                response.Error = new ErrorResponse
-                {
-                    Code = ex.Code.Name,
-                    Description = ProcessXml.GetDescriptionError(ex.Code.Name) ?? ex.Message
-                };
+                res.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
-                response.Error = new ErrorResponse
+                res.Error = new ErrorResponse
                 {
                     Description = er.Message
                 };
             }
             
-            return response;
+            return res;
         }
 
         /// <summary>
@@ -109,11 +105,7 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                res.Error = new ErrorResponse
-                {
-                    Code = ex.Code.Name,
-                    Description = ProcessXml.GetDescriptionError(ex.Code.Name)
-                };
+                res.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
@@ -163,11 +155,7 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                res.Error = new ErrorResponse
-                {
-                    Code = ex.Code.Name,
-                    Description = ProcessXml.GetDescriptionError(ex.Code.Name),
-                };
+                res.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
@@ -207,11 +195,7 @@ namespace FacturacionElectronica.Homologacion
             }
             catch (FaultException ex)
             {
-                res.Error = new ErrorResponse
-                {
-                    Code = ex.Code.Name,
-                    Description = ProcessXml.GetDescriptionError(ex.Code.Name)
-                };
+                res.Error = GetErrorFromFault(ex);
             }
             catch (Exception er)
             {
@@ -225,7 +209,25 @@ namespace FacturacionElectronica.Homologacion
         #endregion
 
         #region Static Methods
+
+        private static ErrorResponse GetErrorFromFault(FaultException ex)
+        {
+            var errMsg = ex.Message;
+            var code = ex.Code?.Name;
+            if (string.IsNullOrEmpty(errMsg))
+            {
+                errMsg = ProcessXml.GetDescriptionError(code);
+            }
+
+            return new ErrorResponse
+            {
+                Code = code,
+                Description = errMsg
+            };
+        }
+
         /// <summary>
+        /// 
         /// Establece el Tipo de Servicio que se utilizara para la conexion con el WebService de Sunat.
         /// </summary>
         /// <param name="service">Tipo de Servicio al que se conectara</param>
