@@ -114,7 +114,7 @@ namespace FacturacionElectronica.GeneradorXml
                     {
                         new PaymentMeansType
                         {
-                            ID = "1",
+                            PaymentMeansCode = "1",
                             PaymentDueDate = invoiceHeaderEntity.Vencimiento.Value
                         }
                     }: null,
