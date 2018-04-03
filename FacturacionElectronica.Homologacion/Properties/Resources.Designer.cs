@@ -148,7 +148,7 @@ namespace FacturacionElectronica.Homologacion.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://www.sunat.gob.pe/ol-ti-itemision-otroscpe-gem/billService.
+        ///   Busca una cadena traducida similar a https://e-factura.sunat.gob.pe/ol-ti-itemision-otroscpe-gem/billService.
         /// </summary>
         internal static string UrlRetPerc {
             get {
@@ -166,7 +166,7 @@ namespace FacturacionElectronica.Homologacion.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://www.sunat.gob.pe:443/ol-it-wsconscpegem/billConsultService.
+        ///   Busca una cadena traducida similar a https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService.
         /// </summary>
         internal static string UrlServiceConsult {
             get {
