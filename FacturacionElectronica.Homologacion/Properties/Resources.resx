@@ -150,7 +150,7 @@
     <comment>WebService para  produccion</comment>
   </data>
   <data name="UrlRetPerc" xml:space="preserve">
-    <value>https://www.sunat.gob.pe/ol-ti-itemision-otroscpe-gem/billService</value>
+    <value>https://e-factura.sunat.gob.pe/ol-ti-itemision-otroscpe-gem/billService</value>
     <comment>WebService Retencion y Percepcion</comment>
   </data>
   <data name="UrlRetPercBeta" xml:space="preserve">
@@ -158,7 +158,7 @@
     <comment>WebService Retencion y Percepcion(BETA)</comment>
   </data>
   <data name="UrlServiceConsult" xml:space="preserve">
-    <value>https://www.sunat.gob.pe:443/ol-it-wsconscpegem/billConsultService</value>
+    <value>https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService</value>
     <comment>Consulta si Comprobante fue Registrado</comment>
   </data>
 </root>
