@@ -58,7 +58,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity.Details
             get { return _cantidad; }
             set
             {
-                if (value > 0)
+                if (value >= 0)
                 {
                     //Se le redondea a un máximo de 3 decimales.
                     _cantidad = Math.Round(value, 3, MidpointRounding.AwayFromZero);

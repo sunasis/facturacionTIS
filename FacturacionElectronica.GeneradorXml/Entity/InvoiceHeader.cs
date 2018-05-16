@@ -112,7 +112,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity
                     throw new ArgumentException("El campo NroDocCliente no debe superar los 15 caracteres");
             }
         }
-
+        public string DireccionCliente { get; set; }
         /// <summary>
         /// Código internacional de la moneda del comprobante de venta.
         /// </summary>

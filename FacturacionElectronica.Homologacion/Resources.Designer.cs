@@ -85,7 +85,7 @@ namespace FacturacionElectronica.Homologacion {
         ///    &lt;value&gt;El Usuario ingresado no existe &lt;/value&gt;
         ///  &lt;/Error&gt;
         ///  &lt;Error code=&quot;104&quot;&gt;
-        ///    &lt;value&gt;La Clave ingresada es [resto de la cadena truncado]&quot;;.
+        ///    &lt;value&gt;La Cla [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string ListadeErrores {
             get {
@@ -148,7 +148,7 @@ namespace FacturacionElectronica.Homologacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://www.sunat.gob.pe/ol-ti-itemision-otroscpe-gem/billService.
+        ///   Busca una cadena traducida similar a https://e-factura.sunat.gob.pe/ol-ti-itemision-otroscpe-gem/billService.
         /// </summary>
         internal static string UrlRetPerc {
             get {
@@ -166,7 +166,7 @@ namespace FacturacionElectronica.Homologacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://www.sunat.gob.pe:443/ol-it-wsconscpegem/billConsultService.
+        ///   Busca una cadena traducida similar a https://e-factura.sunat.gob.pe/ol-it-wsconscpegem/billConsultService.
         /// </summary>
         internal static string UrlServiceConsult {
             get {

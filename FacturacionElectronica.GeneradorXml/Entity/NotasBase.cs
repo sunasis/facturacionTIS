@@ -146,6 +146,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity
                     throw new ArgumentException("El campo NombreRazonSocialCliente debe tener más de 1 caracter y un máximo de 100");
             }
         }
+        public string DireccionCliente { get; set; }
 
         /// <summary>
         /// Especifica la Direccion del Emisor Electronico
