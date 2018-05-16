@@ -95,6 +95,7 @@ namespace FacturacionElectronica.GeneradorXml.Entity
             }
         }
 
+        public string DireccionCliente { get; set; }
         public string VendedorCodigo { get; set; }
         public string VendedorNombre { get; set; }
    

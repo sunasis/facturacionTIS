@@ -37,6 +37,7 @@ namespace FacturacionElectronica.GeneradorXmlTests
                 NombreRazonSocialCliente = "SUPERMERCADOS Ñro <xml> íó PERUANOS SOCIEDAD ANóNIMA 'O ' S.P.S.A.",
                 NroDocCliente = "20100070970",
                 CorreoCliente = "juan@gmail.com",
+                DireccionCliente = "DIRECCION DETALLADA DEL CLIENTE",
                 RucEmisor = "20600995805",
                 NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
                 CodigoMoneda = "PEN",

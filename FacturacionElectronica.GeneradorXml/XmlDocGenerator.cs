@@ -84,7 +84,7 @@ namespace FacturacionElectronica.GeneradorXml
                         }
                     },
                     Signature = UtilsXmlDoc.GetSignature(invoiceHeaderEntity),
-                    AccountingSupplierParty =UtilsXmlDoc.GetInfoEmisor(invoiceHeaderEntity),
+                    AccountingSupplierParty = UtilsXmlDoc.GetInfoEmisor(invoiceHeaderEntity),
                     SellerSupplierParty = invoiceHeaderEntity.VendedorCodigo != null || invoiceHeaderEntity.VendedorNombre != null ? new SupplierPartyType
                     {
                         CustomerAssignedAccountID = invoiceHeaderEntity.VendedorCodigo,
@@ -100,6 +100,10 @@ namespace FacturacionElectronica.GeneradorXml
                             new IdentifierType[] { ((int)invoiceHeaderEntity.TipoDocumentoIdentidadCliente).ToString() },
                         Party = new PartyType
                         {
+                            PostalAddress = string.IsNullOrWhiteSpace(invoiceHeaderEntity.DireccionCliente) ? null : new AddressType
+                            {
+                                StreetName = invoiceHeaderEntity.DireccionCliente
+                            },
                             PartyLegalEntity = new[]
                             {
                                 new PartyLegalEntityType
