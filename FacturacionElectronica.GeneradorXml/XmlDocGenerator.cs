@@ -285,6 +285,10 @@ namespace FacturacionElectronica.GeneradorXml
                                 new IdentifierType[] { ((int)creditHeaderEntity.TipoDocumentoIdentidadCliente).ToString() },
                         Party = new PartyType
                         {
+                            PostalAddress = string.IsNullOrWhiteSpace(creditHeaderEntity.DireccionCliente) ? null : new AddressType
+                            {
+                                StreetName = creditHeaderEntity.DireccionCliente
+                            },
                             PartyLegalEntity = new[]
                                 {
                                     new PartyLegalEntityType
@@ -382,6 +386,10 @@ namespace FacturacionElectronica.GeneradorXml
                                 new IdentifierType[] { ((int)debitHeaderEntity.TipoDocumentoIdentidadCliente).ToString() },
                         Party = new PartyType
                         {
+                            PostalAddress = string.IsNullOrWhiteSpace(debitHeaderEntity.DireccionCliente) ? null : new AddressType
+                            {
+                                StreetName = debitHeaderEntity.DireccionCliente
+                            },
                             PartyLegalEntity = new[]
                                 {
                                     new PartyLegalEntityType
