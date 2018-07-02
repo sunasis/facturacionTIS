@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  
   <metadata>
     <id>FacturacionElectronica.Homologacion</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>Ws - Facturacion Electronica</title>
     <authors>Giancarlos Salas</authors>
     <owners>Giansalex</owners>
