@@ -186,8 +186,11 @@ namespace FacturacionElectronica.Homologacion
 
                 var response = result.statusCdr;
                 res.Success = true;
-                using (var xmlCdr = ProcessZip.ExtractFile(response.content))
-                    res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+                if (response.content != null)
+                {
+                    using (var xmlCdr = ProcessZip.ExtractFile(response.content))
+                        res.ApplicationResponse = ProcessXml.GetAppResponse(xmlCdr);
+                }
 
                 res.Code = response.statusCode;
                 res.Message = response.statusMessage;
